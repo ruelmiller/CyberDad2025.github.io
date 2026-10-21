@@ -66,6 +66,10 @@ UNVERIFIED_STATS_RULES = [
         r"|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year", re.I)),
     ("unverified stat: trusted by a crowd (millions/thousands)", re.compile(
         r"\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)", re.I)),
+    # R9d (CoS 2026-10-21): uncited 'N in M teens/kids/children/parents/families' ratios.
+    # Allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
+    ("unverified stat: N in M teens/kids/parents", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:in|out of)\s+(?:every\s+)?(?:[2-9]|\d{2,}|two|three|four|five|six|seven|eight|nine|ten)\s+(?:[a-z.]+\s+)?(?:teens?|teenagers?|tweens?|kids?|children|child|youths?|parents?|families|family|households?)\b", re.I | re.M)),
 ]
 
 
