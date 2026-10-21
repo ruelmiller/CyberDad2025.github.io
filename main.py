@@ -97,6 +97,18 @@ UNVERIFIED_STATS_RULES = [
     # main() also checks the post title on its own line (TITLE_LINE_PREFIX), since it is not in the body.
     ("time promise in title/heading: in N minutes", re.compile(
         r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)", re.I | re.M)),
+    # R9n (CoS + Product M-D7, 2026-10-21): every minute phrase is a time promise, except the three kit lines Product allows
+    # ('one 15-minute Quick Action' / 'Each module starts with a 15-minute Quick Action' and
+    # 'Wait 10 minutes, then check your Spam/Junk folder') and a computed 'N min read'. A source link does not exempt it.
+    ("time promise: N minutes (outside the allowed kit lines)", re.compile(
+        r"^(?![^\n]*(?:15-minute Quick Action|Wait 10 minutes, then check your Spam/Junk folder))[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+minutes\b)", re.I | re.M)),
+    # R9n: 'tonight' / 'instant' wording (Product rule: 0 on the site).
+    ("'tonight'/'instant' wording", re.compile(
+        r"\b(?:tonight|instant|instantly)\b", re.I)),
+    # R9n: unsourced figures (percentages used as claims, 'prevents N%', $N million/billion, N million/billion people...);
+    # allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
+    ("unsourced figure (no source on the line)", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?(?:\b\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)[ \t]+(?:of[ \t]+(?:all[ \t]+)?(?:[\w-]+[ \t]+){0,2}?(?:phishing|scams?|attacks?|breaches|hacks?|accounts?|passwords?|devices?|routers?|cases|incidents|threats|victims|users|people|families|parents|kids|children|teens|households|americans|emails?|wins|attempts|malware|ransomware|data)\b|(?:more|less|fewer|higher|lower|likelier)\b)|\b(?:prevents?|stops?|blocks?|reduces?|cuts?|eliminates?)[ \t]+(?:up[ \t]+to[ \t]+|over[ \t]+|about[ \t]+|nearly[ \t]+|almost[ \t]+)?\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)|\$[ \t]?\d[\d,.]*[ \t]*(?:million|billion|trillion)\b|\b\d[\d,.]*[ \t]*(?:million|billion)[ \t]+(?:people|users|americans|families|kids|children|teens|accounts|records|households|victims|attacks|scams)\b)", re.I | re.M)),
 ]
 TITLE_LINE_PREFIX = "title: "
 
@@ -141,7 +153,7 @@ def unverified_stats_guard(text: str) -> list:
 # like a real human writing on different days, not a content farm.
 FALLBACK_POSTS = [
     {
-        "title": "Roblox Settings Most Parents Never Touch (And Should Tonight)",
+        "title": "Roblox Settings Most Parents Never Touch (And Should Today)",
         "category": "Gaming Safety",
         "lead": "If your kid plays Roblox, you've probably set the parental PIN and called it a day. I did too. Then I actually opened the privacy panel.",
         "body": (
@@ -188,7 +200,7 @@ FALLBACK_POSTS = [
         ),
     },
     {
-        "title": "Four Wi-Fi Settings Every Parent Should Change Tonight",
+        "title": "Four Wi-Fi Settings Every Parent Should Change Today",
         "category": "Devices",
         "lead": "Most home routers haven't been touched since the day the cable guy installed them. That's a problem.",
         "body": (
@@ -218,7 +230,7 @@ FALLBACK_POSTS = [
         "body": (
             "Default settings on these apps favor reach and engagement, not safety. That makes "
             "sense for the platform's business — it doesn't make sense for your kid.\n\n"
-            "Sit down with your tween tonight. Frame it as 'I'm not snooping, I want to make "
+            "Sit down with your tween today. Frame it as 'I'm not snooping, I want to make "
             "sure creeps can't find you.' That phrasing tends to land. Then run this audit:\n\n"
             "**Instagram:** Settings → Privacy → Private Account ON. Turn off Activity Status. "
             "'Tag and Mention controls' to People You Follow only.\n\n"
@@ -385,7 +397,8 @@ RULES:
 - Where it fits naturally, explain what the official advisory means for a home network and link the source (CISA, FBI/IC3, or FTC)
 - No corporate hedge phrases ("It's important to note", "in today's digital age")
 - Lead with one specific scenario, not a definition
-- Give 3 concrete actions a parent can take tonight
+- Give 3 concrete actions a parent can take today
+- Do not promise how many minutes something takes, do not use the words instant, tonight, expert or pro, and do not cite statistics without a named source.
 - End with a one-line reassurance, not a generic platitude
 
 ALERT TITLE: {alert['title']}
@@ -511,7 +524,28 @@ def generate_pin_image(title: str, slug: str) -> Path:
 
 # -------- POST WRITING --------
 
+class PostBlocked(Exception):
+    """Raised when a rendered post fails the R9 guard; nothing is written."""
+
+
+def rendered_post_guard(content: str) -> list:
+    """R9n: run the minute / tonight / unsourced-figure (all R9) rules on the full post exactly as it would be written."""
+    return unverified_stats_guard(content)
+
+
 def write_post(post: dict, slug: str, image_path: Path, source: dict | None) -> Path:
+    filename, content = render_post(post, slug, image_path, source)
+    violations = rendered_post_guard(content)
+    if violations:
+        raise PostBlocked("; ".join(violations))
+    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    filename.write_text(content)
+    return filename
+
+
+def render_post(post: dict, slug: str, image_path: Path, source: dict | None):
+    """Build (filename, file content) without writing anything."""
+    category = post.get("category") or "Family Safety"
     today = datetime.date.today().isoformat()
     filename = POSTS_DIR / f"{today}-{slug}.md"
     image_url = f"{SITE_URL}/{image_path.as_posix()}"
@@ -554,8 +588,8 @@ date: {today}
 last_modified_at: {today}
 author: {AUTHOR_NAME}
 author_slug: {AUTHOR_SLUG}
-categories: [Cybersecurity, {post['category']}]
-tags: [family safety, {post['category'].lower()}, parents]
+categories: [Cybersecurity, {category}]
+tags: [family safety, {category.lower()}, parents]
 image: /{image_path.as_posix()}
 description: "{lead[:155] if lead else safe_title}"
 reading_time: {rt}
@@ -567,9 +601,7 @@ reading_time: {rt}
 {post['body']}{source_block}{author_footer}{cta_block}
 """
 
-    POSTS_DIR.mkdir(parents=True, exist_ok=True)
-    filename.write_text(content)
-    return filename
+    return filename, content
 
 
 # -------- MAIN --------
@@ -602,6 +634,10 @@ def main():
 
     stat_violations = (unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]]))
                        + title_time_promise_guard(post) + author_claim_guard(post))
+    # R9n: also guard the full post exactly as write_post() would write it (front matter, body, source, footer, CTA),
+    # before the image is generated, so a failing post leaves no file behind.
+    _, rendered = render_post(post, slug, IMAGES_DIR / f"{slug}.png", source)
+    stat_violations += [v for v in rendered_post_guard(rendered) if v not in stat_violations]
     if stat_violations:
         print("Post blocked by R9 guard (unverified stats / author-claim words), nothing written: " + "; ".join(stat_violations))
         return
@@ -610,7 +646,11 @@ def main():
     image_path = generate_pin_image(post["title"], slug)
 
     print("Writing post...")
-    filename = write_post(post, slug, image_path, source)
+    try:
+        filename = write_post(post, slug, image_path, source)
+    except PostBlocked as e:
+        print("Post blocked by R9 guard at write time, nothing written: " + str(e))
+        return
     print(f"Wrote {filename}")
 
     log.add(slug)
