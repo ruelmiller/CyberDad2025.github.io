@@ -100,9 +100,10 @@ UNVERIFIED_STATS_RULES = [
     # R9n (CoS + Product M-D7, 2026-10-21): every minute phrase is a time promise, except the three kit lines Product allows
     # ('one 15-minute Quick Action' / 'Each module starts with a 15-minute Quick Action' and
     # 'Wait 10 minutes, then check your Spam/Junk folder') and a computed 'N min read'. A source link does not exempt it.
+    # R9 (F, CoS 2026-10-21): also 'a minute' and 'in/within seconds' ('few minutes', 'in minutes' already covered).
     ("time promise: N minutes (outside the allowed kit lines)", re.compile(
-        r"^(?![^\n]*(?:15-minute Quick Action|Wait 10 minutes, then check your Spam/Junk folder))[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+minutes\b)", re.I | re.M)),
-    # R9n: 'tonight' / 'instant' wording (Product rule: 0 on the site).
+        r"^(?![^\n]*(?:15-minute Quick Action|Wait 10 minutes, then check your Spam/Junk folder))[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of|a)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+(?:minutes|seconds)\b)", re.I | re.M)),
+    # R9n: 'tonight' / 'instant' / 'instantly' wording (Product rule: 0 on the site).
     ("'tonight'/'instant' wording", re.compile(
         r"\b(?:tonight|instant|instantly)\b", re.I)),
     # R9n: unsourced figures (percentages used as claims, 'prevents N%', $N million/billion, N million/billion people...);
