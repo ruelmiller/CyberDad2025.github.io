@@ -1,3 +1,10 @@
+---
+# Front matter only so Jekyll runs Liquid here: the begin_checkout product values come from _data/kit.yml (checkout_item),
+# so a product switch is one data edit. layout: null is required (_config.yml defaults would wrap this file in the
+# "default" HTML layout). Output is still /assets/js/cdk-events.js, plain JS, same URL.
+layout: null
+---
+{%- assign k = site.data.kit.checkout_item -%}
 /*
  * CyberDadKit GA4 events (Growth tracking plan, launch-ready/tracking-plan.md section 2).
  * Uses the gtag already loaded by _layouts/default.html (G-5B1LNCPB56): no extra gtag/js
@@ -15,6 +22,8 @@
  * begin_checkout: capture-phase click on any link to checkout.mailerlite.com, sent with
  *   transport_type beacon so it survives the navigation. Checkout is off today, so no
  *   such link exists on the site yet and this does nothing until one is published.
+ *   Product values (item_id, item_name, price, value, currency) are rendered at build time from
+ *   _data/kit.yml checkout_item (P11): change the product there, not here.
  */
 (function () {
   function ev(name, params) { try { gtag('event', name, params); } catch (e) {} }
@@ -52,8 +61,8 @@
   document.addEventListener('click', function (e) {
     var l = e.target && e.target.closest && e.target.closest('a[href*="checkout.mailerlite.com"]');
     if (!l) return;
-    ev('begin_checkout', { currency: 'USD', value: 67, transport_type: 'beacon',
-      items: [{ item_id: '163449031913113430', item_name: 'CyberDad Shield Kit', price: 67, quantity: 1 }] });
+    ev('begin_checkout', { currency: {{ k.currency | jsonify }}, value: {{ k.value | jsonify }}, transport_type: 'beacon',
+      items: [{ item_id: {{ k.item_id | jsonify }}, item_name: {{ k.item_name | jsonify }}, price: {{ k.price | jsonify }}, quantity: 1 }] });
   }, true);
   // --- select_promotion: post kit CTA (M-P1 _includes/kit-cta.html; data-creative-slot = post-top | post-end) ---
   document.addEventListener('click', function (e) { var l = e.target && e.target.closest && e.target.closest('a[data-cdk-event="select_promotion"]'); if (l) ev('select_promotion', { promotion_id: l.getAttribute('data-promotion-id'), promotion_name: l.getAttribute('data-promotion-name'), creative_slot: l.getAttribute('data-creative-slot'), transport_type: 'beacon' }); }, true);

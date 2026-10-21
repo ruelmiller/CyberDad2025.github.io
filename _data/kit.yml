@@ -7,3 +7,11 @@ cta_label_live: "Get the CyberDad Shield Kit ($67 one-time)"
 # In-content pitch CTA (M-P2). Live label = Product M-D2 verbatim. Pre-launch = minimal swap logged in publish-mp2/DEVIATIONS.md.
 pitch_label_prelaunch: "See the CyberDad Shield Kit: $67 one-time, coming soon"
 pitch_label_live: "Get the CyberDad Shield Kit: $67 one-time"
+# begin_checkout product (R6 assets/js/cdk-events.js renders these at build time; P11). Product switch = edit this block only.
+# item_id is quoted so it stays the exact string GA4 receives. value = price x quantity (1).
+checkout_item:
+  item_id: "163449031913113430"
+  item_name: "CyberDad Shield Kit"
+  price: 67
+  value: 67
+  currency: "USD"
