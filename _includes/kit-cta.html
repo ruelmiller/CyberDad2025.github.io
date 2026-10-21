@@ -1,11 +1,11 @@
 {%- comment -%}
   CyberDad Shield Kit CTA (M-P1). Rendered by _layouts/post.html twice per post:
   position="top" (after the first top-level paragraph) and position="end" (right after the post body).
-  LAUNCH FLIP: checkout is not live, so the button says "($67, coming soon)" and points to the
-  home #kit section (matches the homepage #kit copy and the R5 pattern). At launch, change ONLY the
-  next line to:  {%- assign kit_cta_label = "Get the kit, $67" -%}
+  LAUNCH FLIP (M-P2): the label comes from _data/kit.yml. Checkout is not live, so checkout_live is false and
+  the button says "($67, coming soon)" (matches the homepage #kit copy and the R5 pattern). At launch set
+  checkout_live: true in _data/kit.yml; that flips this CTA and every M-P2 pitch CTA together.
 {%- endcomment -%}
-{%- assign kit_cta_label = "See the CyberDad Shield Kit ($67, coming soon)" -%}
+{%- if site.data.kit.checkout_live -%}{%- assign kit_cta_label = site.data.kit.cta_label_live -%}{%- else -%}{%- assign kit_cta_label = site.data.kit.cta_label_prelaunch -%}{%- endif -%}
 {%- assign kit_cta_pos = include.position | default: "end" -%}
 <aside class="cdk-kit-cta cdk-kit-cta--{{ kit_cta_pos }}" aria-labelledby="cdk-kit-cta-{{ kit_cta_pos }}-title" data-cdk-promo="kit-cta" data-cdk-position="{{ kit_cta_pos }}">
 {%- if kit_cta_pos == "top" %}

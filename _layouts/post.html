@@ -42,9 +42,25 @@ layout: default
       at the top of the body. Covers every post (_posts and scripts/_posts) without editing post files,
       so new generator output gets it too.
     {%- endcomment -%}
+    {%- comment -%}
+      M-P2: if this post has a Product pitch block (_data/kit_pitches.yml, keyed by page.path), place it in front
+      of its "before" heading (topic fit), or at the end of the body if that heading is missing. The result
+      (cdk_body) is what the top-CTA logic below splits, so both blocks render on the same body.
+    {%- endcomment -%}
+    {%- assign cdk_body = content -%}
+    {%- assign cdk_pitch = site.data.kit_pitches[page.path] -%}
+    {%- if cdk_pitch -%}
+      {%- capture cdk_pitch_html -%}{% include kit-pitch.html pitch=cdk_pitch %}{%- endcapture -%}
+      {%- if cdk_pitch.before and content contains cdk_pitch.before -%}
+        {%- assign cdk_pitch_with_anchor = cdk_pitch_html | append: cdk_pitch.before -%}
+        {%- assign cdk_body = content | replace_first: cdk_pitch.before, cdk_pitch_with_anchor -%}
+      {%- else -%}
+        {%- assign cdk_body = content | append: cdk_pitch_html -%}
+      {%- endif -%}
+    {%- endif -%}
     {%- capture cdk_cta_top -%}{% include kit-cta.html position="top" %}{%- endcapture -%}
     {%- assign cdk_tags = "div,blockquote,ul,ol,table,section,aside,details,figure" | split: "," -%}
-    {%- assign cdk_parts = content | split: "</p>" -%}
+    {%- assign cdk_parts = cdk_body | split: "</p>" -%}
     {%- assign cdk_acc = "" -%}
     {%- assign cdk_cut = -1 -%}
     {%- for cdk_part in cdk_parts -%}
@@ -62,13 +78,13 @@ layout: default
       {%- if cdk_ok -%}{%- assign cdk_cut = cdk_acc | size -%}{%- break -%}{%- endif -%}
     {%- endfor -%}
     {%- if cdk_cut > 0 -%}
-      {%- assign cdk_len = content | size -%}
-{{ content | slice: 0, cdk_cut }}
+      {%- assign cdk_len = cdk_body | size -%}
+{{ cdk_body | slice: 0, cdk_cut }}
 {{ cdk_cta_top }}
-{{ content | slice: cdk_cut, cdk_len }}
+{{ cdk_body | slice: cdk_cut, cdk_len }}
     {%- else -%}
 {{ cdk_cta_top }}
-{{ content }}
+{{ cdk_body }}
     {%- endif %}
   </div>
   {% include kit-cta.html position="end" %}
