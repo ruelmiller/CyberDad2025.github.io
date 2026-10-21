@@ -28,7 +28,7 @@ In today's digital age, it's crucial for families to prioritize cybersecurity to
 
 7. **Backup Your Data**: Regularly back up your important files and documents to a secure cloud storage service or an external hard drive. In the event of a cyber attack or data loss, having a backup ensures that you can easily recover your information without paying a ransom.
 
-According to a recent study, over 60% of families have experienced a cyber attack in the past year, highlighting the prevalence of online threats targeting households. Cybercriminals are constantly evolving their tactics to exploit vulnerabilities and steal sensitive information, making it crucial for families to stay informed and proactive about cybersecurity.
+Cybercriminals are constantly evolving their tactics to exploit vulnerabilities and steal sensitive information, making it crucial for families to stay informed and proactive about cybersecurity.
 
 Consider this situation: You receive an email from your child's school claiming to have important information about their upcoming exams. However, upon closer inspection, you notice that the email address is suspicious and contains grammatical errors. This could be a phishing attempt by cybercriminals to trick you into providing personal information or downloading malware. By staying vigilant and educating your family about common online threats, you can avoid falling victim to such scams.
 

@@ -26,7 +26,7 @@ To help protect your family from cyber threats, here are 7 actionable tips that 
 
 7. Backup Your Data: In case of a ransomware attack or data breach, it's important to regularly backup your family's data to a secure, offline location. Use external hard drives, cloud storage services, or backup software to create copies of important files, photos, and documents. Make sure to test your backups periodically to ensure they are up-to-date and accessible in an emergency.
 
-According to recent statistics, families are increasingly becoming targets of cyber attacks, with children being particularly vulnerable to online threats. In a recent survey, it was found that over 60% of parents are concerned about their children's online safety, yet only a small percentage have taken proactive steps to protect them. With the proliferation of internet-connected devices in households, the risk of cyber threats is only expected to grow in the coming years.
+With the proliferation of internet-connected devices in households, the risk of cyber threats is only expected to grow in the coming years.
 
 Consider this situation: Your child unknowingly clicks on a malicious link in an email or social media message, leading to their device being infected with malware. The malware steals sensitive information, such as passwords and banking details, putting your family at risk of identity theft and financial loss. Without proper cybersecurity measures in place, your family's personal and financial well-being could be in jeopardy.
 

@@ -6,17 +6,15 @@ categories: [cybersecurity, family-safety, easy-guide]
 tags: [security, simple, family, guide, protection]
 author: CyberDad
 description: "Simple steps to protect your home internet so bad people can't get in, explained in words everyone can understand."
-reading_time: "5 minutes"
 difficulty: "Super Easy"
-age_appropriate: "All ages (4-99)"
+age_appropriate: "For parents and families"
 ---
 
 <div class="post-header">
   <h1>📶 Make Your Home WiFi Super Safe - Easy Steps</h1>
   <div class="post-meta">
-    <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
-    <span class="age-range">🏠 Perfect for ages 4-99</span>
+    <span class="age-range">🏠 For parents and families</span>
   </div>
   <div class="post-summary">
     <p><strong>Quick Summary:</strong> Simple steps to protect your home internet so bad people can't get in, explained in words everyone can understand.</p>
@@ -178,7 +176,7 @@ You'll learn how to make your home WiFi network safe from bad people who want to
 3. **Use the default password** (on the sticker)
 4. **Set up your security again**
 
-## 🎉 You're Now a WiFi Safety Expert!
+## 🎉 Nice Work: You've Finished the WiFi Checklist!
 
 Great job! You now know how to:
 - ✅ Change your WiFi password

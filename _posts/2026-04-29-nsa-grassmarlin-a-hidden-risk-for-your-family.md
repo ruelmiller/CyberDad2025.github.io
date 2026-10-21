@@ -19,7 +19,7 @@ I recently stumbled upon a cybersecurity alert about NSA GRASSMARLIN that made m
 
 Imagine your child’s device is connected to the Wi-Fi while they’re innocently browsing a cartoon site. If that device is compromised, it could allow attackers to access personal information—like your location or your child’s browsing history—just like how it happens in enterprise environments. It’s alarming, but we can tackle this together.
 
-Here are **three concrete actions you can take tonight** to protect your family from potential exploitation:
+Here are **three concrete actions you can take today** to protect your family from potential exploitation:
 
 1. **Update your devices**: Check all devices connected to your home network for updates. Most manufacturers release patches for vulnerabilities, and applying them can significantly reduce your risk. 
 

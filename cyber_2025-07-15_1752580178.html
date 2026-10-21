@@ -1,15 +1,24 @@
+---
+# Front matter only so Jekyll runs Liquid for the kit label (R9). layout: null keeps this standalone HTML page unwrapped
+# (_config.yml defaults would otherwise apply layout "default"). permalink keeps the URL (and its sitemap entry)
+# at the .html path, as when this page was a static file.
+layout: null
+permalink: /cyber_2025-07-15_1752580178.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- MailerLite Universal -->
+    <!-- MailerLite Universal (account 1632878) -->
     <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
     .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1632070');
+    ml('account', '1632878');
     </script>
     <!-- End MailerLite Universal -->
+    <!-- Honeypot for the KxzppG signup form (client-side only; the trap field is never sent to MailerLite). Same tag as _layouts/default.html (R6); layout: null pages don't get it from the layout. -->
+    <script src="{{ '/assets/js/cdk-honeypot.js' | relative_url }}" defer></script>
     
     <meta charset="UTF-8">
     <title>Mobile Device Management Solutions | Cyber Dad Blog</title>
@@ -63,7 +72,12 @@ Remember, cybersecurity isn't a one-time setup but an ongoing process. Regularly
                 <p><strong>🔒 Essential Security Tool:</strong> <a href="https://nordvpn.com/cyberdad" target="_blank" rel="nofollow">Secure your family with NordVPN</a></p>
             </div>
             
-            <p><a href="/#kit" class="cta">See the CyberDad Shield Kit ($67, coming soon)</a></p>
+            <p>{% include kit-legacy-label.html part="button" %}</p>
+            <!-- R9 (G, Growth): KxzppG signup form (slug KxzppG, form id 163100466988713175) on account 1632878, R3 embed pattern. -->
+            <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                <div class="ml-embedded" data-form="KxzppG"></div>
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">✅ Free • Unsubscribe anytime</p>
+            </div>
         </article>
         
         <h2>🌍 Global Cybersecurity Protection</h2>

@@ -9,7 +9,7 @@ author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
 
-Recent data shows that 85% of families experience WiFi Hacking incidents. This comprehensive guide will help you prevent becoming a statistic:
+Many families are online all day, so a few simple habits go a long way. This guide walks you through them:
 
 **Step 3: Technology Setup**
 Configure your home network for maximum security:
@@ -28,7 +28,7 @@ Take these actions right now to secure your family:
 
 
 
-**Bottom Line:** Implementing these Social Media security measures takes less than 30 minutes but provides years of family protection.
+**Bottom Line:** Set up these Social Media security measures once, then review them whenever your family gets a new device or app.
 
 **🛡️ Essential Family Protection:**
 • [Norton Family Premier →](https://www.dpbolvw.net/click-101495044-13287827) - Parental controls & device monitoring

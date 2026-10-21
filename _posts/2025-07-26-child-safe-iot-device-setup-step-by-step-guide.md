@@ -9,7 +9,7 @@ author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
 
-Cybersecurity experts warn that Identity Theft attacks targeting families have increased 300% this year. Here's how to protect your loved ones:
+Many families are online all day, so it helps to have a plan. Here's how to protect your loved ones:
 
 **Step 2: Family Education**
 Teach your children these essential safety rules:
@@ -29,7 +29,7 @@ Configure your home network for maximum security:
 
 
 
-**Bottom Line:** Implementing these IoT Device security measures takes less than 30 minutes but provides years of family protection.
+**Bottom Line:** Set up these IoT Device security measures once, then review them whenever your family gets a new device or app.
 
 **🛡️ Essential Family Protection:**
 • [Norton Family Premier →](https://www.dpbolvw.net/click-101495044-13287827) - Parental controls & device monitoring

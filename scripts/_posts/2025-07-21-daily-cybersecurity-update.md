@@ -28,7 +28,7 @@ Here are 7 specific tips to help safeguard your family's cybersecurity:
 
 7. Backup important data regularly: Invest in a reliable backup solution to protect your family's photos, documents, and other valuable data from loss or ransomware attacks. Store backups on an external hard drive or in the cloud for added security.
 
-According to a recent study, over 60% of families with children under the age of 18 have experienced at least one cybersecurity incident in the past year. From malware infections to phishing scams, the threats are pervasive and can impact anyone, regardless of age or technical expertise. By implementing the above tips and staying vigilant online, you can reduce the likelihood of falling victim to cyber attacks and safeguard your family's digital well-being.
+From malware infections to phishing scams, the threats are pervasive and can impact anyone, regardless of age or technical expertise. By implementing the above tips and staying vigilant online, you can reduce the likelihood of falling victim to cyber attacks and safeguard your family's digital well-being.
 
 In conclusion, cybersecurity is a shared responsibility that requires proactive measures and continuous education. As a parent, it's essential to prioritize your family's online safety and take steps to mitigate potential risks. By following the actionable tips outlined in this blog post, you can enhance your cybersecurity defenses and protect your loved ones from online threats. Remember, staying informed and vigilant is key to staying safe in an increasingly digital world.
 

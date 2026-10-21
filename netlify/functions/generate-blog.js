@@ -123,6 +123,33 @@ const CLAIMS_RULES = [
   ['toddler-show name', /CocoMelon|Blippi|Peppa Pig|Bluey|Paw Patrol|Ms\.? Rachel|Baby Shark|Pinkfong|Daniel Tiger/i],
   ['kit price not $67', /(?:Shield Kit|CyberDad Kit|the kit)[^\n.]{0,60}\$(?!67\b)\d+|\$(?!67\b)\d+[^\n.]{0,30}(?:Shield Kit|CyberDad Kit)/i],
   ['kit link not /#kit', /\/shield-kit\b|gumroad\.com|etsy\.com\/shop\/CyberDadPrints|checkout\.mailerlite\.com/i],
+  // R9 (2026-10-21): unverified statistics. No sourced numbers exist for any of these, so block them outright.
+  ['unverified stat: N% of families/parents', /\b\d{1,3}(?:\.\d+)?\s?%\s+of\s+(?:all\s+)?(?:families|parents|households|kids|children|teens|users|people|Americans)\b/i],
+  ['unverified stat: attacks increased N%', /\b(?:cyber[- ]?)?(?:attacks?|threats?|incidents?|scams?|breaches|crimes?)\b[^.!?\n]{0,80}?\b(?:increased|increase|risen|rose|grown|grew|surged|jumped|spiked|up)\s+(?:by\s+)?(?:over\s+|more than\s+)?\d+(?:\.\d+)?\s?%|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year/i],
+  ['unverified stat: trusted by a crowd (millions/thousands)', /\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)/i],
+  // R9d (CoS 2026-10-21): uncited 'N in M teens/kids/children/parents/families' ratios. Allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
+  ['unverified stat: N in M teens/kids/parents', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:in|out of)\s+(?:every\s+)?(?:[2-9]|\d{2,}|two|three|four|five|six|seven|eight|nine|ten)\s+(?:[a-z.]+\s+)?(?:teens?|teenagers?|tweens?|kids?|children|child|youths?|parents?|families|family|households?)\b/im],
+  // R9f (CoS + Product 2026-10-21): age-range badges ('ages 4-99', 'All ages (8-99)') are not backed by kit v3.4; reading time must not be a hardcoded number.
+  ['unverified age-range badge: ages N-99', /\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b/i],
+  ['hardcoded reading time: Takes N minutes to read', /\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b/i],
+  // R9g (CoS 2026-10-21): uncited research/study attribution ('according to a (recent) study', 'studies + show', 'research + suggests', 'experts + say'); allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:'). Plus 'Real' + 'Statistics' headings.
+  ['uncited research/study attribution', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:according to (?:a |an |the )?(?:recent |new |latest |\d{4} )?(?:cybersecurity |cyber |security |safety |online safety |industry |internet |crime )?(?:study|studies|survey|surveys|report|reports|research|statistics|stats|data|experts?)|(?:stud(?:y|ies)|surveys?|research|reports?|statistics|data) (?:shows?|suggests?|has shown|have shown|found|finds|indicates?|reveals?|revealed|confirms?)|experts? (?:say|says|agree|agrees|warn|warns|estimate|estimates|believe)|in a recent (?:study|survey|report))\b/im],
+  ['"Real Statistics" heading', /\breal statistics\b|\bstatistics and (?:current )?trends\b/i],
+  // R9h (CoS + Product 2026-10-21): no time or benefit promises in posts (setup time 'less than N min', 'N min or less', multi-year protection).
+  ['time promise: less than N minutes', /\bless than \d+\s*(?:minutes?|mins?)\b/i],
+  ['time promise: N Minutes or Less', /\b\d+\s*(?:minutes?|mins?)\s+or\s+less\b/i],
+  ['benefit promise: "years of ... protection"', /\byears of (?:family )?protection\b/i],
+  // R9i (CoS 2026-10-21): uncited minute promises in a title or heading (front matter title/seo_title/og_title, markdown headings, <h1>-<h6>).
+  // Covers in/under/within/takes/only/just + N minutes, and hyphenated N-minute + fix/setup/check/guide/...; a source link on the line exempts it. Kit phrase allowed: 'one 15-minute Quick Action'.
+  ['time promise in title/heading: in N minutes', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)/im],
+  // R9n (CoS + Product M-D7, 2026-10-21): mirrors main.py. Every minute phrase is a time promise except the allowed kit lines
+  // ('15-minute Quick Action') and a computed 'N min read' (CoS 10:21: the 'Wait 10 minutes ... Spam/Junk' allowance is removed); 'tonight'/'instant' wording;
+  // unsourced figures (allowed only when the same line links its source).
+  // R9 (F, CoS 2026-10-21): minute rule also blocks 'a minute' and 'in/within seconds' (mirrors main.py).
+  ['time promise: N minutes (outside the allowed kit lines)', /^(?![^\n]*15-minute Quick Action)[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of|a)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+(?:minutes|seconds)\b)/im],
+  ['\'tonight\'/\'instant\' wording', /\b(?:tonight|instant|instantly)\b/i],
+  ['unsourced figure (no source on the line)', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?(?:\b\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)[ \t]+(?:of[ \t]+(?:all[ \t]+)?(?:[\w-]+[ \t]+){0,2}?(?:phishing|scams?|attacks?|breaches|hacks?|accounts?|passwords?|devices?|routers?|cases|incidents|threats|victims|users|people|families|parents|kids|children|teens|households|americans|emails?|wins|attempts|malware|ransomware|data)\b|(?:more|less|fewer|higher|lower|likelier)\b)|\b(?:prevents?|stops?|blocks?|reduces?|cuts?|eliminates?)[ \t]+(?:up[ \t]+to[ \t]+|over[ \t]+|about[ \t]+|nearly[ \t]+|almost[ \t]+)?\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)|\$[ \t]?\d[\d,.]*[ \t]*(?:million|billion|trillion)\b|\b\d[\d,.]*[ \t]*(?:million|billion)[ \t]+(?:people|users|americans|families|kids|children|teens|accounts|records|households|victims|attacks|scams)\b)/im],
+  ['author-claim word in title/meta/author line', /^(?:title|description|excerpt|summary|author|seo_title):.*\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b|^#\s.*\b(?:experts?|expertise|pros?|professionals?)\b/im],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];
 function claimsGuard(text) {
@@ -712,17 +739,15 @@ categories: [cybersecurity, family-safety, easy-guide]
 tags: [security, simple, family, guide, protection]
 author: CyberDad
 description: "${template.summary}"
-reading_time: "5 minutes"
 difficulty: "Super Easy"
-age_appropriate: "All ages (4-99)"
+age_appropriate: "For parents and families"
 ---
 
 <div class="post-header">
   <h1>${template.title}</h1>
   <div class="post-meta">
-    <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
-    <span class="age-range">🏠 Perfect for ages 4-99</span>
+    <span class="age-range">🏠 For parents and families</span>
   </div>
   <div class="post-summary">
     <p><strong>Quick Summary:</strong> ${template.summary}</p>

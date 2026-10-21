@@ -1,0 +1,26 @@
+{%- comment -%}
+  R9 (CoS + Growth, Oct 21 2026): kit label for the 3 legacy .html pages (cyber_2025-07-15_1752577965.html x2,
+  cyber_2025-07-15_1752580178.html x1, cyber_parenting_global_blog.html x1) so they flip with the rest of the site.
+  Reads the same _data/kit.yml keys and the same live test as Growth's _includes/kit-state.html (M-G3):
+  live only if checkout_live is true AND checkout_url starts with https:// and is not a placeholder ([, FILL, space).
+  kit-state.html is not used here because it only exists once Growth's M-G3 prep is merged (runbook step 16), after R9;
+  without _data/kit.yml (R9 merged alone) every value falls back to today's pre-launch text.
+  include.part = "button": <a ... class="cta">See the CyberDad Shield Kit ($67, coming soon)</a> / live: Get the CyberDad Shield Kit ($67 one-time) -> checkout_url
+  include.part = "inline": <a href="...">CyberDad Shield Kit</a> ($67, coming soon) / live: ($67 one-time) -> checkout_url
+{%- endcomment -%}
+{%- assign kl_url = site.data.kit.checkout_url | default: "" | strip -%}
+{%- assign kl_scheme = kl_url | slice: 0, 8 -%}
+{%- assign kl_live = false -%}
+{%- if site.data.kit.checkout_live == true and kl_scheme == "https://" -%}
+  {%- unless kl_url contains "[" or kl_url contains "FILL" or kl_url contains " " -%}{%- assign kl_live = true -%}{%- endunless -%}
+{%- endif -%}
+{%- if kl_live -%}
+  {%- assign kl_href = kl_url -%}
+  {%- assign kl_button = site.data.kit.cta_label_live | default: "Get the CyberDad Shield Kit ($67 one-time)" -%}
+  {%- assign kl_price = "($67 one-time)" -%}
+{%- else -%}
+  {%- assign kl_href = site.data.kit.cta_href_prelaunch | default: "/#kit" -%}
+  {%- assign kl_button = site.data.kit.cta_label_prelaunch | default: "See the CyberDad Shield Kit ($67, coming soon)" -%}
+  {%- assign kl_price = "($67, coming soon)" -%}
+{%- endif -%}
+{%- if include.part == "inline" -%}<a href="{{ kl_href }}">CyberDad Shield Kit</a> {{ kl_price }}{%- else -%}<a href="{{ kl_href }}" class="cta">{{ kl_button }}</a>{%- endif -%}

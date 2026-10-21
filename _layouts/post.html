@@ -15,7 +15,7 @@ layout: default
           </span>
       {%- endif -%}
       • {{ content | number_of_words }} words
-      • {{ content | number_of_words | divided_by: 200 | ceil }} min read
+      • {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
     </p>
   </header>
 
@@ -72,7 +72,7 @@ layout: default
   <!-- CALL TO ACTION -->
   <div class="post-cta">
     <h3>🛡️ Keep Your Family Safe</h3>
-    <p>Get instant alerts about new cybersecurity threats affecting families.</p>
+    <p>Get alerts about new cybersecurity threats affecting families.</p>
     <a href="/#kit" class="cta-button">Download Security Guides →</a>
   </div>
 

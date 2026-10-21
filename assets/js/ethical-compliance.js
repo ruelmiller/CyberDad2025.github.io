@@ -231,7 +231,7 @@
         
         <!-- R8: unverified testing claim, hidden pending deletion after Release 1 merges
         <h4>Q: Do you recommend products you don't use?</h4>
-        <p>A: Never. Every recommendation comes from real family testing. We use these tools to protect our own family.</p>
+        <p>A: Our recommendations are based on research of publicly available information and product documentation. When we have used a product ourselves, we say so on that page.</p>
         
         -->
         <h4>Q: Do you test every product you recommend?</h4>
@@ -259,7 +259,6 @@
         <p><strong>Affiliate Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
         <p><strong>General Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
         <p><strong>Product Issues:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
-        <p>💬 <strong>Response time:</strong> Within 24 hours</p>
     </div>
 
     <div class="nav-link">

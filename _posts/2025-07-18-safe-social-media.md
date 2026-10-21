@@ -6,15 +6,13 @@ categories: [cybersecurity, family-safety, easy-guide]
 tags: [security, simple, family, guide, protection]
 author: CyberDad
 description: "Learn how to spot fake emails that try to trick you into giving away your information, explained in simple terms."
-reading_time: "5 minutes"
 difficulty: "Super Easy"
-age_appropriate: "All ages (4-99)"
+age_appropriate: "For parents and families"
 ---
 
 <div class="post-header">
   <h1>🎣 Avoid Email Tricks - Don't Get Fooled!</h1>
   <div class="post-meta">
-    <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
     
   </div>

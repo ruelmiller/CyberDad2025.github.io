@@ -54,19 +54,114 @@ FAMILY_KEYWORDS = [
     "chrome", "youtube", "instagram", "minecraft", "fortnite",
 ]
 
+# -------- R9: UNVERIFIED-STATS GUARD --------
+# No sourced numbers exist for these claims, so a post that contains one is never written.
+# Kept in step with the R9 rules in netlify/functions/generate-blog.js (CLAIMS_RULES).
+# The P5 claims guard absorbs these rules (CLAIMS_RULES = [...] + UNVERIFIED_STATS_RULES).
+UNVERIFIED_STATS_RULES = [
+    ("unverified stat: N% of families/parents", re.compile(
+        r"\b\d{1,3}(?:\.\d+)?\s?%\s+of\s+(?:all\s+)?(?:families|parents|households|kids|children|teens|users|people|Americans)\b", re.I)),
+    ("unverified stat: attacks increased N%", re.compile(
+        r"\b(?:cyber[- ]?)?(?:attacks?|threats?|incidents?|scams?|breaches|crimes?)\b[^.!?\n]{0,80}?\b(?:increased|increase|risen|rose|grown|grew|surged|jumped|spiked|up)\s+(?:by\s+)?(?:over\s+|more than\s+)?\d+(?:\.\d+)?\s?%"
+        r"|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year", re.I)),
+    ("unverified stat: trusted by a crowd (millions/thousands)", re.compile(
+        r"\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)", re.I)),
+    # R9d (CoS 2026-10-21): uncited 'N in M teens/kids/children/parents/families' ratios.
+    # Allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
+    ("unverified stat: N in M teens/kids/parents", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:in|out of)\s+(?:every\s+)?(?:[2-9]|\d{2,}|two|three|four|five|six|seven|eight|nine|ten)\s+(?:[a-z.]+\s+)?(?:teens?|teenagers?|tweens?|kids?|children|child|youths?|parents?|families|family|households?)\b", re.I | re.M)),
+    # R9f (CoS + Product 2026-10-21): age-range badges ('ages 4-99', 'All ages (8-99)') are not backed by kit v3.4;
+    # reading time must not be a hardcoded number.
+    ("unverified age-range badge: ages N-99", re.compile(
+        r"\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b", re.I)),
+    ("hardcoded reading time: Takes N minutes to read", re.compile(
+        r"\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b", re.I)),
+    # R9g (CoS 2026-10-21): uncited research/study attribution ('according to a (recent) study', 'studies + show',
+    # 'research + suggests', 'experts + say'); allowed only when the same line links its source
+    # (URL, markdown link, <a href> or 'Source:'). Plus 'Real' + 'Statistics' headings.
+    ("uncited research/study attribution", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:according to (?:a |an |the )?(?:recent |new |latest |\d{4} )?(?:cybersecurity |cyber |security |safety |online safety |industry |internet |crime )?(?:study|studies|survey|surveys|report|reports|research|statistics|stats|data|experts?)|(?:stud(?:y|ies)|surveys?|research|reports?|statistics|data) (?:shows?|suggests?|has shown|have shown|found|finds|indicates?|reveals?|revealed|confirms?)|experts? (?:say|says|agree|agrees|warn|warns|estimate|estimates|believe)|in a recent (?:study|survey|report))\b", re.I | re.M)),
+    ('"Real Statistics" heading', re.compile(
+        r"\breal statistics\b|\bstatistics and (?:current )?trends\b", re.I)),
+    # R9h (CoS + Product 2026-10-21): no time or benefit promises in posts
+    # (setup time 'less than N min', 'N min or less', multi-year protection).
+    ("time promise: less than N minutes", re.compile(
+        r"\bless than \d+\s*(?:minutes?|mins?)\b", re.I)),
+    ("time promise: N Minutes or Less", re.compile(
+        r"\b\d+\s*(?:minutes?|mins?)\s+or\s+less\b", re.I)),
+    ('benefit promise: "years of ... protection"', re.compile(
+        r"\byears of (?:family )?protection\b", re.I)),
+    # R9i (CoS 2026-10-21): uncited minute promises in a title or heading (front matter title/seo_title/og_title,
+    # markdown headings, <h1>-<h6>). Covers in/under/within/takes/only/just + N minutes, and hyphenated N-minute + fix/setup/check/guide/...;
+    # a source link on the line exempts it. Kit phrase allowed: 'one 15-minute Quick Action'.
+    # main() also checks the post title on its own line (TITLE_LINE_PREFIX), since it is not in the body.
+    ("time promise in title/heading: in N minutes", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)", re.I | re.M)),
+    # R9n (CoS + Product M-D7, 2026-10-21): every minute phrase is a time promise, except the kit lines Product allows
+    # ('one 15-minute Quick Action' / 'Each module starts with a 15-minute Quick Action') and a computed 'N min read'.
+    # A source link does not exempt it. CoS 10:21 ruling: the 'Wait 10 minutes, then check your Spam/Junk folder' allowance is removed.
+    # R9 (F, CoS 2026-10-21): also 'a minute' and 'in/within seconds' ('few minutes', 'in minutes' already covered).
+    ("time promise: N minutes (outside the allowed kit lines)", re.compile(
+        r"^(?![^\n]*15-minute Quick Action)[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of|a)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+(?:minutes|seconds)\b)", re.I | re.M)),
+    # R9n: 'tonight' / 'instant' / 'instantly' wording (Product rule: 0 on the site).
+    ("'tonight'/'instant' wording", re.compile(
+        r"\b(?:tonight|instant|instantly)\b", re.I)),
+    # R9n: unsourced figures (percentages used as claims, 'prevents N%', $N million/billion, N million/billion people...);
+    # allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
+    ("unsourced figure (no source on the line)", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?(?:\b\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)[ \t]+(?:of[ \t]+(?:all[ \t]+)?(?:[\w-]+[ \t]+){0,2}?(?:phishing|scams?|attacks?|breaches|hacks?|accounts?|passwords?|devices?|routers?|cases|incidents|threats|victims|users|people|families|parents|kids|children|teens|households|americans|emails?|wins|attempts|malware|ransomware|data)\b|(?:more|less|fewer|higher|lower|likelier)\b)|\b(?:prevents?|stops?|blocks?|reduces?|cuts?|eliminates?)[ \t]+(?:up[ \t]+to[ \t]+|over[ \t]+|about[ \t]+|nearly[ \t]+|almost[ \t]+)?\d{1,3}(?:\.\d+)?[ \t]?(?:%|percent)|\$[ \t]?\d[\d,.]*[ \t]*(?:million|billion|trillion)\b|\b\d[\d,.]*[ \t]*(?:million|billion)[ \t]+(?:people|users|americans|families|kids|children|teens|accounts|records|households|victims|attacks|scams)\b)", re.I | re.M)),
+]
+TITLE_LINE_PREFIX = "title: "
+
+
+# Author-claim words (steering 2026-10-21 4:49 AM ET): never describe Ruel/CDK as expert, pro or professional
+# in a post title, meta description (lead) or author line/byline. Generic body uses are left to the P5 guard.
+AUTHOR_CLAIM_RULE = ("author-claim word in title/meta/author line", re.compile(
+    r"\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b", re.I))
+
+
+def author_claim_guard(post: dict) -> list:
+    """Check title, lead (meta description) and the author line/byline for author-claim words."""
+    name, rx = AUTHOR_CLAIM_RULE
+    out = []
+    for field, text in (("title", post.get("title", "")), ("lead/meta", post.get("lead", "")),
+                        ("author line", " ".join([AUTHOR_NAME, AUTHOR_TITLE, AUTHOR_BIO]))):
+        m = rx.search(text or "")
+        if m:
+            out.append(f'{name} ({field}): "{m.group(0)}"')
+    return out
+
+
+def title_time_promise_guard(post: dict) -> list:
+    """R9i: check the post title as a 'title:' line for minute promises (the body is checked by unverified_stats_guard)."""
+    name, rx = next(r for r in UNVERIFIED_STATS_RULES if r[0] == "time promise in title/heading: in N minutes")
+    m = rx.search(TITLE_LINE_PREFIX + (post.get("title") or ""))
+    return [f'{name} (title): "{m.group(0)}"'] if m else []
+
+
+def unverified_stats_guard(text: str) -> list:
+    """Return the R9 violations found in text (empty list = OK)."""
+    out = []
+    for name, rx in UNVERIFIED_STATS_RULES:
+        m = rx.search(text or "")
+        if m:
+            out.append(f'{name}: "{m.group(0)}"')
+    return out
+
+
 # Fallback posts — written in a varied, human voice with first-person anecdotes.
 # These are deliberately NOT in the same template format so the site reads
 # like a real human writing on different days, not a content farm.
 FALLBACK_POSTS = [
     {
-        "title": "Roblox Settings Most Parents Never Touch (And Should Tonight)",
+        "title": "Roblox Settings Most Parents Never Touch (And Should Today)",
         "category": "Gaming Safety",
         "lead": "If your kid plays Roblox, you've probably set the parental PIN and called it a day. I did too. Then I actually opened the privacy panel.",
         "body": (
             "Roblox ships with most privacy settings open by default. That's a deliberate "
             "choice — it makes the platform 'social' out of the box. The downside: any random "
             "account can DM your kid, see their friend list, and invite them into private servers.\n\n"
-            "Here's the 5-minute fix I run on every account in my house:\n\n"
+            "Here's the fix to run on every account in your house:\n\n"
             "**Turn on 2-Step Verification.** Settings → Security → enable it. This single step "
             "blocks the vast majority of account takeovers. If your kid plays on a Chromebook at "
             "school, this matters even more — those accounts get phished constantly.\n\n"
@@ -106,7 +201,7 @@ FALLBACK_POSTS = [
         ),
     },
     {
-        "title": "Four Wi-Fi Settings Every Parent Should Change Tonight",
+        "title": "Four Wi-Fi Settings Every Parent Should Change Today",
         "category": "Devices",
         "lead": "Most home routers haven't been touched since the day the cable guy installed them. That's a problem.",
         "body": (
@@ -119,24 +214,24 @@ FALLBACK_POSTS = [
             "to log into the router itself. Default is often 'admin' or 'password.' Change it "
             "to something long and unique.\n\n"
             "**Switch to WPA3 encryption.** WPA2 if WPA3 isn't an option. If your router still "
-            "uses WEP, anyone within range can crack the password in under 10 minutes using "
+            "uses WEP, anyone within range can crack the password quickly using "
             "free tools.\n\n"
             "**Disable WPS.** It's a 'convenience' feature with a documented vulnerability that "
             "lets attackers brute-force the PIN. You don't need it.\n\n"
             "**Set up a guest network.** Put smart-home devices and visitors on a separate "
             "network from your main one. If a smart bulb gets compromised — and they do — "
             "attackers can't pivot to your laptop or phone.\n\n"
-            "Twenty minutes total. Your router is the layer that protects everything else."
+            "Your router is the layer that protects everything else."
         ),
     },
     {
-        "title": "The Tween Social Media Privacy Audit — 5 Minutes, 4 Apps",
+        "title": "The Tween Social Media Privacy Audit: 4 Apps to Check",
         "category": "Social Media",
         "lead": "If your tween is on Instagram, TikTok, Snapchat, or Discord, their account is leaking more info than you realize.",
         "body": (
             "Default settings on these apps favor reach and engagement, not safety. That makes "
             "sense for the platform's business — it doesn't make sense for your kid.\n\n"
-            "Sit down with your tween tonight. Frame it as 'I'm not snooping, I want to make "
+            "Sit down with your tween today. Frame it as 'I'm not snooping, I want to make "
             "sure creeps can't find you.' That phrasing tends to land. Then run this audit:\n\n"
             "**Instagram:** Settings → Privacy → Private Account ON. Turn off Activity Status. "
             "'Tag and Mention controls' to People You Follow only.\n\n"
@@ -169,8 +264,8 @@ FALLBACK_POSTS = [
             "free Robux now.' Real companies don't pressure you. Urgency is the scammer's "
             "main weapon.\n\n"
             "**Never click login links in email.** If something needs your attention, open the "
-            "app or website directly and check there. This habit alone prevents 80% of phishing "
-            "wins.\n\n"
+            "app or website directly and check there. This habit alone stops many phishing "
+            "attempts.\n\n"
             "**Hover before tapping.** On a desktop, hover the link. On mobile, long-press. The "
             "actual URL appears. If it doesn't match the sender, it's fake.\n\n"
             "Run through one real email with your kid this week. Show them where to look. That "
@@ -303,7 +398,8 @@ RULES:
 - Where it fits naturally, explain what the official advisory means for a home network and link the source (CISA, FBI/IC3, or FTC)
 - No corporate hedge phrases ("It's important to note", "in today's digital age")
 - Lead with one specific scenario, not a definition
-- Give 3 concrete actions a parent can take tonight
+- Give 3 concrete actions a parent can take today
+- Do not promise how many minutes something takes, do not use the words instant, tonight, expert or pro, and do not cite statistics without a named source.
 - End with a one-line reassurance, not a generic platitude
 
 ALERT TITLE: {alert['title']}
@@ -429,7 +525,28 @@ def generate_pin_image(title: str, slug: str) -> Path:
 
 # -------- POST WRITING --------
 
+class PostBlocked(Exception):
+    """Raised when a rendered post fails the R9 guard; nothing is written."""
+
+
+def rendered_post_guard(content: str) -> list:
+    """R9n: run the minute / tonight / unsourced-figure (all R9) rules on the full post exactly as it would be written."""
+    return unverified_stats_guard(content)
+
+
 def write_post(post: dict, slug: str, image_path: Path, source: dict | None) -> Path:
+    filename, content = render_post(post, slug, image_path, source)
+    violations = rendered_post_guard(content)
+    if violations:
+        raise PostBlocked("; ".join(violations))
+    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    filename.write_text(content)
+    return filename
+
+
+def render_post(post: dict, slug: str, image_path: Path, source: dict | None):
+    """Build (filename, file content) without writing anything."""
+    category = post.get("category") or "Family Safety"
     today = datetime.date.today().isoformat()
     filename = POSTS_DIR / f"{today}-{slug}.md"
     image_url = f"{SITE_URL}/{image_path.as_posix()}"
@@ -472,8 +589,8 @@ date: {today}
 last_modified_at: {today}
 author: {AUTHOR_NAME}
 author_slug: {AUTHOR_SLUG}
-categories: [Cybersecurity, {post['category']}]
-tags: [family safety, {post['category'].lower()}, parents]
+categories: [Cybersecurity, {category}]
+tags: [family safety, {category.lower()}, parents]
 image: /{image_path.as_posix()}
 description: "{lead[:155] if lead else safe_title}"
 reading_time: {rt}
@@ -485,9 +602,7 @@ reading_time: {rt}
 {post['body']}{source_block}{author_footer}{cta_block}
 """
 
-    POSTS_DIR.mkdir(parents=True, exist_ok=True)
-    filename.write_text(content)
-    return filename
+    return filename, content
 
 
 # -------- MAIN --------
@@ -518,11 +633,25 @@ def main():
         print(f"Post '{slug}' already exists — skipping.")
         return
 
+    stat_violations = (unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]]))
+                       + title_time_promise_guard(post) + author_claim_guard(post))
+    # R9n: also guard the full post exactly as write_post() would write it (front matter, body, source, footer, CTA),
+    # before the image is generated, so a failing post leaves no file behind.
+    _, rendered = render_post(post, slug, IMAGES_DIR / f"{slug}.png", source)
+    stat_violations += [v for v in rendered_post_guard(rendered) if v not in stat_violations]
+    if stat_violations:
+        print("Post blocked by R9 guard (unverified stats / author-claim words), nothing written: " + "; ".join(stat_violations))
+        return
+
     print("Generating Pinterest image...")
     image_path = generate_pin_image(post["title"], slug)
 
     print("Writing post...")
-    filename = write_post(post, slug, image_path, source)
+    try:
+        filename = write_post(post, slug, image_path, source)
+    except PostBlocked as e:
+        print("Post blocked by R9 guard at write time, nothing written: " + str(e))
+        return
     print(f"Wrote {filename}")
 
     log.add(slug)
