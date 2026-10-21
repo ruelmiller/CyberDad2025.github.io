@@ -31,8 +31,8 @@ Take these actions right now to secure your family:
 **Take Action Today:** Download our free family security checklist and start protecting your loved ones immediately.
 
 **🛡️ Recommendations:**
-• **Norton Family Premier** - Essential parental controls (30-day trial)
-• **Norton VPN** - Complete privacy protection (money-back guarantee)
+• **Norton Family Premier** - Essential parental controls
+• **Norton VPN** - Complete privacy protection
 
 **If you suspect a breach:** follow the official steps at IdentityTheft.gov or ReportFraud.ftc.gov. Questions about this guide? Email ruel@getcyberdadkit.com
 
