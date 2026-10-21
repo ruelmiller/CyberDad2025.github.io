@@ -1,4 +1,28 @@
+// Cron auth (R7). Same scheme as affiliate-injector.js: the caller must send the header
+//   Authorization: Bearer <CRON_SECRET>
+// (exact match, compared in constant time). Missing or wrong -> 401 before any GitHub call.
+// CRON_SECRET env var unset -> fail closed (500, logged), nothing runs.
+const crypto = require('crypto');
+function cronAuthFailure(event) {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) {
+    console.error('generate-blog: CRON_SECRET env var is not set; refusing to run (fail closed). Set CRON_SECRET in Netlify env vars.');
+    return { statusCode: 500, body: JSON.stringify({ error: 'Server misconfigured: CRON_SECRET not set' }) };
+  }
+  const h = (event && event.headers) || {};
+  const auth = h.authorization || h.Authorization || '';
+  const digest = (s) => crypto.createHash('sha256').update(String(s)).digest();
+  if (!auth || !crypto.timingSafeEqual(digest(auth), digest(`Bearer ${secret}`))) {
+    console.warn('generate-blog: unauthorized request (missing or wrong Authorization header)');
+    return { statusCode: 401, body: JSON.stringify({ error: 'Unauthorized' }) };
+  }
+  return null;
+}
+
 exports.handler = async (event, context) => {
+  const denied = cronAuthFailure(event);
+  if (denied) return denied;
+
   const { Octokit } = require("@octokit/rest");
   
   try {
