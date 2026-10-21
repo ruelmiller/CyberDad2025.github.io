@@ -7,7 +7,7 @@ from pathlib import Path
 TITLE_TEMPLATES = [
     "How to Protect Kids from {threat} - Complete Parent Guide 2025",
     "{threat} Safety for Families: 5 Essential Steps Parents Need",
-    "Keep Your Family Safe from {threat} - Expert Tips That Work",
+    "Keep Your Family Safe from {threat} - Practical Tips That Work",
     "Family Guide: Preventing {threat} Attacks in Your Home",
     "Parents Alert: {threat} Threats and How to Stop Them",
     "Simple {topic} Security for Non-Tech Parents",
@@ -113,7 +113,7 @@ def generate_blog_post():
     blog_post += "## 🔒 Get FREE Cybersecurity Alerts\n\n"
     blog_post += "**Join 12,000+ families getting instant notifications about threats affecting their devices!**\n\n"
     blog_post += "<div style=\"background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;\">\n"
-    blog_post += "    <div class=\"ml-embedded\" data-form=\"158915078478890584\"></div>\n"
+    blog_post += "    <div class=\"ml-embedded\" data-form=\"KxzppG\"></div>\n"
     blog_post += "    <p style=\"font-size: 12px; color: #666; margin-top: 10px;\">✅ Real-time threat alerts • Unsubscribe anytime</p>\n"
     blog_post += "</div>\n\n"
     blog_post += "<!-- MailerLite Universal -->\n"

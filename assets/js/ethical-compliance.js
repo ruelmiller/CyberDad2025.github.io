@@ -262,7 +262,7 @@
         <p>A: You don't have to! But if our review helped you decide, using our link supports our family security research at no cost to you.</p>
         
         <h4>Q: Do you recommend products you don't use?</h4>
-        <p>A: Never. Every recommendation comes from real family testing. We use these tools to protect our own kids.</p>
+        <p>A: Never. Every recommendation comes from real family testing. We use these tools to protect our own family.</p>
         
         <h4>Q: What if I have problems with a product you recommended?</h4>
         <p>A: Contact us! We'll help you resolve issues or find better alternatives. Your experience helps other families too.</p>
@@ -299,7 +299,7 @@
             This affiliate disclosure was last updated on January 17, 2025, and complies with FTC guidelines and international regulations.
         </p>
         <p style="margin-top: 15px;">
-            <a href="/privacy-policy.html" style="color: #3b82f6; margin: 0 10px;">Privacy Policy</a> |
+            <a href="/cyberdadkit-privacy-policy.html" style="color: #3b82f6; margin: 0 10px;">Privacy Policy</a> |
             <a href="/terms-of-service.html" style="color: #3b82f6; margin: 0 10px;">Terms of Service</a> |
             <a href="/cookie-policy.html" style="color: #3b82f6; margin: 0 10px;">Cookie Policy</a>
         </p>

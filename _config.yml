@@ -2,7 +2,7 @@
 title: "Cyber Dad Blog"
 description: "Global Cybersecurity Guidance for Modern Families"
 author: "CyberDad2025"
-email: "cyberdadkit@gmail.com"
+email: "ruel@getcyberdadkit.com"
 url: "https://cyberdad2025.github.io"
 baseurl: ""
 
@@ -26,7 +26,7 @@ description: "Real-time cybersecurity intelligence for modern families. Get prot
 url: "https://cyberdad2025.github.io"
 author:
   name: "CyberDad"
-  email: "cyberdadkit@gmail.com"
+  email: "ruel@getcyberdadkit.com"
 
 # Google Analytics (ADD THIS LINE)
 google_analytics: G-XXXXXXXXXX

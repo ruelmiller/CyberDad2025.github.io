@@ -26,17 +26,15 @@ POSTS_DIR = Path("_posts")
 LOG_FILE = Path("logs/posted.json")
 IMAGES_DIR = Path("assets/pins")
 
-# Author config — your real credentials drive E-E-A-T
+# Author config — owner-approved claims only (claims-audit-2026-10-20.md). No employers, no current-SOC wording, no "expert".
 AUTHOR_NAME = "Ruel Miller"
-AUTHOR_TITLE = "SOC Analyst, Security+ Certified | Founder, CyberDad Kit"
+AUTHOR_TITLE = "U.S. Marine Corps veteran, CompTIA Security+ | Founder, CyberDadKit"
 AUTHOR_EMAIL = "ruel@getcyberdadkit.com"
 AUTHOR_SLUG = "ruel-miller"
 AUTHOR_BIO = (
-    "Ruel Miller is a Security+ certified SOC Analyst and Incident Responder. "
-    "He worked as a contractor for L3Harris monitoring the FAA network, where he "
-    "applied the same threat hunting and Cyber Threat Intelligence workflows used to "
-    "defend critical national infrastructure. He founded CyberDad Kit to translate "
-    "those enterprise-grade techniques into plain-English protection for families."
+    "Ruel Miller is a U.S. Marine Corps veteran and CompTIA Security+ certified dad "
+    "with hands-on Security Operations Center experience, who built CyberDadKit "
+    "to help families protect themselves online."
 )
 
 # CISA has shifted feeds before. Try multiple in order so the script doesn't
@@ -68,7 +66,7 @@ FALLBACK_POSTS = [
             "Roblox ships with most privacy settings open by default. That's a deliberate "
             "choice — it makes the platform 'social' out of the box. The downside: any random "
             "account can DM your kid, see their friend list, and invite them into private servers.\n\n"
-            "Here's the 5-minute fix I run on every kid's account in my house:\n\n"
+            "Here's the 5-minute fix I run on every account in my house:\n\n"
             "**Turn on 2-Step Verification.** Settings → Security → enable it. This single step "
             "blocks the vast majority of account takeovers. If your kid plays on a Chromebook at "
             "school, this matters even more — those accounts get phished constantly.\n\n"
@@ -76,9 +74,9 @@ FALLBACK_POSTS = [
             "reason for strangers to be able to message your kid through the platform.\n\n"
             "**Lock the account PIN.** Settings → Security → Account PIN. Your kid won't know "
             "the PIN. That means they can't change privacy settings back without you.\n\n"
-            "I'll be honest — my 9-year-old wasn't thrilled about losing the open chat. But "
-            "after I showed her one of the messages from a stranger that came in the previous "
-            "week, she got it. Have that conversation with your kid before you change the "
+            "I'll be honest — my family wasn't thrilled about losing the open chat. But "
+            "after I showed them one of the messages from a stranger that came in the previous "
+            "week, they got it. Have that conversation with your kid before you change the "
             "settings, not after."
         ),
     },
@@ -149,7 +147,7 @@ FALLBACK_POSTS = [
             "strangers through.\n\n"
             "**Discord:** Settings → Privacy & Safety → enable 'Keep me safe' (scans messages "
             "for explicit content). Disable DMs from server members.\n\n"
-            "I do this audit with my own kids every six months. The settings drift — apps push "
+            "I do this audit with my own family every six months. The settings drift — apps push "
             "updates that reset preferences, and kids tweak things over time. It's not a one-and-done."
         ),
     },
@@ -180,29 +178,29 @@ FALLBACK_POSTS = [
         ),
     },
     {
-        "title": "YouTube Kids Isn't Actually Safe by Default — What I Changed for My 5-Year-Old",
+        "title": "YouTube Kids Isn't Actually Safe by Default — What I Changed at Home",
         "category": "Privacy",
-        "lead": "If your kid lives in CocoMelon and Blippi territory like mine does, here's what most parents miss about the YouTube Kids app.",
+        "lead": "If your kid lives on kids' YouTube channels, here's what most parents miss about the YouTube Kids app.",
         "body": (
-            "I have a five-year-old. He's deep in CocoMelon, Blippi, the whole autoplay rabbit "
+            "In my family it's popular kids' videos and the whole autoplay rabbit "
             "hole. YouTube Kids markets itself as a walled garden — and it mostly is — but "
             "'mostly' is doing a lot of work in that sentence.\n\n"
             "Two things parents miss: the app still serves ads (some of them weirdly targeted), "
             "and the content recommendation algorithm still occasionally surfaces low-quality, "
             "knock-off, or unsettling videos that slip past the filters. The 'Elsagate' problem "
             "from a few years back hasn't been fully solved — it's just gotten more subtle.\n\n"
-            "Three settings I changed for my own kid:\n\n"
+            "Three settings I changed for my own family:\n\n"
             "**Switch to 'Approved Content Only' mode.** Settings → your child's profile → "
             "'Approved content only.' This flips the model — instead of YouTube deciding what's "
             "okay, you do. Yes, it means more work upfront. It also means no algorithm-driven "
             "surprises.\n\n"
             "**Turn off Search.** In the same profile settings. With Search off, your kid can "
             "only watch the channels and videos you've approved. No discovery, no rabbit hole. "
-            "For a 5-year-old this is the right call — the 'discovery' use case isn't real at "
-            "that age.\n\n"
+            "For young kids this is the right call — the 'discovery' use case isn't real for "
+            "them yet.\n\n"
             "**Disable autoplay.** Each session, tap the autoplay toggle off. Autoplay is the "
             "single biggest driver of kids ending up on weird content — they finish a normal "
-            "Blippi video and the next one starts before anyone's reviewing it.\n\n"
+            "kids' video and the next one starts before anyone's reviewing it.\n\n"
             "From a threat-model perspective, YouTube Kids is collecting behavioral data on a "
             "minor. That's a privacy concern, not just a content concern. These three settings "
             "tighten both at once."
@@ -291,18 +289,18 @@ def translate_with_ai(alert: dict):
         "Direct and a bit blunt, like a friend who works in IT",
         "Calm and reassuring, like a school counselor",
         "Slightly skeptical, like an older sibling who's seen the scams before",
-        "Analyst-tone, like an incident responder briefing the team — but stripped of jargon for a parent audience",
+        "Calm and precise, like a parent walking another parent through official guidance step by step",
     ]
     voice = random.choice(voices)
 
-    prompt = f"""You are writing for CyberDad Kit, a family cybersecurity blog by Ruel Miller — a Security+ certified SOC Analyst and Incident Responder who worked as a contractor for L3Harris monitoring the FAA network. He has one young child and writes for parents who want enterprise-grade threat awareness translated to home use.
+    prompt = f"""You are writing for CyberDadKit, a family cybersecurity blog by Ruel Miller, a U.S. Marine Corps veteran and CompTIA Security+ certified dad with hands-on Security Operations Center experience, who built CyberDadKit to help families protect themselves online. He writes for parents who want official FBI, FTC, and CISA guidance translated into plain-English steps for home.
 
 Take this CISA cybersecurity alert and turn it into a 350-word post for parents.
 
 VOICE: {voice}
 RULES:
-- Write in first person where natural ("I noticed", "in the SOC we'd see this as...", "in my house we...")
-- Where it fits naturally, draw the parallel between how this attack pattern shows up in enterprise networks vs. home networks — that's our differentiator
+- Write in first person where natural ("I noticed", "CISA's advisory says...", "in my house we..."). If you mention Ruel's background, use ONLY these facts, in the past tense for SOC work: U.S. Marine Corps veteran; CompTIA Security+; past hands-on Security Operations Center experience (e.g., "when I worked in a SOC"). NEVER say or imply he currently works in a SOC or as an analyst. NEVER name, describe, or hint at any employer, agency, contractor, or client. NEVER use the words "expert", "professional", "pro", or any number of years of experience. NEVER state or imply the author's child's or children's age, gender, name, or school, or how many children he has; refer to his household only as "my family".
+- Where it fits naturally, explain what the official advisory means for a home network and link the source (CISA, FBI/IC3, or FTC)
 - No corporate hedge phrases ("It's important to note", "in today's digital age")
 - Lead with one specific scenario, not a definition
 - Give 3 concrete actions a parent can take tonight
@@ -464,7 +462,7 @@ def write_post(post: dict, slug: str, image_path: Path, source: dict | None) -> 
 
     cta_block = (
         f"\n\n---\n\n"
-        f"**Want the full system?** [Get the Shield Kit]({SITE_URL}/shield-kit) — "
+        f"**Want the full system?** [Get the Shield Kit]({SITE_URL}/#kit) — "
         f"the complete family cybersecurity playbook in one place."
     )
 

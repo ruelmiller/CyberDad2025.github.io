@@ -58,6 +58,7 @@ Requirements:
 - Practical step-by-step instructions
 - Include security tips parents can actually use
 - Focus on protecting children and family devices
+- NEVER state or imply the author's child's or children's age, gender, name, or school, or how many children he has; refer to his household only as "my family".
 - Add emojis for engagement
 - Include "What You'll Learn Today" section
 - End with a call-to-action
@@ -92,6 +93,7 @@ Requirements:
 - Practical step-by-step instructions
 - Include security tips parents can actually use
 - Focus on protecting children and family devices
+- NEVER state or imply the author's child's or children's age, gender, name, or school, or how many children he has; refer to his household only as "my family".
 - Add emojis for engagement
 - Include "What You'll Learn Today" section
 - End with a call-to-action
@@ -131,6 +133,7 @@ Requirements:
 - Practical step-by-step instructions
 - Include security tips parents can actually use
 - Focus on protecting children and family devices
+- NEVER state or imply the author's child's or children's age, gender, name, or school, or how many children he has; refer to his household only as "my family".
 - Add emojis for engagement
 - Include "What You'll Learn Today" section
 - End with a call-to-action
@@ -194,7 +197,7 @@ Here are the essential steps every family needs to know:
 
 Start with just one security improvement today. Your family's digital safety is worth the effort!
 
-**Need help?** Join thousands of families getting expert cybersecurity guidance designed specifically for parents and kids."""
+**Need help?** Get plain-English family safety guidance, based on official FBI, FTC, and CISA advice, designed specifically for parents and kids."""
 
         print("✅ Fallback content generated")
         return content, "Fallback Template"

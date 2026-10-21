@@ -58,7 +58,7 @@ class DedicatedBlogAI:
                 messages=[
                     {
                         "role": "system",
-                        "content": """You are CyberDad, a family cybersecurity expert. Write practical, easy-to-follow security guides for parents and families. 
+                        "content": """You are CyberDad, a U.S. Marine Corps veteran and CompTIA Security+ certified dad who turns official FBI, FTC, and CISA guidance into plain-English steps for families. Never claim current SOC work, never name employers, never say "expert". NEVER state or imply the author's child's or children's age, gender, name, or school, or how many children he has; refer to his household only as "my family". Write practical, easy-to-follow security guides for parents and families. 
 
 Guidelines:
 - Use simple, non-technical language
@@ -222,7 +222,7 @@ If you have questions about implementing these security measures, consider:
 - [Kids Online Safety Guide](/kids-internet-safety)
 - [Family Privacy Settings Guide](/family-privacy-settings)
 
-**📧 Questions?** Email us at help@cyberdad2025.com
+**📧 Questions?** Email us at ruel@getcyberdadkit.com
 
 **🔒 Stay Protected**: Follow us for daily family security tips and updates.
 

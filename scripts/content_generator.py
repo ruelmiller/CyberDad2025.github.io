@@ -7,7 +7,7 @@ from pathlib import Path
 TITLE_TEMPLATES = [
     "How to Protect Kids from {threat} - Complete Parent Guide 2025",
     "{threat} Safety for Families: 5 Essential Steps Parents Need",
-    "Keep Your Family Safe from {threat} - Expert Tips That Work",
+    "Keep Your Family Safe from {threat} - Practical Tips That Work",
     "Family Guide: Preventing {threat} Attacks in Your Home",
     "Parents Alert: {threat} Threats and How to Stop Them",
     "Simple {topic} Security for Non-Tech Parents",
@@ -84,7 +84,7 @@ def generate_seo_post():
     category = random.choice(categories)
     
     # Create SEO-optimized excerpt
-    excerpt = "Learn how to protect your family from cyber threats with our expert cybersecurity guide. Simple steps every parent can implement today."
+    excerpt = "Learn how to protect your family from cyber threats with our plain-English guide based on FBI, FTC, and CISA advice. Simple steps every parent can implement today."
     
     # Build complete blog post using simple string concatenation
     content = "---\n"
@@ -113,7 +113,7 @@ def generate_seo_post():
     content += "## 🔒 Get FREE Cybersecurity Alerts\n\n"
     content += "**Join 12,000+ families getting instant notifications about threats affecting their devices!**\n\n"
     content += "<div style=\"background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;\">\n"
-    content += "    <div class=\"ml-embedded\" data-form=\"158915078478890584\"></div>\n"
+    content += "    <div class=\"ml-embedded\" data-form=\"KxzppG\"></div>\n"
     content += "    <p style=\"font-size: 12px; color: #666; margin-top: 10px;\">✅ Real-time threat alerts • Unsubscribe anytime</p>\n"
     content += "</div>\n\n"
     

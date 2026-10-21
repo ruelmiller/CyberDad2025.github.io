@@ -5,14 +5,7 @@ description: Practical cybersecurity for families. No jargon. No fear tactics. J
 ---
 {% seo %}
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
+<!-- Google Analytics: real GA4 tag (G-5B1LNCPB56) is loaded once by _layouts/default.html; the duplicate placeholder GA tag was removed. -->
 
 <!-- Schema Markup -->
 <script type="application/ld+json">
@@ -23,7 +16,7 @@ description: Practical cybersecurity for families. No jargon. No fear tactics. J
   "description": "Practical cybersecurity for families. No jargon, no fear tactics.",
   "url": "https://cyberdadkit.com",
   "author": { "@type": "Person", "name": "CyberDad" },
-  "contactPoint": { "@type": "ContactPoint", "email": "ruel@cyberdadkit.com" }
+  "contactPoint": { "@type": "ContactPoint", "email": "ruel@getcyberdadkit.com" }
 }
 </script>
 
@@ -820,7 +813,7 @@ body {
 .kit-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 
 .btn-kit {
-  background: #0a9e84;
+  background: #087f6a; /* was #0a9e84: white text was 3.37:1; now 4.94:1 (WCAG AA) */
   color: var(--white);
   font-family: var(--font-body);
   font-weight: 700;
@@ -834,8 +827,9 @@ body {
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   box-shadow: 0 4px 16px rgba(10,158,132,0.3);
 }
+.btn-kit:link, .btn-kit:visited, .btn-kit:focus { color: var(--white); } /* theme a:visited (#154895) was overriding */
 .btn-kit:hover {
-  background: #0c8a73;
+  background: #067462; /* white text 5.70:1 */
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(10,158,132,0.35);
   color: var(--white);
@@ -900,6 +894,8 @@ body {
 }
 
 .kit-includes li::before { content: '→'; color: #4dd9bf; font-weight: 700; flex-shrink: 0; }
+
+#kit-signup { scroll-margin-top: 80px; margin-top: 1.5rem; text-align: left; }
 
 .kit-divider {
   border: none;
@@ -981,7 +977,7 @@ body {
   .content-sidebar { grid-template-columns: 1fr; }
   .sidebar { display: none; }
   .kit-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .kit-card { display: none; }
+  .kit-card { padding: 1.75rem 1.25rem; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1015,7 +1011,7 @@ body {
       </p>
       <div class="hero-actions">
         <a href="#guides" class="btn-primary">Browse Free Guides</a>
-        <a href="#kit" class="btn-ghost">Get the Shield Kit — $67</a>
+        <a href="#kit" class="btn-ghost">Get the CyberDad Shield Kit — $67</a>
       </div>
       <div class="hero-trust">
         <span>✓ No jargon</span>
@@ -1089,7 +1085,7 @@ body {
     <div class="trust-item"><span>📖</span> Plain-English guides</div>
     <div class="trust-item"><span>🔔</span> Weekly threat alerts</div>
     <div class="trust-item"><span>✅</span> 30-day money-back guarantee</div>
-    <div class="trust-item"><span>📧</span> ruel@cyberdadkit.com</div>
+    <div class="trust-item"><span>📧</span> ruel@getcyberdadkit.com</div>
   </div>
 </div>
 
@@ -1100,43 +1096,43 @@ body {
   <div class="topics-inner">
     <div class="strip-label">What we cover</div>
     <div class="topics-grid">
-      <a href="/tag/social-media" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">📲</span>
         <span class="topic-chip-label">Social Media Safety</span>
       </a>
-      <a href="/tag/devices" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">💻</span>
         <span class="topic-chip-label">Device Security</span>
       </a>
-      <a href="/tag/passwords" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">🔑</span>
         <span class="topic-chip-label">Passwords & Accounts</span>
       </a>
-      <a href="/tag/scams" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">🎣</span>
         <span class="topic-chip-label">Scams & Phishing</span>
       </a>
-      <a href="/tag/wifi" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">📡</span>
         <span class="topic-chip-label">Wi-Fi & Home Network</span>
       </a>
-      <a href="/tag/cyberbullying" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">💬</span>
         <span class="topic-chip-label">Cyberbullying & Predators</span>
       </a>
-      <a href="/tag/browsing" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">🌐</span>
         <span class="topic-chip-label">Safe Browsing</span>
       </a>
-      <a href="/tag/family-rules" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">📋</span>
         <span class="topic-chip-label">Family Tech Rules</span>
       </a>
-      <a href="/tag/recovery" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">🔄</span>
         <span class="topic-chip-label">Emergency Plans</span>
       </a>
-      <a href="/tag/privacy" class="topic-chip">
+      <a href="/#guides" class="topic-chip">
         <span class="topic-chip-icon">🔒</span>
         <span class="topic-chip-label">Digital Privacy</span>
       </a>
@@ -1154,7 +1150,7 @@ body {
         <div class="section-eyebrow">Latest guides</div>
         <h2 class="section-title">Practical protection for your family</h2>
       </div>
-      <a href="/blog" class="section-link">View all guides →</a>
+      <a href="/#guides" class="section-link">View all guides →</a>
     </div>
 
     <div class="guides-grid">
@@ -1324,18 +1320,8 @@ body {
           <p>New guides and family threat alerts every week. Parents-only content, written to actually help.</p>
         </div>
 
-        <!-- ══════════════════════════════════════════════════
-             MAILERLITE EMBED — Replace this entire block
-             with your MailerLite embed code when ready.
-             The surrounding .sidebar-card-body div stays.
-        ═══════════════════════════════════════════════════ -->
-        <div class="ml-embed-placeholder" id="ml-form">
-          <input type="email" class="ml-embed-input" placeholder="your@email.com" id="ml-email-input">
-          <button type="button" class="ml-embed-btn" onclick="handleMLSignup()">Send me free alerts →</button>
-          <p class="ml-disclaimer">Unsubscribe with one click. No spam, ever.</p>
-        </div>
-        <div id="ml-success">✓ You're in! Check your inbox for a welcome email.</div>
-        <!-- ══ END MAILERLITE EMBED AREA ══ -->
+        <!-- The single KxzppG signup form lives in the Shield Kit section (#kit-signup) so it is visible at every width. -->
+        <a href="#kit-signup" class="btn-kit" style="display:block; text-align:center; font-size:0.9rem; padding:0.8rem 1rem;">Get the free checklist →</a>
 
       </div>
     </div>
@@ -1394,7 +1380,7 @@ body {
 <section class="kit-section" id="kit">
   <div class="kit-inner">
     <div>
-      <div class="kit-eyebrow">Digital Download · Instant Access</div>
+      <div class="kit-eyebrow">Digital Download · Coming Soon</div>
       <h2 class="kit-title">
         The CyberDad<br>
         <em>Shield Kit</em>
@@ -1411,8 +1397,10 @@ body {
         <li><span class="kit-check">✓</span>Emergency response plan for account hacks and breaches</li>
       </ul>
       <div class="kit-actions">
-        <a href="https://checkout.mailerlite.com/checkout/4435" target="_blank" class="btn-kit">
-          Get instant access — $67 →
+        <!-- Checkout is OFF until the Shield Kit file is attached and delivery is tested.
+             Buttons point to the free FREE_DOWNLOAD signup (form KxzppG) instead of the disabled checkout. -->
+        <a href="#kit-signup" class="btn-kit">
+          Coming soon — get the free checklist &amp; be first to know →
         </a>
         <span class="kit-guarantee">🔒 30-day money-back guarantee</span>
       </div>
@@ -1422,7 +1410,7 @@ body {
       <span class="kit-card-icon">🛡️</span>
       <div class="kit-price-label">One-time purchase</div>
       <div class="kit-price">$67</div>
-      <div class="kit-price-sub">Instant digital download</div>
+      <div class="kit-price-sub">Launching soon · digital download</div>
       <hr class="kit-divider">
       <ul class="kit-includes">
         <li>Home network checklist</li>
@@ -1432,9 +1420,17 @@ body {
         <li>Family tech agreement template</li>
         <li>Emergency response plan</li>
       </ul>
-      <a href="https://checkout.mailerlite.com/checkout/4435" target="_blank" class="btn-kit" style="display:block; text-align:center;">
-        Buy now →
+      <a href="#kit-signup" class="btn-kit" style="display:block; text-align:center;">
+        Notify me at launch →
       </a>
+      <!-- MailerLite embedded form: "CyberDad Free Tech Checklist" (slug KxzppG, form id 163100466988713175).
+           Adds subscribers to group FREE_DOWNLOAD, which triggers the active
+           "CyberDad Free Tech Checklist Workflow" automation (5 emails).
+           Requires the MailerLite universal script (loaded in _layouts/default.html).
+           Only instance of this form on the page; visible at every width. -->
+      <div id="kit-signup">
+        <div class="ml-embedded" id="ml-form" data-form="KxzppG"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1449,18 +1445,18 @@ body {
       <div class="footer-brand-desc">
         Practical cybersecurity for families who want real protection without the jargon. Written by a parent, for parents.
       </div>
-      <a href="mailto:ruel@cyberdadkit.com" class="footer-email">ruel@cyberdadkit.com</a>
+      <a href="mailto:ruel@getcyberdadkit.com" class="footer-email">ruel@getcyberdadkit.com</a>
     </div>
 
     <div>
       <div class="footer-col-title">Guides</div>
       <ul class="footer-links">
-        <li><a href="/tag/social-media">Social Media Safety</a></li>
-        <li><a href="/tag/devices">Device Security</a></li>
-        <li><a href="/tag/passwords">Passwords & Accounts</a></li>
-        <li><a href="/tag/scams">Scams & Phishing</a></li>
-        <li><a href="/tag/wifi">Wi-Fi Security</a></li>
-        <li><a href="/tag/family-rules">Family Tech Rules</a></li>
+        <li><a href="/#guides">Social Media Safety</a></li>
+        <li><a href="/#guides">Device Security</a></li>
+        <li><a href="/#guides">Passwords & Accounts</a></li>
+        <li><a href="/#guides">Scams & Phishing</a></li>
+        <li><a href="/#guides">Wi-Fi Security</a></li>
+        <li><a href="/#guides">Family Tech Rules</a></li>
       </ul>
     </div>
 
@@ -1468,8 +1464,8 @@ body {
       <div class="footer-col-title">CyberDadKit</div>
       <ul class="footer-links">
         <li><a href="/about">About</a></li>
-        <li><a href="#kit">Shield Kit — $67</a></li>
-        <li><a href="#newsletter">Free Email Alerts</a></li>
+        <li><a href="#kit">CyberDad Shield Kit — $67</a></li>
+        <li><a href="#kit-signup">Free Email Alerts</a></li>
         <li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li>
         <li><a href="/cookie-policy.html">Cookie Policy</a></li>
         <li><a href="/cyberdadkit-privacy-policy.html">Privacy Policy</a></li>
@@ -1487,18 +1483,3 @@ body {
   </div>
 </footer>
 
-<script>
-function handleMLSignup() {
-  const input = document.getElementById('ml-email-input');
-  if (!input.value || !input.value.includes('@')) {
-    input.focus();
-    input.style.borderColor = '#dc2626';
-    setTimeout(() => input.style.borderColor = '', 1500);
-    return;
-  }
-  document.getElementById('ml-form').style.display = 'none';
-  document.getElementById('ml-success').style.display = 'block';
-  // TODO: Replace this function with your MailerLite embed code
-  // or wire up the form action to your MailerLite endpoint
-}
-</script>
