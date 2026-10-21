@@ -16,6 +16,8 @@
       gtag('js', new Date());
       gtag('config', 'G-5B1LNCPB56');
     </script>
+    <!-- GA4 events (generate_lead, begin_checkout); uses the gtag above, no second tag -->
+    <script src="{{ '/assets/js/cdk-events.js' | relative_url }}" defer></script>
 
     <script type="application/ld+json">
     {
@@ -109,6 +111,8 @@
       }
     </script>
     <!-- End MailerLite Universal -->
+    <!-- Honeypot for the KxzppG signup form (client-side only; the trap field is never sent to MailerLite) -->
+    <script src="{{ '/assets/js/cdk-honeypot.js' | relative_url }}" defer></script>
 </head>
 <body>
     <div class="site-wrapper">
