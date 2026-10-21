@@ -110,11 +110,11 @@ def generate_blog_post():
     blog_post += "*As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*\n\n"
     
     # Add email signup section
-    blog_post += "## 🔒 Get FREE Cybersecurity Alerts\n\n"
-    blog_post += "**Join 12,000+ families getting instant notifications about threats affecting their devices!**\n\n"
+    blog_post += "## 🔒 Get the free Family Cybersecurity Checklist\n\n"
+    blog_post += "**Enter your email below to get the free checklist.**\n\n"
     blog_post += "<div style=\"background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;\">\n"
     blog_post += "    <div class=\"ml-embedded\" data-form=\"KxzppG\"></div>\n"
-    blog_post += "    <p style=\"font-size: 12px; color: #666; margin-top: 10px;\">✅ Real-time threat alerts • Unsubscribe anytime</p>\n"
+    blog_post += "    <p style=\"font-size: 12px; color: #666; margin-top: 10px;\">✅ Free • Unsubscribe anytime</p>\n"
     blog_post += "</div>\n\n"
     blog_post += "<!-- MailerLite Universal -->\n"
     blog_post += "<script>\n"

@@ -23,8 +23,8 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 3. Freebie Signup Link (Mailerlite, Gumroad, etc.)
-  const signupLinks = document.querySelectorAll("a[href*='subscribe'], a[href*='gumroad'], a[href*='mailerlite']");
+  // 3. Freebie Signup Link (MailerLite)
+  const signupLinks = document.querySelectorAll("a[href*='subscribe'], a[href*='mailerlite']");
   signupLinks.forEach(link => {
     link.addEventListener("click", () => {
       gtag('event', 'signup_click', {

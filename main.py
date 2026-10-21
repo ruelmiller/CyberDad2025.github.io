@@ -28,7 +28,7 @@ IMAGES_DIR = Path("assets/pins")
 
 # Author config — owner-approved claims only (claims-audit-2026-10-20.md). No employers, no current-SOC wording, no "expert".
 AUTHOR_NAME = "Ruel Miller"
-AUTHOR_TITLE = "U.S. Marine Corps veteran, CompTIA Security+ | Founder, CyberDadKit"
+AUTHOR_TITLE = "U.S. Marine Corps veteran, CompTIA Security+ · Founder, CyberDadKit"
 AUTHOR_EMAIL = "ruel@getcyberdadkit.com"
 AUTHOR_SLUG = "ruel-miller"
 AUTHOR_BIO = (
