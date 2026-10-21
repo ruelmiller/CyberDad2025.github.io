@@ -3,7 +3,7 @@
 checkout_live: false
 # Post CTA (M-P1), pre-launch label matches the homepage #kit section and the R5 '($67, coming soon)' pattern.
 cta_label_prelaunch: "See the CyberDad Shield Kit ($67, coming soon)"
-cta_label_live: "Get the kit, $67"
+cta_label_live: "Get the CyberDad Shield Kit ($67 one-time)"
 # In-content pitch CTA (M-P2). Live label = Product M-D2 verbatim. Pre-launch = minimal swap logged in publish-mp2/DEVIATIONS.md.
 pitch_label_prelaunch: "See the CyberDad Shield Kit: $67 one-time, coming soon"
 pitch_label_live: "Get the CyberDad Shield Kit: $67 one-time"
