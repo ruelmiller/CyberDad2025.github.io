@@ -1,0 +1,187 @@
+---
+layout: default
+title: "Help: Downloads, Refunds and Order Fixes"
+description: "CyberDad Shield Kit help: resend your download, fix the email on your order, open the PDFs on any device, and request a refund within 30 days."
+permalink: /help/
+---
+<!-- M-S4 (Support): help page from support/final/M-S1/help.md. The <style> block is copied from refund-policy.html (R2) so the page matches;
+     it only applies to this page. Contact is ruel@getcyberdadkit.com only. Refund wording matches the final purchase emails. -->
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+  :root {
+    --ink:#0e1117; --ink-soft:#1c2333; --mist:#f0f4f8; --cloud:#e8edf4;
+    --teal:#0a9e84; --teal-light:#e6f7f4; --teal-mid:#0c8a73;
+    --amber:#d97706; --amber-bg:#fffbeb; --green:#059669; --green-bg:#ecfdf5;
+    --text:#1a202c; --text-mid:#4a5568; --text-soft:#718096; --border:#e2e8f0; --white:#ffffff;
+    --radius-sm:8px; --radius:14px; --radius-lg:20px;
+    --font-head:'Fraunces', Georgia, serif; --font-body:'DM Sans', sans-serif;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow:0 4px 16px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
+  }
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--white); color:var(--text); font-family:var(--font-body); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  a { color:var(--teal-mid); }
+  .cd-wrap { max-width:1160px; margin:0 auto; padding:0 1.5rem; }
+
+  /* header (matches .site-header look) */
+  .rp-header { background:var(--white); border-bottom:1px solid var(--border); box-shadow:var(--shadow-sm); position:sticky; top:0; z-index:100; }
+  .rp-header .cd-wrap { display:flex; align-items:center; justify-content:space-between; padding-top:1rem; padding-bottom:1rem; }
+  .rp-brand { font-family:var(--font-head); font-weight:700; font-size:1.25rem; color:var(--ink); text-decoration:none; letter-spacing:-0.3px; }
+  .rp-nav a { color:var(--text-mid); font-size:0.9rem; text-decoration:none; margin-left:1.25rem; }
+  .rp-nav a:hover { color:var(--teal); }
+
+  /* hero (matches .hero) */
+  .rp-hero { background:linear-gradient(160deg,#f7fbfa 0%,#edf6f3 45%,#f8fafc 100%); border-bottom:1px solid var(--border); padding:3.5rem 1.5rem 3rem; }
+  .rp-hero-inner { max-width:780px; margin:0 auto; }
+  .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:var(--teal-light); color:var(--teal); font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:0.35rem 0.85rem; border-radius:999px; margin-bottom:1.25rem; }
+  .rp-hero h1 { font-family:var(--font-head); font-size:clamp(2rem,4.5vw,3rem); font-weight:700; line-height:1.12; color:var(--ink); letter-spacing:-1px; margin-bottom:1rem; }
+  .rp-hero h1 em { font-style:italic; font-weight:300; color:var(--teal); }
+  .rp-hero p { font-size:1.1rem; color:var(--text-mid); }
+
+  main { max-width:780px; margin:0 auto; padding:3rem 1.5rem 4rem; }
+  .card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:1.75rem; margin-bottom:1.5rem; }
+  .card.highlight { background:var(--green-bg); border-color:#a7f3d0; }
+  h2 { font-family:var(--font-head); font-size:1.6rem; font-weight:700; color:var(--ink); margin:2.5rem 0 1rem; letter-spacing:-0.5px; }
+  h3 { font-family:var(--font-head); font-size:1.15rem; font-weight:600; color:var(--ink); margin:1.25rem 0 0.5rem; }
+  p { margin-bottom:0.85rem; }
+  ul, ol { margin:0 0 0.85rem 1.25rem; }
+  li { margin-bottom:0.35rem; }
+  .btn-primary { display:inline-block; background:var(--teal); color:var(--white); font-weight:600; font-size:0.95rem; padding:0.85rem 1.6rem; border-radius:var(--radius-sm); text-decoration:none; transition:background 0.2s; }
+  .btn-primary:hover { background:var(--teal-mid); }
+
+  details { border:1px solid var(--border); border-radius:var(--radius-sm); padding:0.9rem 1.1rem; margin-bottom:0.75rem; background:var(--white); }
+  details[open] { box-shadow:var(--shadow-sm); }
+  summary { cursor:pointer; font-weight:600; color:var(--ink); }
+  details > div { margin-top:0.75rem; color:var(--text-mid); }
+  .faq-group { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-soft); margin:1.75rem 0 0.75rem; }
+
+  /* footer (matches .cd-footer) */
+  .cd-footer { background:var(--ink); border-top:1px solid rgba(255,255,255,0.06); padding:3.5rem 1.5rem 2rem; }
+  .footer-inner { max-width:1160px; margin:0 auto 3rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:3rem; }
+  .footer-brand-name { font-family:var(--font-head); font-size:1.15rem; font-weight:700; color:var(--white); margin-bottom:0.75rem; }
+  .footer-brand-desc { font-size:0.875rem; color:#64748b; line-height:1.65; margin-bottom:1rem; }
+  .footer-email { font-size:0.82rem; color:#4dd9bf; text-decoration:none; }
+  .footer-col-title { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#475569; margin-bottom:1rem; }
+  .footer-links { list-style:none; margin:0; display:flex; flex-direction:column; gap:0.6rem; }
+  .footer-links a { font-size:0.875rem; color:#64748b; text-decoration:none; }
+  .footer-links a:hover { color:#4dd9bf; }
+  .footer-bottom { max-width:1160px; margin:0 auto; padding-top:1.75rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-copy, .footer-legal a { font-size:0.8rem; color:#64748b; text-decoration:none; }
+  .footer-legal { display:flex; gap:1.5rem; }
+  @media (max-width:960px) { .footer-inner { grid-template-columns:1fr 1fr; } }
+  @media (max-width:620px) { .footer-inner { grid-template-columns:1fr; } .footer-bottom { flex-direction:column; align-items:flex-start; } .rp-nav a:not(:last-child) { display:none; } }
+  </style>
+<header class="rp-header">
+  <div class="cd-wrap">
+    <a class="rp-brand" href="/">CyberDadKit</a>
+    <nav class="rp-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/#kit">Shield Kit — $67</a>
+    </nav>
+  </div>
+</header>
+
+<section class="rp-hero">
+  <div class="rp-hero-inner">
+    <div class="hero-badge">🛟 CyberDad Shield Kit help</div>
+    <h1>How can we <em>help</em>?</h1>
+    <p>Resend your download, fix the email on your order, or ask for a refund. Email <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a> and you'll hear back within 1 business day.</p>
+  </div>
+</section>
+
+<main>
+  <h2 id="resend-download" style="margin-top:0;">Resend my download</h2>
+  <div class="card">
+    <p>After checkout you'll see a <strong>"Download your kit"</strong> button on the confirmation page. We also email your downloads from <strong>ruel@getcyberdadkit.com</strong>: the order confirmation, plus <strong>"Your CyberDad Shield Kit is ready (download inside)"</strong> with two links, "Download your CyberDad Shield Kit" and "Download your 3 Fast Wins (start here)".</p>
+    <h3>Can't find the email?</h3>
+    <ol>
+      <li>Check Spam/Junk and, in Gmail, the Promotions tab.</li>
+      <li>Search your inbox for <strong>"Shield Kit"</strong> or <strong>ruel@getcyberdadkit.com</strong>.</li>
+      <li>Still nothing? Email <a href="mailto:ruel@getcyberdadkit.com?subject=Resend%20my%20Shield%20Kit%20download">ruel@getcyberdadkit.com</a> with the email address you used at checkout, and we'll send your downloads directly.</li>
+    </ol>
+  </div>
+
+  <h2 id="wrong-email">Used the wrong email at checkout?</h2>
+  <div class="card">
+    <ol>
+      <li>Email <a href="mailto:ruel@getcyberdadkit.com?subject=Wrong%20email%20on%20my%20order">ruel@getcyberdadkit.com</a> from the address you'd like to use.</li>
+      <li>Include the address you typed at checkout, your name as it appears on the order and the approximate date of purchase.</li>
+      <li>We'll match the order and send your downloads to the right address.</li>
+    </ol>
+  </div>
+
+  <h2 id="open-pdf">Can't open the PDF?</h2>
+  <div class="card">
+    <p>You get two PDFs: the <strong>CyberDad Shield Kit</strong> and the 1-page <strong>3 Fast Wins</strong> sheet to start with.</p>
+    <ul>
+      <li>Open it in a browser (Chrome, Safari or Edge), or save it first and open it from Files/Downloads.</li>
+      <li>On iPhone/iPad: tap the file, then the Share icon, then <strong>Save to Files</strong>. On Android: open it from the <strong>Files</strong> app.</li>
+      <li>Still stuck? Email us the device and the exact error message.</li>
+    </ul>
+  </div>
+
+  <h2 id="refunds">Refunds</h2>
+  <div class="card highlight">
+    <p>If it isn't right for your family, email <a href="mailto:ruel@getcyberdadkit.com?subject=Refund%20request">ruel@getcyberdadkit.com</a> within 30 days of purchase for a full refund of what you paid.</p>
+    <ol>
+      <li>Email <a href="mailto:ruel@getcyberdadkit.com?subject=Refund%20request">ruel@getcyberdadkit.com</a> within 30 days of purchase.</li>
+      <li>Include the email address you used at checkout and your name as it appears on the order. A reason is welcome but never required.</li>
+      <li>You'll hear back within 1 business day, and your refund goes back to your original payment method.</li>
+    </ol>
+    <p style="margin-bottom:0;">Full policy: <a href="{{ '/refund-policy/' | relative_url }}">Refund Policy &amp; FAQ</a></p>
+  </div>
+
+  <h2 id="subscription">Is it a subscription?</h2>
+  <div class="card">
+    <p style="margin-bottom:0;">No. The CyberDad Shield Kit is $67, one time, with no recurring charges.</p>
+  </div>
+
+  <h2 id="safety">Your safety</h2>
+  <div class="card">
+    <p style="margin-bottom:0;">We'll never ask for your passwords or ask to connect to your devices remotely. If anyone claiming to be CyberDadKit does, it isn't us.</p>
+  </div>
+
+  <h2 id="contact">Contact</h2>
+  <div class="card">
+    <p>Questions about an order, a download or a refund?</p>
+    <p><a class="btn-primary" href="mailto:ruel@getcyberdadkit.com?subject=CyberDad%20Shield%20Kit%20question">Email ruel@getcyberdadkit.com</a></p>
+    <p style="font-size:0.875rem;color:var(--text-soft);margin-bottom:0;">CyberDadKit · Support replies within 1 business day.</p>
+  </div>
+</main>
+
+<footer class="cd-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">CyberDadKit</div>
+      <div class="footer-brand-desc">Practical cybersecurity for families who want real protection without the jargon. Written by a parent, for parents.</div>
+      <a href="mailto:ruel@getcyberdadkit.com" class="footer-email">ruel@getcyberdadkit.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">CyberDadKit</div>
+      <ul class="footer-links">
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/#kit' | relative_url }}">Shield Kit — $67</a></li>
+        <li><a href="{{ '/help/' | relative_url }}">Help</a></li>
+        <li><a href="{{ '/refund-policy/' | relative_url }}">Refund Policy &amp; FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="{{ '/terms-of-sale/' | relative_url }}">Terms of Sale</a></li>
+        <li><a href="{{ '/cyberdadkit-privacy-policy.html' | relative_url }}">Privacy Policy</a></li>
+        <li><a href="{{ '/cookie-policy.html' | relative_url }}">Cookie Policy</a></li>
+        <li><a href="{{ '/affiliate-disclosure.html' | relative_url }}">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© {{ 'now' | date: '%Y' }} CyberDadKit. All rights reserved.</div>
+    <div class="footer-legal">
+      <a href="{{ '/cyberdadkit-privacy-policy.html' | relative_url }}">Privacy</a>
+      <a href="{{ '/cookie-policy.html' | relative_url }}">Cookies</a>
+      <a href="{{ '/refund-policy/' | relative_url }}">Refunds</a>
+    </div>
+  </div>
+</footer>
