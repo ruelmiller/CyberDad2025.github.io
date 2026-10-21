@@ -21,7 +21,7 @@ title: Quick Home Router Security Check
 
 Title: Quick Home Router Security Check: Protecting Your Family's Digital Life
 
-Hello families, it's CyberDad here! Today, we're going to chat about home router security. Now, you might be asking - why is this important for my family? Well, your home router is like the front door to your family's digital life. If it's not secure, it's like leaving your front door wide open, inviting cyber intruders to peek into your personal lives. Not a pretty picture, right? So, let's quickly learn how to lock this digital door quickly and keep our family safe online.
+Hello families, it's CyberDad here! Today, we're going to chat about home router security. Now, you might be asking - why is this important for my family? Well, your home router is like the front door to your family's digital life. If it's not secure, it's like leaving your front door wide open, inviting cyber intruders to peek into your personal lives. Not a pretty picture, right? So, let's quickly learn how to lock this digital door and keep our family safe online.
 
 **Main Content with Practical Steps**
 
