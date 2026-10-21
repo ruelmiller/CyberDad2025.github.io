@@ -42,7 +42,7 @@ Teach your children these essential safety rules:
 
 Protect your family with these trusted cybersecurity solutions:
 
-- **[Norton 360 Deluxe](https://norton.com/affiliate-link)** - Complete family protection with VPN
+- **Norton 360 Deluxe** - Complete family protection with VPN
 
 
 *As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*
