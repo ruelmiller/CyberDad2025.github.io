@@ -25,6 +25,15 @@ exports.handler = async (event, context) => {
     
     const fileName = `${dateStr}-${generateSlug()}.md`;
     const post = generateUltraReadablePost(fullTimestamp);
+
+    // Claims guardrail (R5, mirrors R1's main.py / generator rules): never publish a post that breaks the owner-approved claims.
+    const violations = claimsGuard(post);
+    if (violations.length) {
+      return {
+        statusCode: 422,
+        body: JSON.stringify({ success: false, message: 'Post blocked by claims guardrail; nothing committed', violations, filename: fileName })
+      };
+    }
     
     // Check if file already exists
     try {
@@ -76,6 +85,27 @@ exports.handler = async (event, context) => {
     };
   }
 };
+
+// Owner-approved claims only (claims-audit 2026-10-20): U.S. Marine Corps veteran, active CompTIA Security+, PAST hands-on SOC experience.
+// Blocks: current-SOC wording, employer names, "expert"/"professional"/"pro" wording, years/durations of experience,
+// any child age/gender/count, toddler-show names, a kit price other than $67, kit links other than /#kit, retired stores/checkout,
+// and any MailerLite form other than KxzppG.
+const CLAIMS_RULES = [
+  ['current-SOC wording', /\bSOC analyst\b|\bincident responder\b|\b(?:I|he) (?:currently )?works? (?:in|at|for) (?:a |the )?SOC\b|\bby day I'?m\b|\bcurrent(?:ly)? (?:a |an )?(?:SOC|security) analyst\b/i],
+  ['employer name', /L3 ?Harris|\bFAA\b|Federal Aviation|Lockheed|Raytheon|Northrop|Booz Allen|Leidos|\bSAIC\b|\bCACI\b|ManTech|General Dynamics|Peraton/i],
+  ['expert/pro wording', /\bexperts?\b|\bexpertise\b|\bprofessionals?\b|\bpro\b/i],
+  ['years/duration of experience', /\b\d+\+?\s*(?:years?|yrs?|months?)\s+(?:of\s+)?(?:experience|in (?:the )?(?:field|industry|cyber\w*|security|SOC))\b|\b(?:one|two|three|four|five|six|seven|eight|nine|ten|twenty)[- ](?:to[- ]\w+[- ])?(?:years?|months?)\s+(?:of\s+)?experience\b|\b\d+-year (?:veteran|career)\b/i],
+  ['child age/gender/count', /\bmy (?:own )?(?:son|sons|daughter|daughters|kid|kids|child|children|boy|girl|toddler|teen|teenager|tween|little one|youngest|oldest)\b|\bour (?:son|sons|daughter|daughters|kids|children)\b|\b(?:dad|father|parent) of (?:one|two|three|four|five|\d)\b|\bmy \w+[- ]year[- ]old\b|\b\d+[- ]year[- ]old\b|\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}[^\n]*\bages\b/iu],
+  ['toddler-show name', /CocoMelon|Blippi|Peppa Pig|Bluey|Paw Patrol|Ms\.? Rachel|Baby Shark|Pinkfong|Daniel Tiger/i],
+  ['kit price not $67', /(?:Shield Kit|CyberDad Kit|the kit)[^\n.]{0,60}\$(?!67\b)\d+|\$(?!67\b)\d+[^\n.]{0,30}(?:Shield Kit|CyberDad Kit)/i],
+  ['kit link not /#kit', /\/shield-kit\b|gumroad\.com|etsy\.com\/shop\/CyberDadPrints|checkout\.mailerlite\.com/i],
+  ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
+];
+function claimsGuard(text) {
+  const out = [];
+  for (const [name, re] of CLAIMS_RULES) { const m = text.match(re); if (m) out.push(`${name}: "${m[0]}"`); }
+  return out;
+}
 
 function generateSlug() {
   const topics = [
@@ -402,7 +432,7 @@ You'll learn how to make your home WiFi network safe from bad people who want to
 3. **Use the default password** (on the sticker)
 4. **Set up your security again**
 
-## 🎉 You're Now a WiFi Safety Expert!
+## 🎉 You're Ready to Keep Your WiFi Safe!
 
 Great job! You now know how to:
 - ✅ Change your WiFi password
@@ -668,7 +698,7 @@ age_appropriate: "All ages (4-99)"
   <div class="post-meta">
     <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
-    <span class="age-range">👨‍👩‍👧‍👦 Perfect for ages 4-99</span>
+    <span class="age-range">🏠 Perfect for ages 4-99</span>
   </div>
   <div class="post-summary">
     <p><strong>Quick Summary:</strong> ${template.summary}</p>
@@ -904,3 +934,6 @@ code {
 *Stay safe online! 🔒*
 *- The Cyber Dad Team*`;
 }
+
+// Exposed for offline dry runs and tests only (Netlify uses exports.handler).
+exports._test = { claimsGuard, generateUltraReadablePost, generateSlug, CLAIMS_RULES };

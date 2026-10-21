@@ -81,6 +81,20 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - .github
+  # Non-site files (repo tooling, generator code, bot logs): kept in the repo, not published (R5, CoS 2026-10-20)
+  - main.py
+  - smart_fm_update.py
+  - requirements.txt
+  - package.json
+  - netlify
+  - logs
+  - scripts/analytics_fixed.py
+  - scripts/content_generator.py
+  - scripts/dedicated_blog_ai.py
+  - scripts/multi_ai_blog_generator.py
+  - scripts/pinterest_traffic_blitz.py
+  - scripts/premium_content_generator.py
+  - "Add ethical compliance system with GDPR controls"
 
 # Include files
 include:

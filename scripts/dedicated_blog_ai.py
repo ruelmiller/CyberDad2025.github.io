@@ -203,8 +203,7 @@ If you have questions about implementing these security measures, consider:
                 'tags': ['family-safety', 'cybersecurity', 'digital-parenting', 'security-tips'],
                 'excerpt': content[:150] + '...',
                 'author': 'CyberDad',
-                'reading_time': f"{max(1, len(content.split()) // 200)} min read",
-                'image': '/assets/images/cybersecurity-family.jpg'
+                'reading_time': f"{max(1, len(content.split()) // 200)} min read"
             }
             
             # Create complete post
@@ -217,10 +216,10 @@ If you have questions about implementing these security measures, consider:
 
 ## 🛡️ More Family Security Resources
 
-- [Complete Family Password Guide](/password-security-families)
-- [Smart Home Security Checklist](/smart-home-security)
-- [Kids Online Safety Guide](/kids-internet-safety)
-- [Family Privacy Settings Guide](/family-privacy-settings)
+- [Complete Family Password Guide](/2025/07/30/simple-password-safety.html)
+- [Home Network Security Guide](/2025/07/24/home-network-security.html)
+- [Kids Online Safety Guide](/2025/07/26/safe-internet-browsing-for-kids.html)
+- [Family Privacy Settings Guide](/2025/07/24/family-digital-privacy.html)
 
 **📧 Questions?** Email us at ruel@getcyberdadkit.com
 

@@ -16,7 +16,7 @@ age_appropriate: "All ages (4-99)"
   <div class="post-meta">
     <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
-    <span class="age-range">👨‍👩‍👧‍👦 Perfect for ages 4-99</span>
+    <span class="age-range">🏠 Perfect for ages 4-99</span>
   </div>
   <div class="post-summary">
     <p><strong>Quick Summary:</strong> Simple steps to protect your home internet so bad people can't get in, explained in words everyone can understand.</p>
