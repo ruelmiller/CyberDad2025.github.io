@@ -5,14 +5,14 @@ date: 2025-11-03 14:15:24 -0500
 categories: [cybersecurity, family-safety, security-guide]
 tags: [security, family, guide, protection, cybersecurity]
 author: CyberDad
-description: "Learn home router security in 5 minutes with simple steps anyone can follow."
+description: "Learn simple home router security steps anyone can follow."
 difficulty: "Super Easy"
 age_appropriate: "For parents and families"
 ---
 
 # Quick Home Router Security Check
 
-🔒 **Quick Summary:** Learn how to home router security in 5 minutes with simple steps anyone can follow.
+🔒 **Quick Summary:** Simple home router security steps anyone can follow.
 
 📚 **Super Easy** 🏠 **For parents and families**
 

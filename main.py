@@ -148,7 +148,7 @@ FALLBACK_POSTS = [
             "Roblox ships with most privacy settings open by default. That's a deliberate "
             "choice — it makes the platform 'social' out of the box. The downside: any random "
             "account can DM your kid, see their friend list, and invite them into private servers.\n\n"
-            "Here's the 5-minute fix I run on every account in my house:\n\n"
+            "Here's the fix to run on every account in your house:\n\n"
             "**Turn on 2-Step Verification.** Settings → Security → enable it. This single step "
             "blocks the vast majority of account takeovers. If your kid plays on a Chromebook at "
             "school, this matters even more — those accounts get phished constantly.\n\n"
@@ -201,18 +201,18 @@ FALLBACK_POSTS = [
             "to log into the router itself. Default is often 'admin' or 'password.' Change it "
             "to something long and unique.\n\n"
             "**Switch to WPA3 encryption.** WPA2 if WPA3 isn't an option. If your router still "
-            "uses WEP, anyone within range can crack the password in under 10 minutes using "
+            "uses WEP, anyone within range can crack the password quickly using "
             "free tools.\n\n"
             "**Disable WPS.** It's a 'convenience' feature with a documented vulnerability that "
             "lets attackers brute-force the PIN. You don't need it.\n\n"
             "**Set up a guest network.** Put smart-home devices and visitors on a separate "
             "network from your main one. If a smart bulb gets compromised — and they do — "
             "attackers can't pivot to your laptop or phone.\n\n"
-            "Twenty minutes total. Your router is the layer that protects everything else."
+            "Your router is the layer that protects everything else."
         ),
     },
     {
-        "title": "The Tween Social Media Privacy Audit — 5 Minutes, 4 Apps",
+        "title": "The Tween Social Media Privacy Audit: 4 Apps to Check",
         "category": "Social Media",
         "lead": "If your tween is on Instagram, TikTok, Snapchat, or Discord, their account is leaking more info than you realize.",
         "body": (

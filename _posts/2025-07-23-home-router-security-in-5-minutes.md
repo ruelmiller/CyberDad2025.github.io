@@ -69,7 +69,7 @@ Using simple or common passwords is like using a paper lock on a steel door. It'
 
 **Encouraging Conclusion**
 
-Phew! That was a quick 5-minute cybersecurity workout, wasn't it? But remember, the few minutes you spend securing your home router can save your family from countless hours of stress and worry. So, take these steps today and give your family the gift of online safety. After all, as families, we protect each other, don't we?
+Phew! That was a quick cybersecurity workout, wasn't it? But remember, the few minutes you spend securing your home router can save your family from countless hours of stress and worry. So, take these steps today and give your family the gift of online safety. After all, as families, we protect each other, don't we?
 
 Stay safe and stay connected. Until next time, this is CyberDad signing off, reminding you that a secure digital home is a happy digital home!
 

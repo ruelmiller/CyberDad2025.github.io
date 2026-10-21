@@ -20,7 +20,7 @@ A hacked gaming account can expose your payment info, your child's personal deta
 4. Set spending limits or require parental approval for purchases
 5. Talk to your kid about never sharing their password — even with friends
 
-Fifteen minutes of setup prevents a major headache.
+A little setup now prevents a major headache.
 
 ---
 *Stay protected. Get free weekly family threat alerts at [CyberDadKit](https://cyberdadkit.com).*
