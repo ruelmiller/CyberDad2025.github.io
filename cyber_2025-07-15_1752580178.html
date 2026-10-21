@@ -1,3 +1,10 @@
+---
+# Front matter only so Jekyll runs Liquid for the kit label (R9). layout: null keeps this standalone HTML page unwrapped
+# (_config.yml defaults would otherwise apply layout "default"). permalink keeps the URL (and its sitemap entry)
+# at the .html path, as when this page was a static file.
+layout: null
+permalink: /cyber_2025-07-15_1752580178.html
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +62,7 @@ Remember, cybersecurity isn't a one-time setup but an ongoing process. Regularly
                 <p><strong>🔒 Essential Security Tool:</strong> <a href="https://nordvpn.com/cyberdad" target="_blank" rel="nofollow">Secure your family with NordVPN</a></p>
             </div>
             
-            <p><a href="/#kit" class="cta">See the CyberDad Shield Kit ($67, coming soon)</a></p>
+            <p>{% include kit-legacy-label.html part="button" %}</p>
         </article>
         
         <h2>🌍 Global Cybersecurity Protection</h2>
