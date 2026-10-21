@@ -23,7 +23,7 @@ class MultiAIBlogGenerator:
         # Family cybersecurity topics
         self.topics = [
             "Password Manager Setup for Families",
-            "Home Router Security in 5 Minutes", 
+            "Quick Home Router Security Check", 
             "Smart TV Privacy Settings Guide",
             "Two-Factor Authentication Setup",
             "Protect Your Phone from Scams",

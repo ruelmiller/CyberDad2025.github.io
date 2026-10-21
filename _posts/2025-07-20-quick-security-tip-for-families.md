@@ -36,7 +36,7 @@ Your family's digital security is important to us. Here are some simple steps to
 ## Why This Matters
 Regular security practices help protect your family's personal information and digital life.
 
-## Simple Action (Takes 2 Minutes)
+## Simple Action
 Check one device today for available security updates. Your family's safety is worth these few minutes.
 
 **Stay Safe, CyberDad** 🛡️

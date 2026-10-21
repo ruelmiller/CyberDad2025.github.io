@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Home Router Security in 5 Minutes"
+title: "Quick Home Router Security Check"
 date: 2026-01-05 14:20:08 -0500
 categories: [cybersecurity, family-safety, security-guide]
 tags: [security, family, guide, protection, cybersecurity]
@@ -10,7 +10,7 @@ difficulty: "Super Easy"
 age_appropriate: "For parents and families"
 ---
 
-# Home Router Security in 5 Minutes
+# Quick Home Router Security Check
 
 🔒 **Quick Summary:** Learn how to home router security in 5 minutes with simple steps anyone can follow.
 

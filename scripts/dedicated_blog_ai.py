@@ -21,7 +21,7 @@ class DedicatedBlogAI:
         # Cybersecurity topics specifically for families
         self.topics = [
             "Password Manager Setup for Families",
-            "Home Router Security in 5 Minutes", 
+            "Quick Home Router Security Check", 
             "Smart TV Privacy Settings Guide",
             "iPhone Security for Parents",
             "Family WiFi Safety Checklist",
