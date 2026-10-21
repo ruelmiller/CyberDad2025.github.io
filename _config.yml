@@ -81,7 +81,30 @@ sass:
 # Security
 safe: true
 
+# Plugins: one list = the set GitHub Pages actually runs for this site (github-pages 232: its default plugins, plus
+# jekyll-remote-theme because remote_theme is set, plus feed/sitemap/seo-tag). whitelist repeats it so a local build
+# with only this file works under safe: true (GitHub Pages ignores this whitelist and applies its own, which has all of these).
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-github-metadata
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+whitelist:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-github-metadata
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
