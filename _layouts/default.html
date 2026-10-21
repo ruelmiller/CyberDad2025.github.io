@@ -5,7 +5,8 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title | escape }} - {% endif %}CyberDad</title>
+    {%- comment -%} G2: jekyll-seo-tag renders the single <title>, meta description, canonical, Open Graph and Twitter tags in <head> on every page. {%- endcomment %}
+    {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
@@ -27,7 +28,6 @@
       "name": "CyberDad Kit",
       "alternateName": "CyberDadKit",
       "url": "https://cyberdad2025.github.io",
-      "logo": "https://cyberdad2025.github.io/assets/logo.png",
       "description": "Family online safety guidance from Ruel Miller, a U.S. Marine Corps veteran and CompTIA Security+ certified dad with hands-on Security Operations Center experience, who built CyberDadKit to help families protect themselves online.",
       "founder": {
         "@type": "Person",
@@ -80,23 +80,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://cyberdad2025.github.io/#website",
-      "url": "https://cyberdad2025.github.io",
-      "name": "CyberDad Kit",
-      "publisher": {
-        "@id": "https://cyberdad2025.github.io/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://cyberdad2025.github.io/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+    <!-- G2: WebSite JSON-LD removed here; jekyll-seo-tag outputs it on the homepage. The old SearchAction (?s=) pointed to a search the static site does not have. -->
     <!-- MailerLite Universal (account 1632878): powers the embedded signup form and the "Cyber Dad" popup -->
     <script>
       if (!window.ml) {
