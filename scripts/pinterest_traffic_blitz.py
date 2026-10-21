@@ -61,8 +61,6 @@ def log_activity(content_data, success, full_description=None, pin_url=None, err
 def main():
     """Main function with comprehensive debugging"""
     
-    def main():
-    """Main function with comprehensive debugging"""
 
     print("🚀 PINTEREST TRAFFIC BLITZ - ENHANCED VERSION")
     print("=" * 60)
