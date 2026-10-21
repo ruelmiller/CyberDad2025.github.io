@@ -158,7 +158,7 @@
             <li><strong>We Research Products:</strong> We read publicly available information and product documentation before recommending anything</li>
             <li><strong>We Write Honest Guides:</strong> We explain strengths and drawbacks in plain English, and only describe hands-on testing where we actually did it</li>
             <li><strong>You Click Our Link:</strong> If you find our review helpful and decide to purchase</li>
-            <li><strong>We Earn a Small Commission:</strong> The company pays us a percentage of the sale</li>
+            <li><strong>We May Earn a Commission:</strong> The company may pay us a commission on qualifying purchases</li>
             <li><strong>Your Price Stays the Same:</strong> You never pay extra because of our link</li>
             <li><strong>We Create More Content:</strong> Commissions help us research and write more family security guides</li>
         </ol>
