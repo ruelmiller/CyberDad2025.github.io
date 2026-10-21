@@ -55,4 +55,6 @@
     ev('begin_checkout', { currency: 'USD', value: 67, transport_type: 'beacon',
       items: [{ item_id: '163449031913113430', item_name: 'CyberDad Shield Kit', price: 67, quantity: 1 }] });
   }, true);
+  // --- select_promotion: post kit CTA (M-P1 _includes/kit-cta.html; data-creative-slot = post-top | post-end) ---
+  document.addEventListener('click', function (e) { var l = e.target && e.target.closest && e.target.closest('a[data-cdk-event="select_promotion"]'); if (l) ev('select_promotion', { promotion_id: l.getAttribute('data-promotion-id'), promotion_name: l.getAttribute('data-promotion-name'), creative_slot: l.getAttribute('data-creative-slot'), transport_type: 'beacon' }); }, true);
 })();
