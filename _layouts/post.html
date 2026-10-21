@@ -20,8 +20,43 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {%- comment -%}
+      M-P1 kit CTA, top position: inserted after the first top-level paragraph of the rendered post
+      (a </p> that is not inside an open div/blockquote/list/table/section/aside/details/figure, so it
+      lands after the intro and outside inline-HTML header boxes). Posts with no such paragraph get it
+      at the top of the body. Covers every post (_posts and scripts/_posts) without editing post files,
+      so new generator output gets it too.
+    {%- endcomment -%}
+    {%- capture cdk_cta_top -%}{% include kit-cta.html position="top" %}{%- endcapture -%}
+    {%- assign cdk_tags = "div,blockquote,ul,ol,table,section,aside,details,figure" | split: "," -%}
+    {%- assign cdk_parts = content | split: "</p>" -%}
+    {%- assign cdk_acc = "" -%}
+    {%- assign cdk_cut = -1 -%}
+    {%- for cdk_part in cdk_parts -%}
+      {%- if forloop.last -%}{%- break -%}{%- endif -%}
+      {%- assign cdk_acc = cdk_acc | append: cdk_part -%}
+      {%- assign cdk_ok = true -%}
+      {%- for cdk_t in cdk_tags -%}
+        {%- assign cdk_open = "<" | append: cdk_t -%}
+        {%- assign cdk_close = "</" | append: cdk_t -%}
+        {%- assign cdk_o = cdk_acc | split: cdk_open | size -%}
+        {%- assign cdk_c = cdk_acc | split: cdk_close | size -%}
+        {%- if cdk_o != cdk_c -%}{%- assign cdk_ok = false -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+      {%- assign cdk_acc = cdk_acc | append: "</p>" -%}
+      {%- if cdk_ok -%}{%- assign cdk_cut = cdk_acc | size -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if cdk_cut > 0 -%}
+      {%- assign cdk_len = content | size -%}
+{{ content | slice: 0, cdk_cut }}
+{{ cdk_cta_top }}
+{{ content | slice: cdk_cut, cdk_len }}
+    {%- else -%}
+{{ cdk_cta_top }}
+{{ content }}
+    {%- endif %}
   </div>
+  {% include kit-cta.html position="end" %}
 <!-- Google AdSense In-Post Ad -->
 <ins class="adsbygoogle"
      style="display:block; text-align:center;"
@@ -69,12 +104,7 @@ layout: default
     {% endfor %}
   </div>
 
-  <!-- CALL TO ACTION -->
-  <div class="post-cta">
-    <h3>🛡️ Keep Your Family Safe</h3>
-    <p>Get alerts about new cybersecurity threats affecting families.</p>
-    <a href="/#kit" class="cta-button">Download Security Guides →</a>
-  </div>
+  {% comment %} M-P1: the old red "Keep Your Family Safe" box that linked to /#kit was replaced by _includes/kit-cta.html, rendered right after the post body. {% endcomment %}
 
 </article>
 
@@ -123,23 +153,5 @@ layout: default
   border-bottom: 1px solid #e2e8f0;
 }
 
-.post-cta {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.cta-button {
-  background: rgba(255,255,255,0.2);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  margin-top: 1rem;
-}
 </style>
+{% include kit-cta-style.html %}
