@@ -2,7 +2,21 @@
 layout: default
 ---
 
+{% include post-fixes-style.html %}
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- comment -%}
+    mobile-perf: 1,272 template posts carry their own inline header box (<div class="post-header"> with the
+    title, read time and summary). For those, the layout's title header is a second copy of the title (and the
+    post's inline CSS styles it as a second big gradient box), so it is not rendered. The date and author stay
+    as a one-line dateline with the same microdata; the headline is kept as a meta tag.
+  {%- endcomment -%}
+  {%- if content contains 'class="post-header"' %}
+  <meta itemprop="headline" content="{{ page.title | escape }}">
+  <p class="cdk-dateline">
+    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time>
+    {%- if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>{% endif %}
+  </p>
+  {%- else %}
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
@@ -18,6 +32,7 @@ layout: default
       • {{ content | number_of_words | divided_by: 200 | ceil }} min read
     </p>
   </header>
+  {%- endif %}
 
   <div class="post-content e-content" itemprop="articleBody">
     {%- comment -%}
@@ -82,11 +97,15 @@ layout: default
   
   <!-- INTERNAL LINKING SECTION -->
   <div class="related-posts">
-    <h3>🔗 Related Security Guides</h3>
+    <h2 class="cdk-section-title">🔗 Related Security Guides</h2>
     <div class="related-grid">
-      {% assign related_posts = site.posts | where_exp: "post", "post.categories contains page.categories.first" | limit: 3 %}
+      {%- comment -%} mobile-perf: "| limit: 3" is not a Liquid filter, so every post in the category was listed
+        (1,635 links / ~385 KB on each template post). Now at most 3, as intended. {%- endcomment -%}
+      {%- assign related_posts = site.posts | where_exp: "post", "post.categories contains page.categories.first" -%}
+      {%- assign cdk_rel_n = 0 -%}
       {% for post in related_posts %}
-        {% unless post.url == page.url %}
+        {%- if cdk_rel_n >= 3 -%}{%- break -%}{%- endif -%}
+        {% unless post.url == page.url %}{%- assign cdk_rel_n = cdk_rel_n | plus: 1 -%}
           <a href="{{ post.url }}" class="related-link">
             <strong>{{ post.title }}</strong>
             <span>{{ post.date | date: "%B %d" }}</span>
@@ -98,7 +117,7 @@ layout: default
 
   <!-- POPULAR POSTS -->
   <div class="popular-posts">
-    <h3>🔥 Most Popular This Week</h3>
+    <h2 class="cdk-section-title">🔥 Most Popular This Week</h2>
     {% for post in site.posts limit: 5 %}
       <a href="{{ post.url }}">{{ post.title | truncatewords: 6 }}</a>
     {% endfor %}
