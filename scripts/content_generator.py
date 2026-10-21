@@ -103,10 +103,10 @@ def generate_seo_post():
     # Add affiliate section
     content += "## 🛡️ Recommended Security Tools\n\n"
     content += "Protect your family with these trusted cybersecurity solutions:\n\n"
-    content += "- **[Norton 360 Deluxe](https://norton.com/affiliate-link)** - Complete family protection with VPN\n"
-    content += "- **[NordVPN](https://nordvpn.com/affiliate-link)** - Secure your internet connection worldwide\n"
-    content += "- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager\n"
-    content += "- **[Malwarebytes](https://malwarebytes.com/affiliate-link)** - Advanced malware protection\n\n"
+    content += "- **Norton 360 Deluxe** - Complete family protection with VPN\n"
+    content += "- **NordVPN** - Secure your internet connection worldwide\n"
+    content += "- **LastPass** - Password manager\n"
+    content += "- **Malwarebytes** - Advanced malware protection\n\n"
     content += "*As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*\n\n"
     
     # Add email signup section

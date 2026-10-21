@@ -103,10 +103,10 @@ def generate_blog_post():
     # Add affiliate section
     blog_post += "## 🛡️ Recommended Security Tools\n\n"
     blog_post += "Protect your family with these trusted cybersecurity solutions:\n\n"
-    blog_post += "- **[Norton 360 Deluxe](https://norton.com/affiliate-link)** - Complete family protection with VPN\n"
-    blog_post += "- **[NordVPN](https://nordvpn.com/affiliate-link)** - Secure your internet connection worldwide\n"
-    blog_post += "- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager\n"
-    blog_post += "- **[Malwarebytes](https://malwarebytes.com/affiliate-link)** - Advanced malware protection\n\n"
+    blog_post += "- **Norton 360 Deluxe** - Complete family protection with VPN\n"
+    blog_post += "- **NordVPN** - Secure your internet connection worldwide\n"
+    blog_post += "- **LastPass** - Password manager\n"
+    blog_post += "- **Malwarebytes** - Advanced malware protection\n\n"
     blog_post += "*As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*\n\n"
     
     # Add email signup section
