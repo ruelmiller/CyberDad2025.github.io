@@ -99,6 +99,10 @@ const CLAIMS_RULES = [
   ['toddler-show name', /CocoMelon|Blippi|Peppa Pig|Bluey|Paw Patrol|Ms\.? Rachel|Baby Shark|Pinkfong|Daniel Tiger/i],
   ['kit price not $67', /(?:Shield Kit|CyberDad Kit|the kit)[^\n.]{0,60}\$(?!67\b)\d+|\$(?!67\b)\d+[^\n.]{0,30}(?:Shield Kit|CyberDad Kit)/i],
   ['kit link not /#kit', /\/shield-kit\b|gumroad\.com|etsy\.com\/shop\/CyberDadPrints|checkout\.mailerlite\.com/i],
+  // R9 (2026-10-21): unverified statistics. No sourced numbers exist for any of these, so block them outright.
+  ['unverified stat: N% of families/parents', /\b\d{1,3}(?:\.\d+)?\s?%\s+of\s+(?:all\s+)?(?:families|parents|households|kids|children|teens|users|people|Americans)\b/i],
+  ['unverified stat: attacks increased N%', /\b(?:cyber[- ]?)?(?:attacks?|threats?|incidents?|scams?|breaches|crimes?)\b[^.!?\n]{0,80}?\b(?:increased|increase|risen|rose|grown|grew|surged|jumped|spiked|up)\s+(?:by\s+)?(?:over\s+|more than\s+)?\d+(?:\.\d+)?\s?%|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year/i],
+  ['unverified stat: trusted by a crowd (millions/thousands)', /\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)/i],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];
 function claimsGuard(text) {

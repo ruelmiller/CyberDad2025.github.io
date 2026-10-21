@@ -34,8 +34,8 @@ TOPICS = [
 CONTENT_TEMPLATES = {
     "intro": [
         "As a parent in 2025, protecting your family from cyber threats is more critical than ever. Here's what you need to know:",
-        "Cybersecurity experts warn that attacks targeting families have increased 300% this year. Here's how to protect your loved ones:",
-        "Recent data shows that 85% of families experience security incidents. This comprehensive guide will help you prevent becoming a statistic:",
+        "Many families are online all day, so it helps to have a plan. Here's how to protect your loved ones:",
+        "Many families are online all day, so a few simple habits go a long way. This guide walks you through them:",
     ],
     
     "steps": [
@@ -105,7 +105,7 @@ def generate_seo_post():
     content += "Protect your family with these trusted cybersecurity solutions:\n\n"
     content += "- **[Norton 360 Deluxe](https://norton.com/affiliate-link)** - Complete family protection with VPN\n"
     content += "- **[NordVPN](https://nordvpn.com/affiliate-link)** - Secure your internet connection worldwide\n"
-    content += "- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager trusted by millions\n"
+    content += "- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager\n"
     content += "- **[Malwarebytes](https://malwarebytes.com/affiliate-link)** - Advanced malware protection\n\n"
     content += "*As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*\n\n"
     

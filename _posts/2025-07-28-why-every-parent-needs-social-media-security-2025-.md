@@ -9,7 +9,7 @@ author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
 
-Recent data shows that 85% of families experience WiFi Hacking incidents. This comprehensive guide will help you prevent becoming a statistic:
+Many families are online all day, so a few simple habits go a long way. This guide walks you through them:
 
 **Step 3: Technology Setup**
 Configure your home network for maximum security:

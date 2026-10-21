@@ -22,7 +22,7 @@ When I worked hands-on in a Security Operations Center, I saw how much damage a 
 
 5. Limit the personal information you share online: In today's social media-driven world, it can be tempting to share every aspect of your life online. However, sharing too much personal information can make your family vulnerable to cybercriminals. Encourage your family members to be mindful of the information they share online and adjust their privacy settings to limit who can see their posts.
 
-According to recent statistics, cyberattacks targeting families have increased by 300% in the past year alone. These attacks can have devastating consequences, from identity theft to financial loss. Consider this situation: a family's smart home devices are hacked, allowing cybercriminals to monitor their every move and even unlock their front door remotely. This may sound like something out of a sci-fi movie, but it's a real threat that families need to be aware of.
+Cyberattacks on families can have devastating consequences, from identity theft to financial loss. Consider this situation: a family's smart home devices are hacked, allowing cybercriminals to monitor their every move and even unlock their front door remotely. This may sound like something out of a sci-fi movie, but it's a real threat that families need to be aware of.
 
 To protect your family from cyber threats, it's essential to stay informed and take proactive measures to safeguard your digital lives. By following the tips outlined above and staying vigilant online, you can reduce the risk of falling victim to cybercriminals.
 

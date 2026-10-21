@@ -32,7 +32,7 @@ Actionable Tips for Families:
 7. Talk to your family about cybersecurity: Have open and honest conversations with your loved ones about the importance of cybersecurity and the potential risks online. Encourage them to report any suspicious activity or security incidents immediately.
 
 Real Statistics and Current Trends:
-According to a recent report, 65% of parents are concerned about their children's online safety, yet only 40% actively monitor their online activities. Cyberbullying is a growing problem, with 1 in 3 teenagers experiencing some form of online harassment. Additionally, phishing attacks targeting families have increased by 60% in the past year, highlighting the need for heightened vigilance.
+Cyberbullying is a growing problem, with 1 in 3 teenagers experiencing some form of online harassment.
 
 Call-to-Action:
 Protecting your family online is a shared responsibility that requires ongoing effort and vigilance. By following the tips outlined in this blog post and staying informed about the latest cybersecurity trends, you can create a safer digital environment for your loved ones. Remember, the key to cybersecurity is prevention, so take action today to safeguard your family's online presence. Stay safe and stay secure!

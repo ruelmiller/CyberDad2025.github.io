@@ -54,6 +54,31 @@ FAMILY_KEYWORDS = [
     "chrome", "youtube", "instagram", "minecraft", "fortnite",
 ]
 
+# -------- R9: UNVERIFIED-STATS GUARD --------
+# No sourced numbers exist for these claims, so a post that contains one is never written.
+# Kept in step with the R9 rules in netlify/functions/generate-blog.js (CLAIMS_RULES).
+# The P5 claims guard absorbs these rules (CLAIMS_RULES = [...] + UNVERIFIED_STATS_RULES).
+UNVERIFIED_STATS_RULES = [
+    ("unverified stat: N% of families/parents", re.compile(
+        r"\b\d{1,3}(?:\.\d+)?\s?%\s+of\s+(?:all\s+)?(?:families|parents|households|kids|children|teens|users|people|Americans)\b", re.I)),
+    ("unverified stat: attacks increased N%", re.compile(
+        r"\b(?:cyber[- ]?)?(?:attacks?|threats?|incidents?|scams?|breaches|crimes?)\b[^.!?\n]{0,80}?\b(?:increased|increase|risen|rose|grown|grew|surged|jumped|spiked|up)\s+(?:by\s+)?(?:over\s+|more than\s+)?\d+(?:\.\d+)?\s?%"
+        r"|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year", re.I)),
+    ("unverified stat: trusted by a crowd (millions/thousands)", re.compile(
+        r"\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)", re.I)),
+]
+
+
+def unverified_stats_guard(text: str) -> list:
+    """Return the R9 violations found in text (empty list = OK)."""
+    out = []
+    for name, rx in UNVERIFIED_STATS_RULES:
+        m = rx.search(text or "")
+        if m:
+            out.append(f'{name}: "{m.group(0)}"')
+    return out
+
+
 # Fallback posts — written in a varied, human voice with first-person anecdotes.
 # These are deliberately NOT in the same template format so the site reads
 # like a real human writing on different days, not a content farm.
@@ -516,6 +541,11 @@ def main():
 
     if slug in log or post_exists(slug):
         print(f"Post '{slug}' already exists — skipping.")
+        return
+
+    stat_violations = unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]]))
+    if stat_violations:
+        print("Post blocked by unverified-stats guard (R9), nothing written: " + "; ".join(stat_violations))
         return
 
     print("Generating Pinterest image...")

@@ -8,7 +8,7 @@ author: CyberDad
 excerpt: "Essential cybersecurity guidance to keep your family safe online"
 ---
 
-Recent data shows that 85% of families experience security incidents. This comprehensive guide will help you prevent becoming a statistic:
+Many families are online all day, so a few simple habits go a long way. This guide walks you through them:
 
 **Step 2: Family Education**
 Teach your children these essential safety rules:
@@ -44,7 +44,7 @@ Protect your family with these trusted cybersecurity solutions:
 
 - **[Norton 360 Deluxe](https://norton.com/affiliate-link)** - Complete family protection with VPN
 - **[NordVPN](https://nordvpn.com/affiliate-link)** - Secure your internet connection worldwide
-- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager trusted by millions
+- **[LastPass](https://lastpass.com/affiliate-link)** - Password manager
 - **[Malwarebytes](https://malwarebytes.com/affiliate-link)** - Advanced malware protection
 
 *As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*

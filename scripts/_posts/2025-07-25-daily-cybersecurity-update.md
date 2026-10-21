@@ -26,7 +26,7 @@ To help keep your family safe online, here are 7 actionable tips that you can im
 
 7. Backup your data regularly: In the event of a ransomware attack or data breach, having a backup of your important files is essential to avoid losing valuable information. Use a cloud storage service or an external hard drive to regularly backup your data and ensure that you can recover it in case of a cyber attack.
 
-According to recent statistics, cyber attacks on families have been on the rise in recent years, with more than 60% of households experiencing some form of cybercrime. Imagine if your family fell victim to a ransomware attack and lost all of your precious photos, documents, and memories. Consider this situation: your child unknowingly downloads a malicious file while browsing the internet, and suddenly your entire device is locked by a ransomware message demanding payment. It's a nightmare scenario that no family wants to experience.
+Imagine if your family fell victim to a ransomware attack and lost all of your precious photos, documents, and memories. Consider this situation: your child unknowingly downloads a malicious file while browsing the internet, and suddenly your entire device is locked by a ransomware message demanding payment. It's a nightmare scenario that no family wants to experience.
 
 To protect your family from cyber threats, take action today by implementing these cybersecurity tips and staying vigilant online. Remember that cybersecurity is a shared responsibility, and by taking proactive steps to protect your family, you can minimize the risk of falling victim to cyber attacks. Stay informed about the latest cybersecurity trends and tools, and empower your family to navigate the digital world safely.
 
