@@ -176,7 +176,7 @@ You'll learn how to make your home WiFi network safe from bad people who want to
 3. **Use the default password** (on the sticker)
 4. **Set up your security again**
 
-## 🎉 You're Now a WiFi Safety Expert!
+## 🎉 Nice Work: You've Finished the WiFi Checklist!
 
 Great job! You now know how to:
 - ✅ Change your WiFi password
