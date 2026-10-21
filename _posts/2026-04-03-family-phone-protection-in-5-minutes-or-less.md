@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Phone Protection in 5 Minutes or Less"
+title: "Family Phone Protection: A Step-by-Step Setup Guide"
 date: 2026-04-03 17:34:11 +0000
 categories: [Family Safety]
 tags: [cybersecurity, family-safety, password-theft, parents-guide]

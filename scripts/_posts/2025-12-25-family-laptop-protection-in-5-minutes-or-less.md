@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Laptop Protection in 5 Minutes or Less"
+title: "Family Laptop Protection: A Step-by-Step Setup Guide"
 date: 2025-12-25
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips

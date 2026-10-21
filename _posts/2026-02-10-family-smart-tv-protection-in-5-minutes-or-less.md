@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Smart TV Protection in 5 Minutes or Less"
+title: "Family Smart TV Protection: A Step-by-Step Setup Guide"
 date: 2026-02-10 18:01:39 +0000
 categories: [Digital Protection]
 tags: [cybersecurity, family-safety, gaming-threats, parents-guide]

@@ -28,7 +28,7 @@ Take these actions right now to secure your family:
 
 
 
-**Bottom Line:** Implementing these Password Manager security measures takes less than 30 minutes but provides years of family protection.
+**Bottom Line:** Set up these Password Manager security measures once, then review them whenever your family gets a new device or app.
 
 **🛡️ Essential Family Protection:**
 • [Norton Family Premier →](https://www.dpbolvw.net/click-101495044-13287827) - Parental controls & device monitoring

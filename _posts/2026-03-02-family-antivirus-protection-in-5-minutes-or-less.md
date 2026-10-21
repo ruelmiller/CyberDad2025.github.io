@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Antivirus Protection in 5 Minutes or Less"
+title: "Family Antivirus Protection: A Step-by-Step Setup Guide"
 date: 2026-03-02 17:43:47 +0000
 categories: [Family Safety]
 tags: [cybersecurity, family-safety, device-tracking, parents-guide]

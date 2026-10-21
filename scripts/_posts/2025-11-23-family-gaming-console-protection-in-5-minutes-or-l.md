@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Gaming Console Protection in 5 Minutes or Less"
+title: "Family Gaming Console Protection: A Step-by-Step Setup Guide"
 date: 2025-11-23
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips

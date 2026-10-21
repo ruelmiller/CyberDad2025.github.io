@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Gaming Console Protection in 5 Minutes or Less"
+title: "Family Gaming Console Protection: A Step-by-Step Setup Guide"
 date: 2026-04-24 02:39:59 +0000
 categories: [Digital Protection]
 tags: [cybersecurity, family-safety, device-tracking, parents-guide]

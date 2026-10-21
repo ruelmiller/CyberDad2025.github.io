@@ -35,7 +35,7 @@ Teach your children these essential safety rules:
 
 
 
-**Bottom Line:** Implementing these security measures takes less than 30 minutes but provides years of family protection.
+**Bottom Line:** Set up these security measures once, then review them whenever your family gets a new device or app.
 
 ## 🛡️ Recommended Security Tools
 

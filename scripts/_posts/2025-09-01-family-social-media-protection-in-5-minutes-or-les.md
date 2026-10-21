@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Social Media Protection in 5 Minutes or Less"
+title: "Family Social Media Protection: A Step-by-Step Setup Guide"
 date: 2025-09-01
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips
@@ -35,7 +35,7 @@ Configure your home network for maximum security:
 
 
 
-**Bottom Line:** Implementing these security measures takes less than 30 minutes but provides years of family protection.
+**Bottom Line:** Set up these security measures once, then review them whenever your family gets a new device or app.
 
 ## 🛡️ Recommended Security Tools
 

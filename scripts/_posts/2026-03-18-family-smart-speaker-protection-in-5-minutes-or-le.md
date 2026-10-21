@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Smart Speaker Protection in 5 Minutes or Less"
+title: "Family Smart Speaker Protection: A Step-by-Step Setup Guide"
 date: 2026-03-18
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips

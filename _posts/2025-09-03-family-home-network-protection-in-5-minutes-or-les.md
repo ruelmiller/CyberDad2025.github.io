@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Home Network Protection in 5 Minutes or Less"
+title: "Family Home Network Protection: A Step-by-Step Setup Guide"
 date: 2025-09-03 17:15:49 +0000
 categories: [Family Safety]
 tags: [cybersecurity, family-safety, data-breaches, parents-guide]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family VPN Protection in 5 Minutes or Less"
+title: "Family VPN Protection: A Step-by-Step Setup Guide"
 date: 2025-11-19
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips

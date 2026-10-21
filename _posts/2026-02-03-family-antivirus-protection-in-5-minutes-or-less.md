@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Antivirus Protection in 5 Minutes or Less"
+title: "Family Antivirus Protection: A Step-by-Step Setup Guide"
 date: 2026-02-03 02:09:26 +0000
 categories: [Digital Protection]
 tags: [cybersecurity, family-safety, social-media-scams, parents-guide]

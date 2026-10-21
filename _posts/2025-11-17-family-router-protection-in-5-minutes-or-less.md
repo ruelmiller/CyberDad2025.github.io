@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Router Protection in 5 Minutes or Less"
+title: "Family Router Protection: A Step-by-Step Setup Guide"
 date: 2025-11-17 01:38:44 +0000
 categories: [Family Safety]
 tags: [cybersecurity, family-safety, cyberbullying, parents-guide]

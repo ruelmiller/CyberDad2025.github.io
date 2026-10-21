@@ -83,6 +83,14 @@ UNVERIFIED_STATS_RULES = [
         r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:according to (?:a |an |the )?(?:recent |new |latest |\d{4} )?(?:cybersecurity |cyber |security |safety |online safety |industry |internet |crime )?(?:study|studies|survey|surveys|report|reports|research|statistics|stats|data|experts?)|(?:stud(?:y|ies)|surveys?|research|reports?|statistics|data) (?:shows?|suggests?|has shown|have shown|found|finds|indicates?|reveals?|revealed|confirms?)|experts? (?:say|says|agree|agrees|warn|warns|estimate|estimates|believe)|in a recent (?:study|survey|report))\b", re.I | re.M)),
     ('"Real Statistics" heading', re.compile(
         r"\breal statistics\b|\bstatistics and (?:current )?trends\b", re.I)),
+    # R9h (CoS + Product 2026-10-21): no time or benefit promises in posts
+    # (setup time 'less than N min', 'N min or less', multi-year protection).
+    ("time promise: less than N minutes", re.compile(
+        r"\bless than \d+\s*(?:minutes?|mins?)\b", re.I)),
+    ("time promise: N Minutes or Less", re.compile(
+        r"\b\d+\s*(?:minutes?|mins?)\s+or\s+less\b", re.I)),
+    ('benefit promise: "years of ... protection"', re.compile(
+        r"\byears of (?:family )?protection\b", re.I)),
 ]
 
 

@@ -12,7 +12,7 @@ TITLE_TEMPLATES = [
     "Parents Alert: {threat} Threats and How to Stop Them",
     "Simple {topic} Security for Non-Tech Parents",
     "Child-Safe {topic} Setup: Step-by-Step Guide",
-    "Family {topic} Protection in 5 Minutes or Less",
+    "Family {topic} Protection: A Step-by-Step Setup Guide",
     "Why Every Parent Needs {topic} Security (2025 Update)",
     "Best {topic} Safety Practices for Modern Families",
 ]
@@ -51,7 +51,7 @@ CONTENT_TEMPLATES = {
     ],
     
     "conclusion": [
-        "**Bottom Line:** Implementing these security measures takes less than 30 minutes but provides years of family protection.",
+        "**Bottom Line:** Set up these security measures once, then review them whenever your family gets a new device or app.",
         "**Take Action Today:** Download our free family security checklist and start protecting your loved ones immediately.",
         "**Remember:** Cybersecurity is not optional for modern families. Start with one step today and build from there.",
     ]

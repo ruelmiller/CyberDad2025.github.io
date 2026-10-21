@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family IoT Device Protection in 5 Minutes or Less"
+title: "Family IoT Device Protection: A Step-by-Step Setup Guide"
 date: 2025-12-31 13:32:31 +0000
 categories: [Cybersecurity]
 tags: [cybersecurity, family-safety, online-predators, parents-guide]

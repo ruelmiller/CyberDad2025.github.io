@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Social Media Protection in 5 Minutes or Less"
+title: "Family Social Media Protection: A Step-by-Step Setup Guide"
 date: 2025-08-24 01:44:10 +0000
 categories: [Cybersecurity]
 tags: [cybersecurity, family-safety, gaming-threats, parents-guide]

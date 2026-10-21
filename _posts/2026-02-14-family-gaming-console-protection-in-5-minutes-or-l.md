@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Family Gaming Console Protection in 5 Minutes or Less"
+title: "Family Gaming Console Protection: A Step-by-Step Setup Guide"
 date: 2026-02-14 17:25:58 +0000
 categories: [Cybersecurity]
 tags: [cybersecurity, family-safety, malware, parents-guide]
