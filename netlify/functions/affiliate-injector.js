@@ -1,67 +1,12 @@
 // netlify/functions/affiliate-injector.js
 // Automatically injects affiliate links into blog posts
 
-const AFFILIATE_PRODUCTS = {
-  // VPN Services
-  'nordvpn': {
-    link: 'https://nordvpn.com/ref/YOURCODE',
-    keywords: ['nordvpn', 'nord vpn', 'vpn service', 'virtual private network'],
-    replacement: '[NordVPN](https://nordvpn.com/ref/YOURCODE)'
-  },
-  'expressvpn': {
-    link: 'https://expressvpn.com/ref/YOURCODE',
-    keywords: ['expressvpn', 'express vpn', 'fast vpn'],
-    replacement: '[ExpressVPN](https://expressvpn.com/ref/YOURCODE)'
-  },
-  
-  // Password Managers
-  'lastpass': {
-    link: 'https://lastpass.com/ref/YOURCODE',
-    keywords: ['lastpass', 'password manager', 'password vault'],
-    replacement: '[LastPass](https://lastpass.com/ref/YOURCODE)'
-  },
-  '1password': {
-    link: 'https://1password.com/ref/YOURCODE',
-    keywords: ['1password', 'onepassword', 'password manager'],
-    replacement: '[1Password](https://1password.com/ref/YOURCODE)'
-  },
-  'bitwarden': {
-    link: 'https://bitwarden.com/ref/YOURCODE',
-    keywords: ['bitwarden', 'open source password manager'],
-    replacement: '[Bitwarden](https://bitwarden.com/ref/YOURCODE)'
-  },
-  
-  // Antivirus Software
-  'norton': {
-    link: 'https://norton.com/ref/YOURCODE',
-    keywords: ['norton', 'norton antivirus', 'norton security'],
-    replacement: '[Norton Security](https://norton.com/ref/YOURCODE)'
-  },
-  'mcafee': {
-    link: 'https://mcafee.com/ref/YOURCODE',
-    keywords: ['mcafee', 'mcafee antivirus', 'mcafee security'],
-    replacement: '[McAfee](https://mcafee.com/ref/YOURCODE)'
-  },
-  
-  // Backup Services
-  'backblaze': {
-    link: 'https://backblaze.com/ref/YOURCODE',
-    keywords: ['backblaze', 'cloud backup', 'online backup'],
-    replacement: '[Backblaze](https://backblaze.com/ref/YOURCODE)'
-  },
-  'carbonite': {
-    link: 'https://carbonite.com/ref/YOURCODE',
-    keywords: ['carbonite', 'backup service', 'data backup'],
-    replacement: '[Carbonite](https://carbonite.com/ref/YOURCODE)'
-  },
-  
-  // Security Tools
-  'malwarebytes': {
-    link: 'https://malwarebytes.com/ref/YOURCODE',
-    keywords: ['malwarebytes', 'malware protection', 'anti-malware'],
-    replacement: '[Malwarebytes](https://malwarebytes.com/ref/YOURCODE)'
-  }
-};
+// P7 (CoS ruling): the 10 placeholder products (nordvpn, expressvpn, lastpass, 1password, bitwarden, norton, mcafee,
+// backblaze, carbonite, malwarebytes; every URL was an unset https://<vendor>.com/ref/ placeholder) were removed. They are listed
+// in publish-p7/PR.md so they can be restored. Add an entry only with a real, approved affiliate URL:
+//   'key': { link: 'https://…', keywords: ['…'], replacement: '[Name](https://…)' }
+// With an empty table, injectAffiliateLinks() adds no links and returns the content unchanged.
+const AFFILIATE_PRODUCTS = {};
 
 exports.handler = async (event, context) => {
   const headers = {
