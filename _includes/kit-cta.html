@@ -1,0 +1,19 @@
+{%- comment -%}
+  CyberDad Shield Kit CTA (M-P1). Rendered by _layouts/post.html twice per post:
+  position="top" (after the first top-level paragraph) and position="end" (right after the post body).
+  LAUNCH FLIP: checkout is not live, so the button says "($67, coming soon)" and points to the
+  home #kit section (matches the homepage #kit copy and the R5 pattern). At launch, change ONLY the
+  next line to:  {%- assign kit_cta_label = "Get the kit, $67" -%}
+{%- endcomment -%}
+{%- assign kit_cta_label = "See the CyberDad Shield Kit ($67, coming soon)" -%}
+{%- assign kit_cta_pos = include.position | default: "end" -%}
+<aside class="cdk-kit-cta cdk-kit-cta--{{ kit_cta_pos }}" aria-labelledby="cdk-kit-cta-{{ kit_cta_pos }}-title" data-cdk-promo="kit-cta" data-cdk-position="{{ kit_cta_pos }}">
+{%- if kit_cta_pos == "top" %}
+  <p class="cdk-kit-cta__title" id="cdk-kit-cta-top-title">Want the step-by-step version?</p>
+  <p class="cdk-kit-cta__text">The CyberDad Shield Kit is a plain-English family safety system: 7 quick-action modules with checklists, templates and printables.</p>
+{%- else %}
+  <p class="cdk-kit-cta__title" id="cdk-kit-cta-end-title">Turn this guide into a family plan</p>
+  <p class="cdk-kit-cta__text">The CyberDad Shield Kit covers password managers, safe browsing, Wi-Fi, a family tech agreement, social media, an emergency tech plan and device setup, plus a 30-day action plan. Written in plain English by a dad, for parents.</p>
+{%- endif %}
+  <a class="cdk-kit-cta__btn" href="/#kit" data-cdk-event="select_promotion" data-promotion-id="kit-cta" data-promotion-name="CyberDad Shield Kit" data-creative-slot="post-{{ kit_cta_pos }}">{{ kit_cta_label }}</a>
+</aside>
