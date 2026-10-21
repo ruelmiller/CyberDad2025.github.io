@@ -70,6 +70,12 @@ UNVERIFIED_STATS_RULES = [
     # Allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
     ("unverified stat: N in M teens/kids/parents", re.compile(
         r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:in|out of)\s+(?:every\s+)?(?:[2-9]|\d{2,}|two|three|four|five|six|seven|eight|nine|ten)\s+(?:[a-z.]+\s+)?(?:teens?|teenagers?|tweens?|kids?|children|child|youths?|parents?|families|family|households?)\b", re.I | re.M)),
+    # R9f (CoS + Product 2026-10-21): age-range badges ('ages 4-99', 'All ages (8-99)') are not backed by kit v3.4;
+    # reading time must not be a hardcoded number.
+    ("unverified age-range badge: ages N-99", re.compile(
+        r"\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b", re.I)),
+    ("hardcoded reading time: Takes N minutes to read", re.compile(
+        r"\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b", re.I)),
 ]
 
 

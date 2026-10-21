@@ -6,16 +6,15 @@ categories: [cybersecurity, family-safety, security-guide]
 tags: [security, family, guide, protection, cybersecurity]
 author: CyberDad
 description: "Learn cyberbullying prevention guide with simple steps anyone can follow."
-reading_time: "5 minutes"
 difficulty: "Super Easy"
-age_appropriate: "All ages (8-99)"
+age_appropriate: "For parents and families"
 ---
 
 # Cyberbullying Prevention Guide
 
 🔒 **Quick Summary:** Learn how to cyberbullying prevention guide with simple steps anyone can follow.
 
-⏱️ **Takes 5 minutes to read** 📚 **Super Easy** 🔒 **Perfect for ages 8-99**
+📚 **Super Easy** 🏠 **For parents and families**
 
 **Quick Summary:** Essential cybersecurity guide to help families stay safe online.
 

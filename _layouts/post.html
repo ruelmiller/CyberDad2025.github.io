@@ -15,7 +15,7 @@ layout: default
           </span>
       {%- endif -%}
       • {{ content | number_of_words }} words
-      • {{ content | number_of_words | divided_by: 200 | ceil }} min read
+      • {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
     </p>
   </header>
 

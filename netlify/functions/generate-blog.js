@@ -105,6 +105,9 @@ const CLAIMS_RULES = [
   ['unverified stat: trusted by a crowd (millions/thousands)', /\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)/i],
   // R9d (CoS 2026-10-21): uncited 'N in M teens/kids/children/parents/families' ratios. Allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:').
   ['unverified stat: N in M teens/kids/parents', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:in|out of)\s+(?:every\s+)?(?:[2-9]|\d{2,}|two|three|four|five|six|seven|eight|nine|ten)\s+(?:[a-z.]+\s+)?(?:teens?|teenagers?|tweens?|kids?|children|child|youths?|parents?|families|family|households?)\b/im],
+  // R9f (CoS + Product 2026-10-21): age-range badges ('ages 4-99', 'All ages (8-99)') are not backed by kit v3.4; reading time must not be a hardcoded number.
+  ['unverified age-range badge: ages N-99', /\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b/i],
+  ['hardcoded reading time: Takes N minutes to read', /\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b/i],
   ['author-claim word in title/meta/author line', /^(?:title|description|excerpt|summary|author|seo_title):.*\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b|^#\s.*\b(?:experts?|expertise|pros?|professionals?)\b/im],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];
@@ -695,17 +698,15 @@ categories: [cybersecurity, family-safety, easy-guide]
 tags: [security, simple, family, guide, protection]
 author: CyberDad
 description: "${template.summary}"
-reading_time: "5 minutes"
 difficulty: "Super Easy"
-age_appropriate: "All ages (4-99)"
+age_appropriate: "For parents and families"
 ---
 
 <div class="post-header">
   <h1>${template.title}</h1>
   <div class="post-meta">
-    <span class="reading-time">⏱️ Takes 5 minutes to read</span>
     <span class="difficulty">📊 Super Easy</span>
-    <span class="age-range">🏠 Perfect for ages 4-99</span>
+    <span class="age-range">🏠 For parents and families</span>
   </div>
   <div class="post-summary">
     <p><strong>Quick Summary:</strong> ${template.summary}</p>
