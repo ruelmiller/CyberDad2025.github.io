@@ -2,9 +2,11 @@
 layout: default
 title: "Terms of Sale — Refunds"
 permalink: /terms-of-sale/
+last_updated: SET-AT-MERGE
 ---
 <!-- Source: Support's terms-of-sale-v2.html (Oct 20, 2026): PART 1 (scoped style) and PART 2 (section 2) verbatim.
-     Page chrome (heading, note, home link, footer) and the bracketed PENDING RUEL date marker were added by the CDK Platform Engineer.
+     Page chrome (heading, note, home link, footer) and the last-updated line were added by the CDK Platform Engineer.
+     The date comes from front matter last_updated; it is set to the merge date (America/New_York) at merge by the runbook command in prs/R2.md.
      Only the refund section is published. The other sections of the Drive doc "Terms of Sale & Refund Policy – CyberDadKit – v1 (2025)" can be added later when Ruel supplies them. -->
 <style>
   .tos-refund { max-width:780px; margin:0 auto 2rem; font-family:'DM Sans', sans-serif; color:#1a202c; line-height:1.65; }
@@ -19,7 +21,7 @@ permalink: /terms-of-sale/
 <div style="max-width:780px; margin:0 auto; padding:2rem 1.5rem 3rem; font-family:'DM Sans', sans-serif;">
   <p style="margin-bottom:1.5rem;"><a href="/" style="color:#087f6a;">← Return to CyberDad Home</a></p>
   <h1 style="font-family:'Fraunces', Georgia, serif; font-size:2rem; color:#0e1117; margin-bottom:0.5rem;">CyberDadKit Terms of Sale — Refunds</h1>
-  <p style="margin-bottom:2rem; font-size:0.9rem;">This page contains the refund section of our Terms of Sale. The other sections are pending and will be added here. · Last updated: <span class="pending-ruel" style="background:#fffbeb;color:#92400e;border:1px dashed #d97706;padding:0 0.3rem;font-weight:600;">[LAST UPDATED DATE – PENDING RUEL]</span></p>
+  <p style="margin-bottom:2rem; font-size:0.9rem;">This page contains the refund section of our Terms of Sale. The other sections are pending and will be added here. · Last updated: {% if page.last_updated == "SET-AT-MERGE" %}<span class="pending-ruel" style="background:#fffbeb;color:#92400e;border:1px dashed #d97706;padding:0 0.3rem;font-weight:600;">{{ page.last_updated }}</span>{% else %}{{ page.last_updated | date: "%B %-d, %Y" }}{% endif %}</p>
 <section class="tos-refund" id="refunds">
   <div class="tos-badge">🔒 30-day money-back guarantee</div>
   <h2>2. 30-Day Money-Back Guarantee</h2>
