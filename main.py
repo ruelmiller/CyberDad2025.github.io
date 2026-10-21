@@ -263,7 +263,7 @@ FALLBACK_POSTS = [
             "free Robux now.' Real companies don't pressure you. Urgency is the scammer's "
             "main weapon.\n\n"
             "**Never click login links in email.** If something needs your attention, open the "
-            "app or website directly and check there. This habit alone prevents 80% of phishing "
+            "app or website directly and check there. This habit alone stops a lot of phishing "
             "wins.\n\n"
             "**Hover before tapping.** On a desktop, hover the link. On mobile, long-press. The "
             "actual URL appears. If it doesn't match the sender, it's fake.\n\n"
