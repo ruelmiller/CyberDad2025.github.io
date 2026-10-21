@@ -97,12 +97,12 @@ UNVERIFIED_STATS_RULES = [
     # main() also checks the post title on its own line (TITLE_LINE_PREFIX), since it is not in the body.
     ("time promise in title/heading: in N minutes", re.compile(
         r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)", re.I | re.M)),
-    # R9n (CoS + Product M-D7, 2026-10-21): every minute phrase is a time promise, except the three kit lines Product allows
-    # ('one 15-minute Quick Action' / 'Each module starts with a 15-minute Quick Action' and
-    # 'Wait 10 minutes, then check your Spam/Junk folder') and a computed 'N min read'. A source link does not exempt it.
+    # R9n (CoS + Product M-D7, 2026-10-21): every minute phrase is a time promise, except the kit lines Product allows
+    # ('one 15-minute Quick Action' / 'Each module starts with a 15-minute Quick Action') and a computed 'N min read'.
+    # A source link does not exempt it. CoS 10:21 ruling: the 'Wait 10 minutes, then check your Spam/Junk folder' allowance is removed.
     # R9 (F, CoS 2026-10-21): also 'a minute' and 'in/within seconds' ('few minutes', 'in minutes' already covered).
     ("time promise: N minutes (outside the allowed kit lines)", re.compile(
-        r"^(?![^\n]*(?:15-minute Quick Action|Wait 10 minutes, then check your Spam/Junk folder))[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of|a)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+(?:minutes|seconds)\b)", re.I | re.M)),
+        r"^(?![^\n]*15-minute Quick Action)[^\n]*?(?:\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|fifteen|twenty|thirty|forty-five|sixty|a few|few|several|a couple of|a)[ \t]*-?[ \t]*(?:minutes?|mins?)\b(?![ \t]+read\b)|\b(?:within|in)[ \t]+(?:minutes|seconds)\b)", re.I | re.M)),
     # R9n: 'tonight' / 'instant' / 'instantly' wording (Product rule: 0 on the site).
     ("'tonight'/'instant' wording", re.compile(
         r"\b(?:tonight|instant|instantly)\b", re.I)),
