@@ -103,6 +103,7 @@ const CLAIMS_RULES = [
   ['unverified stat: N% of families/parents', /\b\d{1,3}(?:\.\d+)?\s?%\s+of\s+(?:all\s+)?(?:families|parents|households|kids|children|teens|users|people|Americans)\b/i],
   ['unverified stat: attacks increased N%', /\b(?:cyber[- ]?)?(?:attacks?|threats?|incidents?|scams?|breaches|crimes?)\b[^.!?\n]{0,80}?\b(?:increased|increase|risen|rose|grown|grew|surged|jumped|spiked|up)\s+(?:by\s+)?(?:over\s+|more than\s+)?\d+(?:\.\d+)?\s?%|\b(?:increased|risen|grown|surged|jumped)\s+(?:by\s+)?\d+(?:\.\d+)?\s?%\s+(?:this|last|in the past|over the past|per)\s+year/i],
   ['unverified stat: trusted by a crowd (millions/thousands)', /\btrusted by (?:millions|thousands|hundreds|tens of thousands|over\s+\d|more than\s+\d|\d)/i],
+  ['author-claim word in title/meta/author line', /^(?:title|description|excerpt|summary|author|seo_title):.*\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b|^#\s.*\b(?:experts?|expertise|pros?|professionals?)\b/im],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];
 function claimsGuard(text) {

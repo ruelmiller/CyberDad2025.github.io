@@ -45,7 +45,7 @@ CONTENT_TEMPLATES = {
         
         "**Step 3: Technology Setup**\nConfigure your home network for maximum security:\n\n• Change default router passwords\n• Set up guest WiFi networks for visitors\n• Enable automatic security updates\n• Install parental control software\n\n",
         
-        "**Step 4: Advanced Protection**\nImplement these professional-grade security measures:\n\n• Use a VPN for all family internet activity\n• Set up network monitoring for suspicious activity\n• Create separate user accounts for children\n• Regular security audits of all family devices\n\n",
+        "**Step 4: Advanced Protection**\nPut these extra security measures in place:\n\n• Use a VPN for all family internet activity\n• Set up network monitoring for suspicious activity\n• Create separate user accounts for children\n• Regular security audits of all family devices\n\n",
         
         "**Step 5: Emergency Response**\nKnow what to do if your family experiences a cyber attack:\n\n• Immediately disconnect affected devices from internet\n• Document the incident with screenshots\n• Change all passwords on unaffected devices\n• Contact your bank if financial information may be compromised\n\n"
     ],

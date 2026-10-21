@@ -26,7 +26,7 @@ Configure your home network for maximum security:
 • Install parental control software
 
 **Step 4: Advanced Protection**
-Implement these professional-grade security measures:
+Put these extra security measures in place:
 
 • Use a VPN for all family internet activity
 • Set up network monitoring for suspicious activity

@@ -69,6 +69,24 @@ UNVERIFIED_STATS_RULES = [
 ]
 
 
+# Author-claim words (steering 2026-10-21 4:49 AM ET): never describe Ruel/CDK as expert, pro or professional
+# in a post title, meta description (lead) or author line/byline. Generic body uses are left to the P5 guard.
+AUTHOR_CLAIM_RULE = ("author-claim word in title/meta/author line", re.compile(
+    r"\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b", re.I))
+
+
+def author_claim_guard(post: dict) -> list:
+    """Check title, lead (meta description) and the author line/byline for author-claim words."""
+    name, rx = AUTHOR_CLAIM_RULE
+    out = []
+    for field, text in (("title", post.get("title", "")), ("lead/meta", post.get("lead", "")),
+                        ("author line", " ".join([AUTHOR_NAME, AUTHOR_TITLE, AUTHOR_BIO]))):
+        m = rx.search(text or "")
+        if m:
+            out.append(f'{name} ({field}): "{m.group(0)}"')
+    return out
+
+
 def unverified_stats_guard(text: str) -> list:
     """Return the R9 violations found in text (empty list = OK)."""
     out = []
@@ -543,9 +561,9 @@ def main():
         print(f"Post '{slug}' already exists — skipping.")
         return
 
-    stat_violations = unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]]))
+    stat_violations = unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]])) + author_claim_guard(post)
     if stat_violations:
-        print("Post blocked by unverified-stats guard (R9), nothing written: " + "; ".join(stat_violations))
+        print("Post blocked by R9 guard (unverified stats / author-claim words), nothing written: " + "; ".join(stat_violations))
         return
 
     print("Generating Pinterest image...")

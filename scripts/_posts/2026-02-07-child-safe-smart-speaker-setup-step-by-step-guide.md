@@ -11,7 +11,7 @@ excerpt: "Essential cybersecurity guidance to keep your family safe online"
 Many families are online all day, so it helps to have a plan. Here's how to protect your loved ones:
 
 **Step 4: Advanced Protection**
-Implement these professional-grade security measures:
+Put these extra security measures in place:
 
 • Use a VPN for all family internet activity
 • Set up network monitoring for suspicious activity

@@ -11,7 +11,7 @@ author: CyberDad
 As a parent in 2025, protecting your family from cyber threats is more critical than ever. Here's what you need to know:
 
 **Step 4: Advanced Protection**
-Implement these professional-grade security measures:
+Put these extra security measures in place:
 
 • Use a VPN for all family internet activity
 • Set up network monitoring for suspicious activity

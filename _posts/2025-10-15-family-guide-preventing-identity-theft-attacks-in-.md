@@ -26,7 +26,7 @@ Take these actions right now to secure your family:
 • Install reputable antivirus software on every device
 
 **Step 4: Advanced Protection**
-Implement these professional-grade security measures:
+Put these extra security measures in place:
 
 • Use a VPN for all family internet activity
 • Set up network monitoring for suspicious activity

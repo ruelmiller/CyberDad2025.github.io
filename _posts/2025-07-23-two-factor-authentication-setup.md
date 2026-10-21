@@ -43,7 +43,7 @@ Here are the essential steps every family needs to know:
 - Stay informed about new threats
 - Backup important family data
 
-## 🛡️ Pro Tips for Families
+## 🛡️ More Tips for Families
 
 - **Talk to your kids** about cybersecurity regularly
 - **Lead by example** with good security habits  

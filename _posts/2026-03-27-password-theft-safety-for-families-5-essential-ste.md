@@ -11,7 +11,7 @@ author: CyberDad
 Many families are online all day, so a few simple habits go a long way. This guide walks you through them:
 
 **Step 4: Advanced Protection**
-Implement these professional-grade security measures:
+Put these extra security measures in place:
 
 • Use a VPN for all family internet activity
 • Set up network monitoring for suspicious activity
