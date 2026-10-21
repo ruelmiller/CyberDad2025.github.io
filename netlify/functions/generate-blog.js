@@ -108,6 +108,9 @@ const CLAIMS_RULES = [
   // R9f (CoS + Product 2026-10-21): age-range badges ('ages 4-99', 'All ages (8-99)') are not backed by kit v3.4; reading time must not be a hardcoded number.
   ['unverified age-range badge: ages N-99', /\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b/i],
   ['hardcoded reading time: Takes N minutes to read', /\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b/i],
+  // R9g (CoS 2026-10-21): uncited research/study attribution ('according to a (recent) study', 'studies + show', 'research + suggests', 'experts + say'); allowed only when the same line links its source (URL, markdown link, <a href> or 'Source:'). Plus 'Real' + 'Statistics' headings.
+  ['uncited research/study attribution', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:according to (?:a |an |the )?(?:recent |new |latest |\d{4} )?(?:cybersecurity |cyber |security |safety |online safety |industry |internet |crime )?(?:study|studies|survey|surveys|report|reports|research|statistics|stats|data|experts?)|(?:stud(?:y|ies)|surveys?|research|reports?|statistics|data) (?:shows?|suggests?|has shown|have shown|found|finds|indicates?|reveals?|revealed|confirms?)|experts? (?:say|says|agree|agrees|warn|warns|estimate|estimates|believe)|in a recent (?:study|survey|report))\b/im],
+  ['"Real Statistics" heading', /\breal statistics\b|\bstatistics and (?:current )?trends\b/i],
   ['author-claim word in title/meta/author line', /^(?:title|description|excerpt|summary|author|seo_title):.*\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b|^#\s.*\b(?:experts?|expertise|pros?|professionals?)\b/im],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];

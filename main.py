@@ -76,6 +76,13 @@ UNVERIFIED_STATS_RULES = [
         r"\bages?\s*\(?\d{1,2}\s*(?:-|–|to)\s*99\b", re.I)),
     ("hardcoded reading time: Takes N minutes to read", re.compile(
         r"\btakes?\s+\d+\s*(?:-\s*\d+\s*)?(?:minutes?|mins?)\s+to\s+read\b", re.I)),
+    # R9g (CoS 2026-10-21): uncited research/study attribution ('according to a (recent) study', 'studies + show',
+    # 'research + suggests', 'experts + say'); allowed only when the same line links its source
+    # (URL, markdown link, <a href> or 'Source:'). Plus 'Real' + 'Statistics' headings.
+    ("uncited research/study attribution", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))[^\n]*?\b(?:according to (?:a |an |the )?(?:recent |new |latest |\d{4} )?(?:cybersecurity |cyber |security |safety |online safety |industry |internet |crime )?(?:study|studies|survey|surveys|report|reports|research|statistics|stats|data|experts?)|(?:stud(?:y|ies)|surveys?|research|reports?|statistics|data) (?:shows?|suggests?|has shown|have shown|found|finds|indicates?|reveals?|revealed|confirms?)|experts? (?:say|says|agree|agrees|warn|warns|estimate|estimates|believe)|in a recent (?:study|survey|report))\b", re.I | re.M)),
+    ('"Real Statistics" heading', re.compile(
+        r"\breal statistics\b|\bstatistics and (?:current )?trends\b", re.I)),
 ]
 
 
