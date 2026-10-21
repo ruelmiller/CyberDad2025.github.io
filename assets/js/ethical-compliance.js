@@ -262,7 +262,7 @@
         <p>A: You don't have to! But if our review helped you decide, using our link supports our family security research at no cost to you.</p>
         
         <h4>Q: Do you recommend products you don't use?</h4>
-        <p>A: Never. Every recommendation comes from real family testing. We use these tools to protect our own family.</p>
+        <p>A: Our recommendations are based on research of publicly available information and product documentation. When we have used a product ourselves, we say so on that page.</p>
         
         <h4>Q: What if I have problems with a product you recommended?</h4>
         <p>A: Contact us! We'll help you resolve issues or find better alternatives. Your experience helps other families too.</p>
@@ -286,7 +286,6 @@
         <p><strong>Affiliate Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
         <p><strong>General Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
         <p><strong>Product Issues:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
-        <p>💬 <strong>Response time:</strong> Within 24 hours</p>
     </div>
 
     <div class="nav-link">
