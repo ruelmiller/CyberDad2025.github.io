@@ -70,13 +70,13 @@ Think of your password like the key to your house. If someone gets your key, the
 ## 🛠️ How to Make a Great Password (Step by Step)
 
 ### Step 1: Pick a Sentence You'll Remember
-Example: "My daughter loves pizza every Friday night!"
+Example: "My family loves pizza every Friday night!"
 
 ### Step 2: Make It Into a Password
-- **Start with:** My daughter loves pizza every Friday night!
-- **Add numbers:** My daughter loves pizza every Friday night 2024!
-- **Mix capitals:** My Daughter Loves Pizza Every Friday Night 2024!
-- **Add symbols:** My-Daughter-Loves-Pizza-Every-Friday-Night-2024!
+- **Start with:** My family loves pizza every Friday night!
+- **Add numbers:** My family loves pizza every Friday night 2024!
+- **Mix capitals:** My Family Loves Pizza Every Friday Night 2024!
+- **Add symbols:** My-Family-Loves-Pizza-Every-Friday-Night-2024!
 
 ### Step 3: Test Your Password
 **Ask yourself:**
@@ -178,7 +178,7 @@ Congratulations! You now know how to create passwords that keep you safe online.
     <h2>🤝 Need Help?</h2>
     <p>If you have questions or need help with this guide:</p>
     <ul class="help-options">
-      <li>📧 Email us: <a href="mailto:cyberdadkit@gmail.com">cyberdadkit@gmail.com</a></li>
+      <li>📧 Email us: <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></li>
       <li>👨‍👩‍👧‍👦 Ask a tech-savvy family member</li>
       <li>📞 Call the company's official phone number</li>
       <li>🌐 Visit their official website</li>

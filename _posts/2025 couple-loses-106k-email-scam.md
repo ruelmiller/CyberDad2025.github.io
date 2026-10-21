@@ -97,13 +97,13 @@ Scammers fake this every day.
 
 ## Protect Yourself TODAY
 
-**[$2 Security Quick-Check](https://cyberdad.gumroad.com)** - Includes phone scam prevention guide
+**[$2 Security Quick-Check](/#kit)** - Includes phone scam prevention guide
 
 **[Norton 360 with LifeLock](YOUR-NORTON-LINK)** - Monitors for identity theft ($75 commission for you!)
 
-**[$47 Complete Protection Kit](https://cyberdad.gumroad.com)** - Full family protection system
+**[CyberDad Shield Kit ($67)](/#kit)** - Full family protection system
 
-**[FREE Scam Prevention Guide](https://cyberdad.gumroad.com)** - Start here
+**[FREE Scam Prevention Guide](/#kit)** - Start here
 
 ## The New Scam Tactics
 
@@ -169,4 +169,4 @@ Don't be next.
 
 **Cyber Dad**
 
-P.S. - The [$2 security check](https://cyberdad.gumroad.com) includes a "Scam Call Script" that would have saved them $106,000. Get it now.
+P.S. - The [$2 security check](/#kit) includes a "Scam Call Script" that would have saved them $106,000. Get it now.

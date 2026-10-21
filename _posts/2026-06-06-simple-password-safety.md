@@ -264,7 +264,7 @@ Congratulations! You now know how to:
     <h2>🤝 Need Help?</h2>
     <p>If you have questions or need help with this guide:</p>
     <ul class="help-options">
-      <li>📧 Email us: <a href="mailto:cyberdadkit@gmail.com">cyberdadkit@gmail.com</a></li>
+      <li>📧 Email us: <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></li>
       <li>👨‍👩‍👧‍👦 Ask a tech-savvy family member</li>
       <li>📞 Call the company's official phone number</li>
       <li>🌐 Visit their official website</li>

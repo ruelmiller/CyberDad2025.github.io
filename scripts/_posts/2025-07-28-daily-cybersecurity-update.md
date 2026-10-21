@@ -10,7 +10,7 @@ excerpt: "Essential cybersecurity guidance to keep your family safe online"
 
 In today's digital age, cybersecurity threats are more prevalent than ever before. From ransomware attacks to phishing scams, families are increasingly at risk of falling victim to online threats. One recent threat that has been making headlines is the rise of social engineering attacks targeting children and teenagers. Imagine if your child received a message from someone claiming to be a friend, only to realize too late that it was actually a hacker looking to steal personal information. This scenario is becoming all too common in today's interconnected world.
 
-As a cybersecurity expert, I understand the importance of protecting your family online. That's why I've compiled a list of 7 actionable tips that families can implement to enhance their cybersecurity posture and keep their loved ones safe from online threats.
+As a CompTIA Security+ certified dad, I know how much protecting your family online matters. That's why I've compiled 7 actionable tips from FBI, FTC, and CISA guidance that families can implement to enhance their cybersecurity posture and keep their loved ones safe from online threats.
 
 1. Educate Your Children: One of the most important steps you can take to protect your family online is to educate your children about cybersecurity best practices. Teach them about the dangers of sharing personal information online and the importance of using strong, unique passwords for each account. Encourage open communication with your children so they feel comfortable coming to you if they encounter any suspicious activity online.
 
@@ -30,7 +30,7 @@ According to the latest cybersecurity statistics, children are increasingly beco
 
 Consider this situation: Your child receives a friend request from someone claiming to be a classmate, but something doesn't seem quite right. Before accepting the request, encourage your child to verify the person's identity by asking them a question only a true friend would know. By teaching your children to be cautious online and question suspicious activity, you can help prevent them from falling victim to social engineering attacks.
 
-As a cybersecurity expert, I urge families to take action to enhance their online security and protect their loved ones from cyber threats. By implementing the tips outlined above, you can strengthen your family's cybersecurity posture and create a safer online environment for everyone. Remember, cybersecurity is a shared responsibility, and by working together, we can help keep our families safe from online threats.
+CISA and the FTC both urge families to take action to enhance their online security and protect their loved ones from cyber threats. By implementing the tips outlined above, you can strengthen your family's cybersecurity posture and create a safer online environment for everyone. Remember, cybersecurity is a shared responsibility, and by working together, we can help keep our families safe from online threats.
 
 In conclusion, I encourage all families to prioritize cybersecurity and take steps to protect their loved ones online. By educating your children, using parental control software, enabling two-factor authentication, keeping software up to date, being wary of phishing scams, securing your Wi-Fi network, and creating backup plans, you can enhance your family's online security and minimize the risk of falling victim to cyber attacks. Together, we can create a safer digital world for our families. Stay safe and stay secure.
 
@@ -38,7 +38,7 @@ In conclusion, I encourage all families to prioritize cybersecurity and take ste
 
 ## Stay Protected
 
-Want more cybersecurity tips? Follow our daily updates and join thousands of families staying safe online.
+Want more cybersecurity tips? Follow our daily updates.
 
 **🔒 Remember: Your family's digital safety is worth the extra effort.**
 

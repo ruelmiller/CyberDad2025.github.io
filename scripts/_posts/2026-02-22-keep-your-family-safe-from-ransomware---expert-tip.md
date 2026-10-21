@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Keep Your Family Safe from Ransomware - Expert Tips That Work"
+title: "Keep Your Family Safe from Ransomware - Practical Tips That Work"
 date: 2026-02-22
 categories: cybersecurity
 tags: family-security online-safety cybersecurity-tips
@@ -48,13 +48,13 @@ Protect your family with these trusted cybersecurity solutions:
 
 *As a cybersecurity affiliate, I earn from qualifying purchases at no cost to you.*
 
-## 🔒 Get FREE Cybersecurity Alerts
+## 🔒 Get the free Family Cybersecurity Checklist
 
-**Join 12,000+ families getting instant notifications about threats affecting their devices!**
+**Enter your email below to get the free checklist.**
 
 <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
-    <div class="ml-embedded" data-form="158915078478890584"></div>
-    <p style="font-size: 12px; color: #666; margin-top: 10px;">✅ Real-time threat alerts • Unsubscribe anytime</p>
+    <div class="ml-embedded" data-form="KxzppG"></div>
+    <p style="font-size: 12px; color: #666; margin-top: 10px;">✅ Free • Unsubscribe anytime</p>
 </div>
 
 <!-- MailerLite Universal -->

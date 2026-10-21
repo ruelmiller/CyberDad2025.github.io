@@ -4,7 +4,7 @@ title: "Child-Safe IoT Device Setup: Step-by-Step Guide"
 date: 2025-07-26 13:49:26 +0000
 categories: [Cybersecurity]
 tags: [cybersecurity, family-safety, identity-theft, parents-guide]
-excerpt: "Learn how to protect your family from identity theft with our expert cybersecurity guide. Simple steps every parent can implement today."
+excerpt: "Learn how to protect your family from identity theft with our plain-English guide based on FBI, FTC, and CISA advice. Simple steps every parent can implement today."
 author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
@@ -37,7 +37,7 @@ Configure your home network for maximum security:
 
 **Complete Family Security:** Get both Norton Family + VPN for maximum protection of your loved ones.
 
-**Need Help?** Contact us at help@cyberdad2025.com
+**Need Help?** Email ruel@getcyberdadkit.com
 
 ---
 

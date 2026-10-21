@@ -11,7 +11,7 @@ description: "Your Kid's Gaming Account Is a Target — Here's How to Lock It Do
 Gaming accounts — Roblox, Fortnite, Minecraft, PlayStation, Xbox — are being targeted by hackers more than ever. Why? Because kids rarely have two-factor authentication turned on.
 
 **Does this affect my family?**
-A hacked gaming account can expose your payment info, your child's personal details, and even be used to scam their friends. It happens to thousands of families every week.
+A hacked gaming account can expose your payment info, your child's personal details, and even be used to scam their friends. It can happen to any family.
 
 **What to do right now:**
 1. Turn on two-factor authentication on every gaming account your child uses

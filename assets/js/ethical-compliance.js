@@ -283,9 +283,9 @@
     <div class="contact-box">
         <h2>📧 Questions About Our Affiliate Program?</h2>
         <p>We believe in complete transparency - ask us anything!</p>
-        <p><strong>Affiliate Questions:</strong> <a href="mailto:affiliates@cyberdad.com">affiliates@cyberdad.com</a></p>
-        <p><strong>General Questions:</strong> <a href="mailto:hello@cyberdad.com">hello@cyberdad.com</a></p>
-        <p><strong>Product Issues:</strong> <a href="mailto:support@cyberdad.com">support@cyberdad.com</a></p>
+        <p><strong>Affiliate Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
+        <p><strong>General Questions:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
+        <p><strong>Product Issues:</strong> <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
         <p>💬 <strong>Response time:</strong> Within 24 hours</p>
     </div>
 

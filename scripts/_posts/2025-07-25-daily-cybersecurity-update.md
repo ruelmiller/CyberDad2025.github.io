@@ -36,7 +36,7 @@ In conclusion, cybersecurity is not just a buzzword – it's a critical aspect o
 
 ## Stay Protected
 
-Want more cybersecurity tips? Follow our daily updates and join thousands of families staying safe online.
+Want more cybersecurity tips? Follow our daily updates.
 
 **🔒 Remember: Your family's digital safety is worth the extra effort.**
 

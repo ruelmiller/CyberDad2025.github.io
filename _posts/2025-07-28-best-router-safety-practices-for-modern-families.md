@@ -4,7 +4,7 @@ title: "Best Router Safety Practices for Modern Families"
 date: 2025-07-28 04:10:49 +0000
 categories: [Cybersecurity]
 tags: [cybersecurity, family-safety, cyberbullying, parents-guide]
-excerpt: "Learn how to protect your family from cyberbullying with our expert cybersecurity guide. Simple steps every parent can implement today."
+excerpt: "Learn how to protect your family from cyberbullying with our plain-English guide based on FBI, FTC, and CISA advice. Simple steps every parent can implement today."
 author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
@@ -30,7 +30,7 @@ Take these actions right now to secure your family:
 
 **Take Action Today:** Download our free family security checklist and start protecting your loved ones immediately. Remember: cybersecurity is not optional for modern families.
 
-**Emergency Support:** If you suspect a security breach, contact us immediately at help@cyberdad2025.com
+**If you suspect a breach:** follow the official steps at IdentityTheft.gov or ReportFraud.ftc.gov. Questions about this guide? Email ruel@getcyberdadkit.com
 
 ---
 

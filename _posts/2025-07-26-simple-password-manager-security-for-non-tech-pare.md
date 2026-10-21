@@ -4,7 +4,7 @@ title: "Simple Password Manager Security for Non-Tech Parents"
 date: 2025-07-26 17:42:14 +0000
 categories: [Family Safety]
 tags: [cybersecurity, family-safety, data-breaches, parents-guide]
-excerpt: "Learn how to protect your family from data breaches with our expert cybersecurity guide. Simple steps every parent can implement today."
+excerpt: "Learn how to protect your family from data breaches with our plain-English guide based on FBI, FTC, and CISA advice. Simple steps every parent can implement today."
 author: CyberDad
 image: /assets/images/cybersecurity-family.jpg
 ---
@@ -36,7 +36,7 @@ Take these actions right now to secure your family:
 
 **Complete Family Security:** Get both Norton Family + VPN for maximum protection of your loved ones.
 
-**Need Help?** Contact us at help@cyberdad2025.com
+**Need Help?** Email ruel@getcyberdadkit.com
 
 ---
 
