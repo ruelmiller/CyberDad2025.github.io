@@ -213,12 +213,26 @@ async function processPost(post) {
   return { updated: true, linksAdded };
 }
 
+// P7: never inject a placeholder or unset affiliate URL (e.g. .../ref/YOURCODE). Fail closed: the product is skipped
+// until a real, approved affiliate URL replaces the placeholder in AFFILIATE_PRODUCTS.
+function isPlaceholderLink(url) {
+  return !url || /YOURCODE|affiliate-link|example\.(?:com|invalid)/i.test(url) || /^\[[A-Z_]+\]$/.test(url);
+}
+function replacementUrl(md) {
+  const m = /\]\(([^)]*)\)/.exec(md || '');
+  return m ? m[1] : '';
+}
+
 function injectAffiliateLinks(content) {
   let updatedContent = content;
   let totalLinksAdded = 0;
 
   // Process each affiliate product
   for (const [productKey, product] of Object.entries(AFFILIATE_PRODUCTS)) {
+    if (isPlaceholderLink(product.link) || isPlaceholderLink(replacementUrl(product.replacement))) {
+      console.log(`⏭️  Skipped ${productKey}: placeholder affiliate URL (P7)`);
+      continue;
+    }
     
     // Check each keyword for this product
     for (const keyword of product.keywords) {
@@ -259,3 +273,5 @@ async function processSpecificPost(filename) {
   
   return await processPost(post);
 }
+
+exports._test = { injectAffiliateLinks, isPlaceholderLink, AFFILIATE_PRODUCTS };
