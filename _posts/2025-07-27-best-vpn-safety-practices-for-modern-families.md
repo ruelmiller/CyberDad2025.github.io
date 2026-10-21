@@ -32,8 +32,8 @@ Configure your home network for maximum security:
 **Take Action Today:** Download our free family security checklist and start protecting your loved ones immediately.
 
 **🛡️ Recommendations:**
-• [Norton Family Premier →](https://www.dpbolvw.net/click-101495044-13287827) - Essential parental controls (30-day trial)
-• [Norton VPN →](https://www.tkqlhce.com/click-101495044-14039214) - Complete privacy protection (money-back guarantee)
+• **Norton Family Premier** - Essential parental controls (30-day trial)
+• **Norton VPN** - Complete privacy protection (money-back guarantee)
 
 **If you suspect a breach:** follow the official steps at IdentityTheft.gov or ReportFraud.ftc.gov. Questions about this guide? Email ruel@getcyberdadkit.com
 

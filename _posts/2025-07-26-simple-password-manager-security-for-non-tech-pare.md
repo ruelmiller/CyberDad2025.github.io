@@ -31,8 +31,8 @@ Take these actions right now to secure your family:
 **Bottom Line:** Set up these Password Manager security measures once, then review them whenever your family gets a new device or app.
 
 **🛡️ Essential Family Protection:**
-• [Norton Family Premier →](https://www.dpbolvw.net/click-101495044-13287827) - Parental controls & device monitoring
-• [Norton VPN →](https://www.tkqlhce.com/click-101495044-14039214) - Online privacy & security protection
+• **Norton Family Premier** - Parental controls & device monitoring
+• **Norton VPN** - Online privacy & security protection
 
 **Complete Family Security:** Get both Norton Family + VPN for maximum protection of your loved ones.
 
