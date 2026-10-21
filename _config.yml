@@ -1,7 +1,10 @@
-# Jekyll Configuration for Cyber Dad Blog
-title: "Cyber Dad Blog"
-description: "Global Cybersecurity Guidance for Modern Families"
-author: "CyberDad2025"
+# Jekyll Configuration for CyberDadKit
+# G2 (Growth): one value per key. Duplicate title/description/author/plugins keys removed (YAML keeps only the last one, which silently overrode the first block).
+title: "CyberDadKit"
+description: "Plain-English family online safety from CyberDadKit: home Wi-Fi, kids' devices, passwords and scams, with a free family tech safety checklist."
+author:
+  name: "Ruel Miller"
+  email: "ruel@getcyberdadkit.com"
 email: "ruel@getcyberdadkit.com"
 url: "https://cyberdad2025.github.io"
 baseurl: ""
@@ -15,21 +18,7 @@ permalink: /:year/:month/:day/:title.html
 future: true
 timezone: America/New_York
 
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  # SEO Settings (ADD THESE LINES)
-title: "CyberDad - Family Cybersecurity Intelligence"
-description: "Real-time cybersecurity intelligence for modern families. Get protection guides, threat alerts, and security tips that keep your family safe online."
-url: "https://cyberdad2025.github.io"
-author:
-  name: "CyberDad"
-  email: "ruel@getcyberdadkit.com"
-
-# Google Analytics (ADD THIS LINE)
-google_analytics: G-XXXXXXXXXX
+# GA4 (G-5B1LNCPB56) is loaded once by _layouts/default.html; no google_analytics key (it held a placeholder).
 
 # Theme
 remote_theme: jekyll/minima
@@ -63,7 +52,6 @@ paginate_path: "/page:num/"
 
 # SEO
 lang: en
-google_analytics: # Add your GA code here later
 google_site_verification: # Add your verification code here later
 
 # Navigation
@@ -95,3 +83,5 @@ safe: true
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
