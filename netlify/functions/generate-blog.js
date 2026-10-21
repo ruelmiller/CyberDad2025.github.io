@@ -115,6 +115,9 @@ const CLAIMS_RULES = [
   ['time promise: less than N minutes', /\bless than \d+\s*(?:minutes?|mins?)\b/i],
   ['time promise: N Minutes or Less', /\b\d+\s*(?:minutes?|mins?)\s+or\s+less\b/i],
   ['benefit promise: "years of ... protection"', /\byears of (?:family )?protection\b/i],
+  // R9i (CoS 2026-10-21): uncited minute promises in a title or heading (front matter title/seo_title/og_title, markdown headings, <h1>-<h6>).
+  // Covers in/under/within/takes/only/just + N minutes, and hyphenated N-minute + fix/setup/check/guide/...; a source link on the line exempts it. Kit phrase allowed: 'one 15-minute Quick Action'.
+  ['time promise in title/heading: in N minutes', /^(?![^\n]*(?:https?:\/\/|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)/im],
   ['author-claim word in title/meta/author line', /^(?:title|description|excerpt|summary|author|seo_title):.*\b(?:experts?|expertise|pros?|professionals?|professional-grade|certified expert)\b|^#\s.*\b(?:experts?|expertise|pros?|professionals?)\b/im],
   ['MailerLite form not KxzppG', /data-form="(?!KxzppG")[^"]*"/]
 ];

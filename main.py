@@ -91,7 +91,14 @@ UNVERIFIED_STATS_RULES = [
         r"\b\d+\s*(?:minutes?|mins?)\s+or\s+less\b", re.I)),
     ('benefit promise: "years of ... protection"', re.compile(
         r"\byears of (?:family )?protection\b", re.I)),
+    # R9i (CoS 2026-10-21): uncited minute promises in a title or heading (front matter title/seo_title/og_title,
+    # markdown headings, <h1>-<h6>). Covers in/under/within/takes/only/just + N minutes, and hyphenated N-minute + fix/setup/check/guide/...;
+    # a source link on the line exempts it. Kit phrase allowed: 'one 15-minute Quick Action'.
+    # main() also checks the post title on its own line (TITLE_LINE_PREFIX), since it is not in the body.
+    ("time promise in title/heading: in N minutes", re.compile(
+        r"^(?![^\n]*(?:https?://|\]\(|<a\s[^>]*href=|\bsources?:))(?:[ \t]*(?:seo_title|og_title|title)[ \t]*:|[ \t]*#{1,6}[ \t]|[^\n]*<h[1-6]\b[^>]*>)[^\n]*?(?:\b(?:in|under|within|takes?|taking|only|just)[ \t]+(?:about[ \t]+|around[ \t]+|less[ \t]+than[ \t]+)?(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-?[ \t]*(?:minutes?|mins?)\b|\b(?!(?<=\bone )15-minute Quick Action\b)(?:\d+|one|two|three|four|five|ten|fifteen|twenty|thirty|sixty)[ \t]*-[ \t]*minutes?[ \t]+(?:[\w'-]+[ \t]+){0,2}?(?:fix|fixes|setup|set-up|check|checks|checkup|check-up|guide|plan|audit|lockdown|makeover|routine|task|tasks|action|actions|tune-up|upgrade|challenge|habit|habits|tip|tips|win|wins|reset|review|walkthrough|tutorial|security|protection|lesson)\b)", re.I | re.M)),
 ]
+TITLE_LINE_PREFIX = "title: "
 
 
 # Author-claim words (steering 2026-10-21 4:49 AM ET): never describe Ruel/CDK as expert, pro or professional
@@ -110,6 +117,13 @@ def author_claim_guard(post: dict) -> list:
         if m:
             out.append(f'{name} ({field}): "{m.group(0)}"')
     return out
+
+
+def title_time_promise_guard(post: dict) -> list:
+    """R9i: check the post title as a 'title:' line for minute promises (the body is checked by unverified_stats_guard)."""
+    name, rx = next(r for r in UNVERIFIED_STATS_RULES if r[0] == "time promise in title/heading: in N minutes")
+    m = rx.search(TITLE_LINE_PREFIX + (post.get("title") or ""))
+    return [f'{name} (title): "{m.group(0)}"'] if m else []
 
 
 def unverified_stats_guard(text: str) -> list:
@@ -586,7 +600,8 @@ def main():
         print(f"Post '{slug}' already exists — skipping.")
         return
 
-    stat_violations = unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]])) + author_claim_guard(post)
+    stat_violations = (unverified_stats_guard(" ".join([post["title"], post.get("lead", ""), post["body"]]))
+                       + title_time_promise_guard(post) + author_claim_guard(post))
     if stat_violations:
         print("Post blocked by R9 guard (unverified stats / author-claim words), nothing written: " + "; ".join(stat_violations))
         return
