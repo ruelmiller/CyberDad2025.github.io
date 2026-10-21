@@ -1,0 +1,10 @@
+{%- comment -%}
+  M-P2 in-content kit pitch (Product M-D2 block, verbatim text from _data/kit_pitches.yml).
+  Called from _layouts/post.html with pitch=<entry>. CTA label comes from _data/kit.yml (checkout_live flips it).
+  R6: data-cdk-event="select_promotion", promotion_id kit-pitch, creative_slot post-pitch-<rank> (same hook as the M-P1 CTA).
+{%- endcomment -%}
+{%- if site.data.kit.checkout_live -%}{%- assign kit_pitch_label = site.data.kit.pitch_label_live -%}{%- else -%}{%- assign kit_pitch_label = site.data.kit.pitch_label_prelaunch -%}{%- endif -%}
+<aside class="cdk-kit-pitch" aria-label="CyberDad Shield Kit" data-cdk-promo="kit-pitch" data-cdk-pitch-rank="{{ include.pitch.rank }}">
+  <p class="cdk-kit-pitch__text">{{ include.pitch.text | escape }}</p>
+  <p class="cdk-kit-pitch__cta"><a class="cdk-kit-pitch__btn" href="/#kit" data-cdk-event="select_promotion" data-promotion-id="kit-pitch" data-promotion-name="CyberDad Shield Kit" data-creative-slot="post-pitch-{{ include.pitch.rank }}">{{ kit_pitch_label }}</a></p>
+</aside>

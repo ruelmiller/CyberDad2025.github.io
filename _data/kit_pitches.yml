@@ -1,0 +1,145 @@
+# M-P2: Product M-D2 kit pitch blocks (/workspace/cdk/product/M-D2/pitches.csv), one per target post.
+# Key = the post source path (page.path). "text" is VERBATIM from pitches.csv "pitch_block" (do not edit here without Product sign-off).
+# "before" = the exact opening tag of the rendered <h2> the block is placed in front of (topic fit; see DEVIATIONS.md / CHECKS.md).
+# The CTA label is NOT stored here: _includes/kit-pitch.html picks it from _data/kit.yml (one launch flip for every kit CTA).
+# Rendered by _layouts/post.html via _includes/kit-pitch.html. If "before" is not found, the block goes at the end of the post body.
+
+_posts/2026-10-20-simple-privacy-tips.md:
+  rank: 1
+  topic: "📶 Make Your Home WiFi Super Safe - Easy Steps"
+  kit_ref: "Module 3, WiFi Security Checklist, pp. 15–17"
+  before: "<h2 id=\"-how-to-check-if-your-wifi-is-safe\">"
+  text: "Want the whole home Wi-Fi checklist in one place? Module 3 of the CyberDad Shield Kit walks you through WPA3 encryption, a long Wi-Fi passphrase, a network name that doesn't identify your family, and a separate guest network for visitors and smart-home gadgets. It ends with a printable Home Network Record so you know where everything is stored."
+
+_posts/2026-10-20-safe-social-media.md:
+  rank: 2
+  topic: "🎣 Avoid Email Tricks - Don't Get Fooled!"
+  kit_ref: "Module 2, Safe Browsing Rules, pp. 11 and 13"
+  before: "<h2 id=\"-common-email-tricks-to-watch-for\">"
+  text: "Module 2 of the CyberDad Shield Kit shows you how to check a link without clicking it, on a computer or a phone, and why to use your email's Report phishing button instead of just deleting. It also teaches the PAUSE test the whole family can use before they click, pay or reply."
+
+_posts/2026-10-19-easy-backup-guide.md:
+  rank: 3
+  topic: "🔒 Keep Your Passwords Safe - Super Easy Guide"
+  kit_ref: "Module 1, Password Manager Setup Guide, pp. 6–7"
+  before: "<h2 id=\"-password-manager---your-digital-helper\">"
+  text: "Ready to stop reusing passwords? Module 1 of the CyberDad Shield Kit compares Apple Passwords, Google Password Manager, Bitwarden and 1Password so you can pick one vault for the family. Then it shows you how to create a master passphrase and set the vault up, step by step."
+
+_posts/2026-01-26-prevent-online-scams.md:
+  rank: 4
+  topic: "Prevent Online Scams"
+  kit_ref: "Module 2, Safe Browsing Rules, pp. 11–12"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "The CyberDad Shield Kit includes a 2026 Scam Field Guide: what unpaid-toll texts, package-delivery texts, fake bank-fraud calls, tech-support pop-ups and AI voice-clone \"family emergency\" calls look like, and exactly what to do about each one. Module 2 also helps your family pick a safe word for any emergency call that asks for money."
+
+_posts/2026-04-06-two-factor-authentication-setup.md:
+  rank: 5
+  topic: "Two-Factor Authentication Setup"
+  kit_ref: "Module 1, Password Manager Setup Guide, pp. 8–9"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "Module 1 of the CyberDad Shield Kit tells you which accounts to protect with two-factor authentication first, and gives the exact taps for your Apple Account, Google Account and Microsoft account. It also covers backup codes and passkeys, and where to keep the codes safe at home."
+
+_posts/2026-04-04-child-safe-phone-setup-step-by-step-guide.md:
+  rank: 6
+  topic: "Child-Safe Phone Setup: Step-by-Step Guide"
+  kit_ref: "Module 7, Device Setup Guides, pp. 37–39"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Setting up a child's phone? Module 7 of the CyberDad Shield Kit starts with giving them their own Child Account in Family Sharing, then gives you a checklist for the child's iPhone or iPad: Screen Time passcode, bedtime schedule, Ask to Buy, website filter and Communication Safety. Android, Windows, Mac and game consoles are covered in the same module."
+
+_posts/2025-08-15-child-safe-parental-controls-setup-step-by-step-gu.md:
+  rank: 7
+  topic: "Child-Safe Parental Controls Setup: Step-by-Step Guide"
+  kit_ref: "Module 7, Device Setup Guides, pp. 37–44 (Family Link p. 40, Microsoft Family Safety p. 42, consoles p. 44)"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "The CyberDad Shield Kit's Device Setup Guides cover parental controls device by device: Screen Time on iPhone and iPad, Google Family Link for Android phones and Chromebooks, Microsoft Family Safety for Windows and Xbox, and the family apps for each game console. Each one comes with a checklist so you can see what's switched on."
+
+_posts/2026-03-23-simple-gaming-console-security-for-non-tech-parent.md:
+  rank: 8
+  topic: "Simple Gaming Console Security for Non-Tech Parents"
+  kit_ref: "Module 7, Device Setup Guides, Part E: Game consoles, p. 44"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Consoles are social networks with a controller. Module 7 of the CyberDad Shield Kit has a universal console checklist plus setup steps for Xbox Family Settings, the PlayStation Family app and Nintendo Switch Parental Controls: child accounts, age ratings, spending limits, and who can message or voice chat with your kid."
+
+_posts/2026-04-17-cyberbullying-safety-for-families-5-essential-step.md:
+  rank: 9
+  topic: "Cyberbullying Safety for Families: 5 Essential Steps Parents Need"
+  kit_ref: "Module 6, Emergency Tech Plan, Playbook 8, p. 34; Module 5, p. 25"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "If cyberbullying happens, the CyberDad Shield Kit's Emergency Tech Plan tells you what to do: screenshot everything, block and report, share the screenshots with the school if classmates are involved, and recheck privacy settings without taking the device away as punishment. The Social Media Safety Checklist helps you set those privacy and messaging settings in the first place."
+
+_posts/2026-03-11-keep-your-family-safe-from-online-predators---expe.md:
+  rank: 10
+  topic: "Keep Your Family Safe from Online Predators - Practical Tips That Work"
+  kit_ref: "Module 5, Social Media Safety Checklist, p. 25; Module 6, Emergency Tech Plan, Playbooks 7–8, pp. 33–34"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "The CyberDad Shield Kit's Social Media Safety Checklist helps you limit who can message your child, filter message requests from strangers, and turn off location in each app. If something does go wrong, the Emergency Tech Plan has step-by-step playbooks for sextortion and creepy strangers, including where to report."
+
+_posts/2026-04-16-parents-alert-identity-theft-threats-and-how-to-st.md:
+  rank: 11
+  topic: "Parents Alert: Identity Theft Threats and How to Stop Them"
+  kit_ref: "Module 6, Emergency Tech Plan, Playbook 5, p. 32"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Module 6 of the CyberDad Shield Kit has a step-by-step playbook for identity theft or a data breach notice. It covers when and how to freeze your credit with Equifax, Experian and TransUnion, using IdentityTheft.gov for a recovery plan, and getting an IRS Identity Protection PIN."
+
+_posts/2026-03-21-parents-alert-ransomware-threats-and-how-to-stop-t.md:
+  rank: 12
+  topic: "Parents Alert: Ransomware Threats and How to Stop Them"
+  kit_ref: "Module 6, Emergency Tech Plan, Playbook 6, p. 33; Module 7, p. 42"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "The CyberDad Shield Kit's Emergency Tech Plan has a playbook for a virus, ransomware, or a fake \"your computer is infected\" pop-up: disconnect the device, don't pay, report it at ic3.gov, and restore from backups. Module 7 shows you how to check Windows Security and set up backups on every PC in the house."
+
+_posts/2026-04-27-backup-your-family-photos-safely.md:
+  rank: 13
+  topic: "Backup Your Family Photos Safely"
+  kit_ref: "Module 7, Device Setup Guides, pp. 39, 41–42; 30-Day Action Plan, p. 46"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "The CyberDad Shield Kit's Device Setup Guides include the backup switch for every device in the house: iCloud Backup on iPhone and iPad, Backup on Android, and Windows Backup or OneDrive plus an external drive for the irreplaceable stuff. The 30-Day Action Plan puts \"backups running\" on your list too."
+
+_posts/2026-03-20-best-router-safety-practices-for-modern-families.md:
+  rank: 14
+  topic: "Best Router Safety Practices for Modern Families"
+  kit_ref: "Module 3, WiFi Security Checklist, p. 15"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Module 3 of the CyberDad Shield Kit starts with taking control of your router: change the admin password from the default, turn on automatic firmware updates, and switch off remote management and WPS. It names the router apps to look for, from eero and TP-Link Deco to your internet provider's app."
+
+_posts/2026-04-21-family-iot-device-protection-in-5-minutes-or-less.md:
+  rank: 15
+  topic: "Family IoT Device Protection: A Step-by-Step Setup Guide"
+  kit_ref: "Module 3, WiFi Security Checklist, The guest network, p. 16"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Smart TVs, plugs, doorbells, cameras and speakers don't need to sit on the same network as your laptops. Module 3 of the CyberDad Shield Kit shows you how to turn on a guest network, move smart-home gadgets onto it, and give it a different password from your main Wi-Fi."
+
+_posts/2026-04-25-why-every-parent-needs-antivirus-security-2025-upd.md:
+  rank: 16
+  topic: "Why Every Parent Needs Antivirus Security (2025 Update)"
+  kit_ref: "Module 7, Device Setup Guides, Part C: Windows, p. 42"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "Wondering whether you need to buy antivirus for the family PC? The CyberDad Shield Kit's Windows checklist shows you where to confirm Windows Security's virus and threat protection, firewall, and app and browser control in Windows Security (Microsoft Defender), which is free. It also covers automatic updates and device encryption."
+
+_posts/2026-03-30-social-media-privacy-for-teens.md:
+  rank: 17
+  topic: "Social Media Privacy for Teens"
+  kit_ref: "Module 5, Social Media Safety Checklist, pp. 25–29"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "Module 5 of the CyberDad Shield Kit is a social media safety checklist for each platform, including Instagram, Snapchat, YouTube and Discord, built around a universal privacy checklist: private account, messages limited to people they know, location off, and 2FA on. It starts with one privacy check-up you do together with your teen."
+
+_posts/2026-04-26-parents-alert-device-tracking-threats-and-how-to-s.md:
+  rank: 18
+  topic: "Parents Alert: Device Tracking Threats and How to Stop Them"
+  kit_ref: "Module 5, p. 25 and p. 27; Module 7, pp. 39 and 41"
+  before: "<h2 id=\"\uFE0F-recommended-security-tools\">"
+  text: "The CyberDad Shield Kit shows you where to review location access on your family's devices: location off in each social app, a walk-through of Location Services, Tracking and Safety Check on iPhone, and the Permission manager on Android. It also covers Snap Map's Ghost Mode."
+
+_posts/2025-10-06-safe-online-shopping-guide.md:
+  rank: 19
+  topic: "Safe Online Shopping Guide"
+  kit_ref: "Module 2, Safe Browsing Rules, pp. 12–13; Module 1, Step 4, p. 8"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "Module 2 of the CyberDad Shield Kit covers the scams that ride along with online shopping, like fake package-delivery texts and requests to pay with gift cards, and the family rule to type store and bank addresses yourself. Module 1 puts Amazon and any store that saves your card on the short list of accounts to lock down first."
+
+_posts/2025-07-29-safe-internet-browsing-for-kids.md:
+  rank: 20
+  topic: "Safe Internet Browsing for Kids"
+  kit_ref: "Module 2, Safe Browsing Rules, p. 13; Module 4 poster, p. 23; Module 7, p. 39"
+  before: "<h2 id=\"\uFE0F-more-tips-for-families\">"
+  text: "The CyberDad Shield Kit includes six Safe Browsing Rules for the whole family, a printable \"My Online Safety Rules\" poster for kids, and the safe-browsing settings for Chrome, Edge and Safari. For your child's iPhone or iPad, Module 7 shows you how to set the website filter."
