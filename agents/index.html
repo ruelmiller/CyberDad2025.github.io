@@ -1,0 +1,121 @@
+---
+layout: default
+no_ads: true
+title: "Monthly client newsletter for independent insurance agencies"
+description: "A done-for-you monthly client newsletter on household risk and scam safety, plus 8 social posts, ready to send under your agency's name. Founding members $29/month, cancel anytime."
+permalink: /agents/
+---
+{%- comment -%}
+  Demand test A (ops/strategy/2026-10-29-recurring-opportunities.md): DFY client newsletter for independent insurance agencies.
+  Sample form: MailerLite embedded form "Agents - Get the free sample" (slug ODBW5f, form id 202528695510893721,
+  group agents-sample 202528690533303319, double opt-in). The form was created through the MailerLite API with no
+  design yet; until someone picks a template and saves it in the MailerLite dashboard the embed renders nothing, so
+  the email fallback below stays visible.
+  Paid button: set agents_checkout_url to the live subscription checkout (Stripe Payment Link or MailerLite paid
+  subscription) once Ruel approves one. While it is empty, no payment link is shown.
+{%- endcomment -%}
+{%- assign agents_checkout_url = "" -%}
+{%- assign agents_sample_form = "ODBW5f" -%}
+<style>
+  .ag { max-width: 860px; margin: 0 auto; padding: 1.5rem 1.25rem 2rem; font-family: Arial, Helvetica, sans-serif; color: #1e293b; line-height: 1.6; }
+  .ag h1 { font-size: 2rem; line-height: 1.2; color: #0f2a5c; margin: 0.5rem 0 0.75rem; }
+  .ag h2 { font-size: 1.35rem; color: #0f2a5c; margin: 2.25rem 0 0.75rem; }
+  .ag .lede { font-size: 1.15rem; margin: 0 0 1.25rem; }
+  .ag .tag { display: inline-block; background: #eff6ff; color: #1d4ed8; font-weight: bold; font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .ag .btn { display: inline-block; background: #1d4ed8; color: #fff; text-decoration: none; font-weight: bold; padding: 0.8rem 1.3rem; border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; }
+  .ag .btn.alt { background: #fff; color: #1d4ed8; border: 2px solid #1d4ed8; }
+  .ag ul { padding-left: 1.2rem; } .ag li { margin: 0.35rem 0; }
+  .ag .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem; }
+  .ag .grid img { width: 100%; height: auto; border-radius: 6px; display: block; }
+  .ag .card { border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; background: #fff; }
+  .ag .price { font-size: 2rem; font-weight: bold; color: #0f2a5c; } .ag .price small { font-size: 1rem; font-weight: normal; color: #475569; }
+  .ag .note { font-size: 0.9rem; color: #475569; }
+  .ag table { border-collapse: collapse; width: 100%; font-size: 0.95rem; } .ag td, .ag th { border-bottom: 1px solid #e2e8f0; padding: 0.5rem; text-align: left; vertical-align: top; }
+</style>
+
+<main class="ag">
+  <span class="tag">For independent insurance agencies</span>
+  <h1>A monthly client newsletter on household and scam safety, ready to send under your agency's name</h1>
+  <p class="lede">Each month you get one finished email issue and 8 social posts about the risks your clients' households actually run into: fake delivery texts, gift card scams, account takeovers, home inventory and more. You review it, edit anything you want, and send it from your own email tool.</p>
+  <p>
+    <a class="btn" href="#sample-form" data-ag-cta="sample_top">Get the free sample</a>
+    <a class="btn alt" href="{{ '/agents/sample/december-2026.html' | relative_url }}" data-ag-cta="read_sample">Read the December issue</a>
+  </p>
+
+  <h2>What's included every month</h2>
+  <ul>
+    <li><strong>One email issue</strong> as ready-to-paste HTML and plain text, about 600 words, with every statistic sourced to agencies like the FTC, FBI IC3, CISA and NAIC.</li>
+    <li><strong>8 social posts</strong>: captions plus 1080x1080 image cards with space for your logo, for Facebook, LinkedIn, Instagram or Nextdoor.</li>
+    <li><strong>Your branding</strong>: placeholders for your agency name, logo, agent name, phone and address. Founding members can send us their logo and details once, and we fill them in each month.</li>
+    <li><strong>Delivered by email on the 1st</strong> of each month. You send it to your clients yourself. We never email your clients or touch your client list.</li>
+  </ul>
+
+  <h2>The December sample</h2>
+  <p>"Holiday scam season: 6 quick checks for your household." It covers fake delivery texts, gift card payment demands, a family code word for "emergency" calls, safer online checkout, two-step sign-in and adding new gifts to a home inventory.</p>
+  <p>
+    <a href="{{ '/agents/sample/december-2026.html' | relative_url }}" data-ag-cta="read_sample_2">Read the full issue in your browser</a> ·
+    <a href="{{ '/assets/agents/household-safety-notes-sample-dec2026.pdf' | relative_url }}" data-ag-cta="sample_pdf">Download the 6-page sample PDF</a>
+  </p>
+  <div class="grid" aria-label="December social post samples">
+    <img src="{{ '/assets/agents/post-1.png' | relative_url }}" alt="Social post: Package couldn't be delivered? Don't tap the link." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-2.png' | relative_url }}" alt="Social post: Gift cards are for gifts, not payments." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-3.png' | relative_url }}" alt="Social post: Pick a family code word before you need one." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-4.png' | relative_url }}" alt="Social post: Type the store's address yourself." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-5.png' | relative_url }}" alt="Social post: Turn on two-step sign-in." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-6.png' | relative_url }}" alt="Social post: New gifts? Snap a photo for your home inventory." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-7.png' | relative_url }}" alt="Social post: $15.9 billion reported lost to fraud in 2025." loading="lazy" width="1080" height="1080">
+    <img src="{{ '/assets/agents/post-8.png' | relative_url }}" alt="Social post: Spotted a scam? Report it here." loading="lazy" width="1080" height="1080">
+  </div>
+
+  <h2 id="sample-form">Get the free sample</h2>
+  <div class="card">
+    <p>Enter your work email and we'll send you the December issue as editable HTML and plain text, plus the 8 image cards, so you can see how it looks in your own email tool.</p>
+    <div class="ml-embedded" data-form="{{ agents_sample_form }}"></div>
+    <p class="note" id="ag-form-fallback">If the form doesn't appear, email <a href="mailto:ruel@getcyberdadkit.com?subject=Agency%20newsletter%20sample">ruel@getcyberdadkit.com</a> with the subject "Agency newsletter sample" and we'll send it.</p>
+    <p class="note">We'll email you the sample and occasional updates about this newsletter. Unsubscribe anytime.</p>
+  </div>
+
+  <h2 id="founding">Founding member offer</h2>
+  <div class="card">
+    <div class="price">$29 <small>per month, cancel anytime</small></div>
+    <p>Founding members get the December issue ready to send, with their agency name and logo filled in, by December 1, then a new issue and social pack on the 1st of each month.</p>
+    {%- if agents_checkout_url != "" %}
+    <p><a class="btn" href="{{ agents_checkout_url }}" target="_blank" rel="noopener" data-ag-cta="checkout">Become a founding member, $29/month</a></p>
+    {%- else %}
+    <p><span class="btn" aria-disabled="true" style="background:#94a3b8; cursor:default;">Founding checkout isn't open yet</span></p>
+    <p class="note">Request the free sample above and we'll email you the founding member signup link when checkout opens.</p>
+    {%- endif %}
+  </div>
+
+  <h2>Fair questions</h2>
+  <table>
+    <tr><th>Is this insurance or legal advice?</th><td>No. It's general household and online safety information with public sources. It doesn't describe any carrier, policy or coverage.</td></tr>
+    <tr><th>Do I have to review it?</th><td>Yes, please. You're the sender, so check each issue against your state's insurance advertising rules and any carrier or network policies before you send it. You can edit or delete anything.</td></tr>
+    <tr><th>Who writes it?</th><td>CyberDadKit, a family online safety publisher founded by Ruel Miller, a U.S. Marine Corps veteran with CompTIA Security+ and past Security Operations Center experience. Every statistic links to its public source.</td></tr>
+    <tr><th>Can other agencies near me use the same issue?</th><td>Yes. The content isn't exclusive to one agency, which is how we keep it at $29.</td></tr>
+    <tr><th>How do I cancel?</th><td>Anytime, with no fee. Reply to any delivery email or write to ruel@getcyberdadkit.com, and you won't be billed again.</td></tr>
+  </table>
+
+  <p class="note" style="margin-top:2rem;">CyberDadKit, PO Box 940061, Maitland, FL 32794 · <a href="mailto:ruel@getcyberdadkit.com">ruel@getcyberdadkit.com</a></p>
+</main>
+
+<script>
+  if (!window.ml) {
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('enablePopups', false);
+    ml('account', '1632878');
+  }
+</script>
+<script>
+(function () {
+  if (window.__agCta) return; window.__agCta = 1;
+  var els = document.querySelectorAll('[data-ag-cta]');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function () {
+      try { if (typeof gtag === 'function') gtag('event', 'agents_cta_click', { cta: this.getAttribute('data-ag-cta'), page_path: '/agents/' }); } catch (e) {}
+    });
+  }
+})();
+</script>
